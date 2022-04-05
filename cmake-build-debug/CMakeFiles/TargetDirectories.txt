@@ -1,3 +1,0 @@
-/home/john/Documents/DA_T4_G62/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/john/Documents/DA_T4_G62/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/john/Documents/DA_T4_G62/cmake-build-debug/CMakeFiles/DA_T4_G62.dir
