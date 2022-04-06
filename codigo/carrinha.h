@@ -12,6 +12,7 @@ private:
     unsigned int peso=0;
     int balanco=-(int)custo;
     std::vector<Encomenda *> encomendas;
+
 public:
     /**
      * Carrinha
@@ -27,6 +28,13 @@ public:
      * @return 0 se for possivel adicionar a encomenda a carrinha
      */
     int adicionarEncomenda(Encomenda *encomenda);
+
+    /**
+     * Verifica se consegue adicionar encomenda a carrinha
+     * @param encomenda encomenda a verificar
+     * @return 0 se for possivel adicionar
+     */
+    int verificaDisponibilidade(Encomenda *encomenda);
 
     /**
      * Remover encomenda do transporte
