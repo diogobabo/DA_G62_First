@@ -2,10 +2,17 @@
 #define DA_T4_G62_EMPRESA_H
 
 #include <string>
+#include <vector>
+#include "encomenda.h"
+#include "carrinha.h"
+
+using namespace std;
 
 class Empresa {
 private:
-    std::string oi;
+    vector<Encomenda *> encomendas;
+    vector<Carrinha> carrinhas;
+
 
 public:
     /**
@@ -15,8 +22,21 @@ public:
 
     /**
      * Constructor
+     * @param fileEncomendas
+     * @param fileCarrinhas
+     */
+    Empresa(string fileEncomendas, string fileCarrinhas);
+
+    /**
+     * Função responsável por ler o ficheiro das carrinhas
+     * @param fileName
      */
     void lerCarrinhas(std::string fileName);
+
+    /**
+     * Função responsável por ler o ficheiro das encomendas
+     * @param fileName
+     */
     void lerEncomendas(std::string fileName);
 };
 

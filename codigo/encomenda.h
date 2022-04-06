@@ -9,7 +9,7 @@ public:
      * Encomenda
      * @param recompensa recompensa da encomenda
      */
-    explicit Encomenda(unsigned int vol, unsigned int peso, unsigned int recompensa);
+     Encomenda(unsigned int vol, unsigned int peso, unsigned int recompensa);
 
     /**
      * Desconstrutor do objeto Encomenda

@@ -1,14 +1,19 @@
-//
-// Created by oliveira on 06/04/22.
-//
-
 #include "Empresa.h"
-#include <string>
+#include <iostream>
 #include <fstream>
 #include <sstream>
-#include <iostream>
 
-using namespace std;
+
+
+
+Empresa::Empresa() {
+
+}
+
+Empresa::Empresa(string fileEncomendas, string fileCarrinhas) {
+    lerEncomendas(fileEncomendas);
+    lerCarrinhas(fileCarrinhas);
+}
 
 void Empresa::lerEncomendas(std::string fileName) {
     string s,tempo;
@@ -22,13 +27,22 @@ void Empresa::lerEncomendas(std::string fileName) {
         getline(str,peso,' ');
         getline(str,recompensa,' ');
         getline(str,tempo,' ');
-        cout << vol << endl;
-        cout << peso << endl;
-        cout << recompensa << endl;
-        cout << tempo << endl;
+        Encomenda encomenda(stoi(vol),stoi(peso),stoi(recompensa));
+        encomendas.push_back(&encomenda);
     }
 }
 
-Empresa::Empresa() {
+void Empresa::lerCarrinhas(std::string fileName) {
+    string s,tempo;
+    string volMax,pesoMax,custo;
+    ifstream file;
+    file.open(fileName);
+    getline(file,s);
+    while(getline(file,s)) {
+        std::stringstream str(s);
+        getline(str,volMax,' ');
+        getline(str,pesoMax,' ');
+        getline(str,custo,' ');
 
+    }
 }
