@@ -13,5 +13,4 @@ add_executable(DA_T4_G62
         codigo/estafeta.cpp
         codigo/estafeta.h
         codigo/main.cpp
-        codigo/pedido.cpp
-        codigo/pedido.h)
+        )
