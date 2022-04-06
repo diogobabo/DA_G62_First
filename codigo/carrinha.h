@@ -8,8 +8,8 @@ private:
     unsigned int pesoMax;
     unsigned int custo;
 
-    unsigned int vol;
-    unsigned int peso;
+    unsigned int vol=0;
+    unsigned int peso=0;
     int balanco=-(int)custo;
     std::vector<Encomenda *> encomendas;
 public:
@@ -28,5 +28,52 @@ public:
      */
     int adicionarEncomenda(Encomenda *encomenda);
 
+    /**
+     * Remover encomenda do transporte
+     * @param encomenda encomenda a ser removida
+     * @return 0 se conseguiu remover
+     */
+    int removerEncomenda(Encomenda *encomenda);
 
+    /**
+     * Retorna volume maximo da carrinha
+     * @return volume maximo
+     */
+    unsigned int getVolMax() const {return volMax;};
+
+    /**
+     * Retorna peso maximo da carrinha
+     * @return peso maximo
+     */
+    unsigned int getPesoMax() const {return pesoMax;};
+
+    /**
+     * Retorna custo do transporte
+     * @return custo
+     */
+    unsigned int getCusto() const {return custo;};
+
+    /**
+     * Retorna volume atual
+     * @return volume
+     */
+    unsigned int getVol() const {return vol;};
+
+    /**
+     * Retorna peso atual
+     * @return  peso
+     */
+    unsigned int getPeso() const {return peso;};
+
+    /**
+     * Retorna balanco atual
+     * @return balanco
+     */
+    int getBalanco() const {return balanco;};
+
+    /**
+     * Retorna vetor de encomendas
+     * @return encomendas
+     */
+    std::vector<Encomenda *> getEncomendas() const {return encomendas;};
 };
