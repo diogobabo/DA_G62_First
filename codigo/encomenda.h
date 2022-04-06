@@ -33,6 +33,30 @@ public:
      * @return recompensa
      */
     unsigned int getRecompensa() const {return recompensa;};
+
+    /**
+     * Função para ordenar por volume
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    bool sortByVolume(const Encomenda &e1, const Encomenda &e2);
+
+    /**
+     * Função para ordenar por peso
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    bool sortByPeso(const Encomenda &e1, const Encomenda &e2);
+
+    /**
+     * Função para ordenar por recompensa
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    bool sortByRecompensa(const Encomenda &e1, const Encomenda &e2);
 };
 
 class ExpressoEncomenda: public Encomenda {
@@ -51,6 +75,14 @@ public:
      * @return duracao
      */
     unsigned int getDuracao() const {return duracao;};
+
+    /**
+     * Função para ordenar por duração
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    bool sortByDuracao(const ExpressoEncomenda &e1, const ExpressoEncomenda &e2);
 };
 
 class NormalEncomenda: public Encomenda {
