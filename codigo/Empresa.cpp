@@ -43,6 +43,7 @@ void Empresa::lerCarrinhas(std::string fileName) {
         getline(str,volMax,' ');
         getline(str,pesoMax,' ');
         getline(str,custo,' ');
-
+        Carrinha carrinha(stoi(volMax), stoi(pesoMax), stoi(custo));
+        carrinhas.push_back(&carrinha);
     }
 }

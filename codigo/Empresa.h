@@ -11,7 +11,7 @@ using namespace std;
 class Empresa {
 private:
     vector<Encomenda *> encomendas;
-    vector<Carrinha> carrinhas;
+    vector<Carrinha *> carrinhas;
 
 
 public:
@@ -38,6 +38,18 @@ public:
      * @param fileName
      */
     void lerEncomendas(std::string fileName);
+
+    /**
+     * Retorna vetor de encomendas
+     * @return encomendas
+     */
+    std::vector<Encomenda *> getEncomendas() const {return encomendas;};
+
+    /**
+     * Retorna vetor de carrinhas
+     * @return carrinhas
+     */
+    std::vector<Carrinha *> getCarrinhas() const {return carrinhas;};
 };
 
 
