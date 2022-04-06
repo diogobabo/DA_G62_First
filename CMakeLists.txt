@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.21)
-project(DA_T4_G62)
+project(DA_T6_G62)
 
 set(CMAKE_CXX_STANDARD 14)
 
