@@ -41,5 +41,10 @@ int Cenario1::knapsackRecursive(vector<vector<int>> &dp, const vector<int> &prof
     return dp[currentIndex][capacity];
 }
 
+bool Cenario1::sortByVolume(const Encomenda *e1, const Encomenda *e2) {
+    return e1->getVol() < e2->getVol();
+}
 
-
+bool Cenario1::sortByPeso(const Encomenda *e1, const Encomenda *e2) {
+    return e1->getPeso() < e2->getPeso();
+}

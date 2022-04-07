@@ -29,16 +29,56 @@ public:
 
     //estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema
     int solveKnapsack(const std::vector<int> &profits, const std::vector<int> &weights, int capacity);
+
+    /**
+     * Função para ordenar por volume
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    static bool sortByVolume(const Encomenda* e1, const Encomenda* e2);
+
+    /**
+     * Função para ordenar por peso
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    static bool sortByPeso(const Encomenda* e1, const Encomenda* e2);
 };
 
 class Cenario2 {
 private:
+    std::vector<Encomenda *> encomendas;
+    std::vector<Carrinha *> carrinhas;
 public:
+
+    /**
+     * Constructor
+     * Montar os argumentos nessecarios para o funcionamento do cenario 1
+     */
+    Cenario2();
+
+    /**
+     * Função para ordenar por recompensa
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    static bool sortByRecompensa(const Encomenda* e1, const Encomenda* e2);
 };
 
 class Cenario3 {
 private:
 public:
+
+    /**
+     * Função para ordenar por duração
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
+    static bool sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomenda* e2);
 };
 
 #endif //DA_T6_G62_CENARIOS_H
