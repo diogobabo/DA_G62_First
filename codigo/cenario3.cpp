@@ -5,7 +5,7 @@ bool Cenario3::sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomend
     return e1->getDuracao() < e2->getDuracao();
 }
 
-void Cenario3::greedyMinAvgTime() {
+int Cenario3::greedyMinAvgTime() {
     sort(encomendasExp.begin(), encomendasExp.end(), sortByDuracao);
     double sum = encomendasExp[0]->getDuracao();
     int startTime = 32400 + encomendasExp[0]->getDuracao(); // corresponde a 09:00 + a 1st encomenda
@@ -24,4 +24,5 @@ void Cenario3::greedyMinAvgTime() {
         }
     }
     avgTime = sum / numEncomendas; // tempo minimizado
+    return avgTime;
 }

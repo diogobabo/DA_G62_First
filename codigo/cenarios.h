@@ -87,7 +87,12 @@ public:
      * @return
      */
     static bool sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomenda* e2);
-    void greedyMinAvgTime();
+
+    /**
+     * Função responsável por minimizar o tempo das entregas expresso
+     * @return o tempo medio minimizado
+     */
+    int greedyMinAvgTime();
 };
 
 #endif //DA_T6_G62_CENARIOS_H
