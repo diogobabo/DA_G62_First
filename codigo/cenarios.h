@@ -55,7 +55,7 @@ public:
 
     /**
      * Constructor
-     * Montar os argumentos nessecarios para o funcionamento do cenario 1
+     * Montar os argumentos nessecarios para o funcionamento do cenario 2
      */
     Cenario2();
 
@@ -70,7 +70,15 @@ public:
 
 class Cenario3 {
 private:
+    std::vector<ExpressoEncomenda *> encomendasExp;
 public:
+
+    /**
+     * Constructor
+     * Montar os argumentos nessecarios para o funcionamento do cenario 2
+     */
+    Cenario3();
+
 
     /**
      * Função para ordenar por duração
@@ -79,6 +87,7 @@ public:
      * @return
      */
     static bool sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomenda* e2);
+    void greedyMinAvgTime();
 };
 
 #endif //DA_T6_G62_CENARIOS_H
