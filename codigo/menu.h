@@ -26,19 +26,19 @@ public:
     int extras();
 
     /**
-     *
+     * Cenario 1
      * @return
      */
     int Cenario1();
 
     /**
-     *
+     * Cenario 2
      * @return
      */
     int Cenario2();
 
     /**
-     *
+     * Cenario 3
      * @return
      */
     int Cenario3();

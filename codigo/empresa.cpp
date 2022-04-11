@@ -86,3 +86,8 @@ void Empresa::removerEntregues() {
         if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
     }
 }
+
+void Empresa::removerEncomendas() {
+    for(auto itr=encomendas.begin(); itr!=encomendas.end(); itr++)
+        delete *itr;
+}
