@@ -20,6 +20,11 @@ bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) 
     return e1.profit < e2.profit;
 }
 int Cenario2::solveKnapsack(Carrinha &c) {
+    for(int n = 0;n<carrinhas.size();n++){
+        if(!carrinhas[n]->getEncomendas().empty()){
+            return -1;
+        }
+    }
     ENCOMENDA_VALOR v;
     Encomenda*e = new Encomenda(0,0,0);
     encomendas.push_back(e);
@@ -43,6 +48,9 @@ int Cenario2::solveKnapsack(Carrinha &c) {
     for (int i = 1; i < n; i++) {
         for (int v = 0; v < c.getVolMax();v++) {
             for(int w = 0; w < c.getPesoMax(); w++){
+                if(encomendas[i]->getEstado()){
+                    continue;
+                }
                 ENCOMENDA_VALOR profit1 , profit2;
                 profit1.profit = 0;
                 profit2.profit = 0;
@@ -69,5 +77,21 @@ int Cenario2::solveKnapsack(Carrinha &c) {
 }
 
 int Cenario2::solveMaxLucro() {
+    bool flag = true;
+    while(flag){
+        int maxprof = 0;
+        for(int car = 0; car<carrinhas.size();car++){
+            solveKnapsack(*carrinhas[car]);
+            if(maxprof < carrinhas[car]->getBalanco()){
+                maxprof = carrinhas[car]->getBalanco();
+            }
+
+        }
+        for(int car = 0; car<carrinhas.size();car++){
+            if(maxprof == carrinhas[car]->getBalanco()){
+
+            }
+        }
+    }
     return 0;
 }
