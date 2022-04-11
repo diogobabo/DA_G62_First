@@ -45,7 +45,7 @@ void Empresa::lerCarrinhas(std::string *fileName) {
 }
 
 void Empresa::novoDia(std::string *fileEncomendas) {
-    for(auto itr=carrinhas.begin(); itr!=carrinhas.end()){
+    for(auto itr=carrinhas.begin(); itr!=carrinhas.end();itr++){
         (*itr)->clearEncomendas();
     }
 
@@ -85,4 +85,9 @@ void Empresa::removerEntregues() {
         itr++;
         if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
     }
+}
+
+void Empresa::removerEncomendas() {
+    for(auto itr=encomendas.begin(); itr!=encomendas.end(); itr++)
+        delete *itr;
 }

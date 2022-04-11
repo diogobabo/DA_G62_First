@@ -82,8 +82,6 @@ int Cenario1::tentativa() {
 int Cenario1::bestFit() {
 
     vector<vector<vector<int>>> dp(carrinhas.size(), vector<vector<int>> (100, vector<int>(100, -1)));
-
-
-
+    
     return 0;
 }

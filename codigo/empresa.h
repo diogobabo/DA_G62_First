@@ -73,6 +73,11 @@ public:
     void removerEntregues();
 
     /**
+     * Remover todas as encomendas
+     */
+    void removerEncomendas();
+
+    /**
      * Retorna o peso do volume na variável
      * @return o peso do volume na variável
      */
