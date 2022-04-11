@@ -3,7 +3,7 @@
 Encomenda::Encomenda(unsigned int vol, unsigned int peso, unsigned int recompensa): vol(vol),peso(peso),recompensa(recompensa)
 {}
 
-void Encomenda::setVarDecisiva(int peso_peso, int peso_vol) {
+void Encomenda::setVarDecisiva(double peso_peso, double peso_vol) {
     var_decisiva = peso_peso*peso + peso_vol*vol;
 }
 

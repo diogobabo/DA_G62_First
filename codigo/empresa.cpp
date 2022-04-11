@@ -59,6 +59,9 @@ void Empresa::novoDia(std::string *fileEncomendas) {
     for(auto &encomenda: encomendas) {
         encomenda->setVarDecisiva(pesoPeso, pesoVol);
     }
+    for(auto &carrinha: carrinhas) {
+        carrinha->setVarDecisiva(pesoPeso, pesoVol);
+    }
 }
 
 void Empresa::balancaVars() {
