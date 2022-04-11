@@ -80,7 +80,6 @@ int Cenario1::tentativa() {
 }
 
 int Cenario1::bestFit() {
-
     int numCarrinhas = 0;
     pair<int, int> bin_rem[encomendas.size()];
 
@@ -105,10 +104,6 @@ int Cenario1::bestFit() {
         else
             bin_rem[bi] = make_pair( bin_rem[bi].first-encomendas[i]->getVol(), bin_rem[bi].second-encomendas[i]->getPeso());
     }
-    for(auto x : carrinhas) {
-        if(x->getEncomendas().size() != 0) {
-            numCarrinhas++;
-        }
-    }
+
     return numCarrinhas;
 }
