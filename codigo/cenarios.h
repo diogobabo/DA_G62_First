@@ -3,9 +3,16 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #include "encomenda.h"
 #include "carrinha.h"
 #include "empresa.h"
+
+
+struct ENCOMENDA_VALOR{
+    int profit = -1;
+    std::vector<Encomenda *> CarrinhaEncomneda;
+};
 
     /**
      * A soluçao do senario 1 vai ser usar Top-down Dynamic Programming with Memoization ou seja vamos usar uma soluçao recursiva
@@ -65,6 +72,7 @@ public:
      */
     explicit Cenario2(Empresa *e);
 
+    int solveKnapsack(Carrinha &c);
     /**
      * Função para ordenar por recompensa
      * @param e1 encomenda 1
@@ -73,10 +81,10 @@ public:
      */
     static bool sortByRecompensa(const Encomenda* e1, const Encomenda* e2);
 
-    static bool sortByVarEncomenda(const Encomenda* e1, const Encomenda* e2);
+    static bool sortByVarEncomendaRecompensa(const Encomenda* e1, const Encomenda* e2);
 
     static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
-
+    static bool sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2);
 };
 
 class Cenario3 {
