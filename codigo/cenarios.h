@@ -124,6 +124,12 @@ public:
      * @return
      */
     static bool sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2);
+
+    /**
+     * Encomendas por entregar
+     * @return
+     */
+    bool porEntregar();
 };
 
 class Cenario3 {

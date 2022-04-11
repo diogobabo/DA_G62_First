@@ -78,7 +78,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
 
 int Cenario2::solveMaxLucro() {
     for(int i=0; i<carrinhas.size(); i++){
-        Carrinha *max;
+        Carrinha *max=nullptr;
         ENCOMENDA_VALOR maxs;
         for(int car = 0; car<carrinhas.size();car++){
             ENCOMENDA_VALOR solved = solveKnapsack(*carrinhas[car]);
@@ -88,7 +88,7 @@ int Cenario2::solveMaxLucro() {
                 maxs = solved;
             }
         }
-        if(maxs.profit<0){
+        if(maxs.profit<0 || porEntregar()){
             break;
         }
         for(int n = 0;n<maxs.CarrinhaEncomneda.size();n++){
@@ -102,4 +102,10 @@ int Cenario2::solveMaxLucro() {
         }
     }
     return profit;
+}
+
+bool Cenario2::porEntregar() {
+    for(auto itr=encomendas.begin(); itr!=encomendas.end(); itr++)
+        if(!(*itr)->getEstado()) return 1;
+    return 0;
 }
