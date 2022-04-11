@@ -69,6 +69,12 @@ public:
      * @param peso_vol percentagem do volume
      */
     void setVarDecisiva(int peso_peso, int peso_vol);
+
+    /**
+     * Retorna variavel decisiva
+     * @return var_decisiva
+     */
+    double getVarDecisiva() const {return var_decisiva;};
 };
 
 class ExpressoEncomenda: public Encomenda {
