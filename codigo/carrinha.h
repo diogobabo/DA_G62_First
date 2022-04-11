@@ -14,6 +14,7 @@ private:
     unsigned int vol=0;
     unsigned int peso=0;
     int balanco=-(int)custo;
+    double var_decisiva;
     std::vector<Encomenda *> encomendas;
 
 public:
@@ -87,6 +88,13 @@ public:
      * @return encomendas
      */
     std::vector<Encomenda *> getEncomendas() const {return encomendas;};
+
+    /**
+     * Define variável decisiva, balanço entre peso e volume
+     * @param peso_peso percentagem do peso
+     * @param peso_vol percentagem do volume
+     */
+    void setVarDecisiva(int peso_peso, int peso_vol);
 };
 
 #endif //DA_T6_G62_CARRINHA_H

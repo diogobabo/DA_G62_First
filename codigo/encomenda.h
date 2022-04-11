@@ -6,6 +6,7 @@ private:
     unsigned int vol;
     unsigned int peso;
     unsigned int recompensa;
+    double var_decisiva;
     bool prioridade=false;
     bool entregue=false;
 public:
@@ -61,6 +62,13 @@ public:
      * @param _entregue entregue
      */
     void setEstado(bool const _entregue) { this->entregue=_entregue;};
+
+    /**
+     * Define variável decisiva, balanço entre peso e volume
+     * @param peso_peso percentagem do peso
+     * @param peso_vol percentagem do volume
+     */
+    void setVarDecisiva(int peso_peso, int peso_vol);
 };
 
 class ExpressoEncomenda: public Encomenda {

@@ -36,3 +36,7 @@ int Carrinha::removerEncomenda(Encomenda *encomenda) {
     }
     return 1;
 }
+
+void Carrinha::setVarDecisiva(int peso_peso, int peso_vol) {
+    var_decisiva = peso_peso*peso + peso_vol*vol;
+}
