@@ -44,6 +44,7 @@ int Menu::extras() {
 
 int Menu::Cenario1() {
     class Cenario1 c1(e);
+    cout << "." << c1.tentativa();
     return 0;
 }
 

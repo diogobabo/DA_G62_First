@@ -14,5 +14,5 @@ bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 }
 
 bool Cenario2::sortByVarEncomenda(const Encomenda *e1, const Encomenda *e2) {
-    return e1->getVarDecisiva() > e2->getVarDecisiva();
+    return e1->getVarDecisiva() < e2->getVarDecisiva();
 }

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "cenarios.h"
 
 using namespace std;
@@ -46,4 +47,34 @@ bool Cenario1::sortByVolume(const Encomenda *e1, const Encomenda *e2) {
 
 bool Cenario1::sortByPeso(const Encomenda *e1, const Encomenda *e2) {
     return e1->getPeso() < e2->getPeso();
+}
+
+bool Cenario1::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
+    return c1->getVarDecisiva() > c2->getVarDecisiva();
+}
+
+bool Cenario1::sortByVarEncomenda(const Encomenda *e1, const Encomenda *e2) {
+    return e1->getVarDecisiva() < e2->getVarDecisiva();
+}
+
+int Cenario1::tentativa() {
+    sort(encomendas.begin(),encomendas.end(), sortByVarEncomenda);
+    sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
+    int numCarrinhas = 0;
+    for(int i = 0; i < carrinhas.size(); i++) {
+        for(int j = 0; j < encomendas.size(); j++) {
+            if(encomendas[j]->getEstado()) {
+                continue;
+            }
+            if (!carrinhas[i]->verificaDisponibilidade(encomendas[j])) {
+                carrinhas[i]->adicionarEncomenda(encomendas[j]);
+            }
+        }
+    }
+    for(auto x : carrinhas) {
+        if(x->getEncomendas().size() != 0) {
+            numCarrinhas++;
+        }
+    }
+    return numCarrinhas;
 }

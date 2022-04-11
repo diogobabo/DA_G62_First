@@ -45,6 +45,12 @@ public:
      * @return
      */
     static bool sortByPeso(const Encomenda* e1, const Encomenda* e2);
+
+    int tentativa();
+
+    static bool sortByVarEncomenda(const Encomenda* e1, const Encomenda* e2);
+
+    static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
 };
 
 class Cenario2 {

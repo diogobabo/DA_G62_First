@@ -68,6 +68,18 @@ public:
     std::vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
 
     void removerEntregues();
+
+    /**
+     * Retorna o peso do volume na variável
+     * @return o peso do volume na variável
+     */
+    double getPesoVol() const {return pesoVol;};
+
+    /**
+     * Retorna o "peso" do peso na variável
+     * @return o "peso" do peso na variável
+     */
+    double getPesoPeso() const {return pesoPeso;};
 };
 
 

@@ -5,10 +5,11 @@ Carrinha::Carrinha(unsigned int volMax, unsigned int pesoMax, unsigned int custo
 }
 
 int Carrinha::adicionarEncomenda(Encomenda *encomenda) {
-    if(!verificaDisponibilidade(encomenda)) {
+    if(verificaDisponibilidade(encomenda)) {
         return 1; // encomenda não cabe na carrinha
     }
 
+    encomenda->setEstado(true);
     encomendas.push_back(encomenda);
     vol+=encomenda->getVol();
     peso+=encomenda->getPeso();
