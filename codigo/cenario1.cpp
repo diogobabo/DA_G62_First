@@ -3,16 +3,15 @@
 using namespace std;
 
 
-Cenario1::Cenario1() {
-    Empresa e("../input/encomendas.txt","../input/carrinhas.txt");
-    this->encomendas = e.getEncomendas();
-    this->carrinhas = e.getCarrinhas();
+Cenario1::Cenario1(Empresa *e) {
+    this->encomendas = e->getEncomendas();
+    this->carrinhas = e->getCarrinhas();
 }
 
 
 int Cenario1::solveKnapsack(const std::vector<int> &profits, const std::vector<int> &weights, int capacity) {
-    vector<vector<int>> dp(profits.size(), vector<int>(capacity + 1, -1));//aqui vai ter que ser 3 entradas ou seja vector<vector<vector<int>>>
-    return this->knapsackRecursive(dp, profits, weights, capacity, 0);//vamos ter problemas no currentindex pq n vai ser um numero
+    vector<vector<int>> dp(profits.size(), vector<int>(capacity + 1, -1)); //aqui vai ter que ser 3 entradas, ou seja, vector<vector<vector<int>>>
+    return this->knapsackRecursive(dp, profits, weights, capacity, 0);//vamos ter problemas no currentindex porque não vai ser um número
 }
 
 

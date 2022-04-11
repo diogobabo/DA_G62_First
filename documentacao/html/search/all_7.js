@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['sortbyduracao_21',['sortByDuracao',['../classExpressoEncomenda.html#aa5c22fabd4b69a1a3bc02cf7d47aabdb',1,'ExpressoEncomenda']]],
-  ['sortbypeso_22',['sortByPeso',['../classEncomenda.html#a32e87a03ab5b3b888d4c86095d133af7',1,'Encomenda']]],
-  ['sortbyrecompensa_23',['sortByRecompensa',['../classEncomenda.html#a354a21154ca90c5f65fbfb4ffd2683c2',1,'Encomenda']]],
-  ['sortbyvolume_24',['sortByVolume',['../classEncomenda.html#a8150a412c1d423274e27a79b71e369ca',1,'Encomenda']]]
+  ['removerencomenda_24',['removerEncomenda',['../classCarrinha.html#a0599567d70e3ca52c56ed1b5236a2250',1,'Carrinha']]]
 ];

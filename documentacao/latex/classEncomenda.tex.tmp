@@ -16,12 +16,6 @@ unsigned int \mbox{\hyperlink{classEncomenda_a51ed607d33f2dc42d59b12a0e4731988}{
 unsigned int \mbox{\hyperlink{classEncomenda_a1625a3e8b10501da0c374c77e384eafa}{get\+Peso}} () const
 \item 
 unsigned int \mbox{\hyperlink{classEncomenda_ad867370508332fa319002ba2a9fb1717}{get\+Recompensa}} () const
-\item 
-bool \mbox{\hyperlink{classEncomenda_a8150a412c1d423274e27a79b71e369ca}{sort\+By\+Volume}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e2)
-\item 
-bool \mbox{\hyperlink{classEncomenda_a32e87a03ab5b3b888d4c86095d133af7}{sort\+By\+Peso}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e2)
-\item 
-bool \mbox{\hyperlink{classEncomenda_a354a21154ca90c5f65fbfb4ffd2683c2}{sort\+By\+Recompensa}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&e2)
 \end{DoxyCompactItemize}
 
 
@@ -72,54 +66,6 @@ recompensa
 
 Retorna volume da encomenda \begin{DoxyReturn}{Returns}
 volume 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classEncomenda_a32e87a03ab5b3b888d4c86095d133af7}\label{classEncomenda_a32e87a03ab5b3b888d4c86095d133af7}} 
-\index{Encomenda@{Encomenda}!sortByPeso@{sortByPeso}}
-\index{sortByPeso@{sortByPeso}!Encomenda@{Encomenda}}
-\doxysubsubsection{\texorpdfstring{sortByPeso()}{sortByPeso()}}
-{\footnotesize\ttfamily bool Encomenda\+::sort\+By\+Peso (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e2 }\end{DoxyParamCaption})}
-
-Função para ordenar por peso 
-\begin{DoxyParams}{Parameters}
-{\em e1} & encomenda 1 \\
-\hline
-{\em e2} & encomenda 2 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classEncomenda_a354a21154ca90c5f65fbfb4ffd2683c2}\label{classEncomenda_a354a21154ca90c5f65fbfb4ffd2683c2}} 
-\index{Encomenda@{Encomenda}!sortByRecompensa@{sortByRecompensa}}
-\index{sortByRecompensa@{sortByRecompensa}!Encomenda@{Encomenda}}
-\doxysubsubsection{\texorpdfstring{sortByRecompensa()}{sortByRecompensa()}}
-{\footnotesize\ttfamily bool Encomenda\+::sort\+By\+Recompensa (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e2 }\end{DoxyParamCaption})}
-
-Função para ordenar por recompensa 
-\begin{DoxyParams}{Parameters}
-{\em e1} & encomenda 1 \\
-\hline
-{\em e2} & encomenda 2 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classEncomenda_a8150a412c1d423274e27a79b71e369ca}\label{classEncomenda_a8150a412c1d423274e27a79b71e369ca}} 
-\index{Encomenda@{Encomenda}!sortByVolume@{sortByVolume}}
-\index{sortByVolume@{sortByVolume}!Encomenda@{Encomenda}}
-\doxysubsubsection{\texorpdfstring{sortByVolume()}{sortByVolume()}}
-{\footnotesize\ttfamily bool Encomenda\+::sort\+By\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} \&}]{e2 }\end{DoxyParamCaption})}
-
-Função para ordenar por volume 
-\begin{DoxyParams}{Parameters}
-{\em e1} & encomenda 1 \\
-\hline
-{\em e2} & encomenda 2 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
 \end{DoxyReturn}
 
 

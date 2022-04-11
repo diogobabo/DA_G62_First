@@ -2,6 +2,83 @@
 \label{classCenario1}\index{Cenario1@{Cenario1}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+{\ttfamily \#include $<$cenarios.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
 \item 
-codigo/cenarios.\+h\end{DoxyCompactItemize}
+\mbox{\hyperlink{classCenario1_ae29121f7b7b83cb9153f4cf73e8fda34}{Cenario1}} (\mbox{\hyperlink{classEmpresa}{Empresa}} $\ast$e)
+\item 
+int \mbox{\hyperlink{classCenario1_a315f14f0c68ed14158bd99a5926ff55d}{solve\+Knapsack}} (const std\+::vector$<$ int $>$ \&profits, const std\+::vector$<$ int $>$ \&weights, int capacity)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classCenario1_a675d9374e9af115f4c961521b59779bd}{sort\+By\+Volume}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e2)
+\item 
+static bool \mbox{\hyperlink{classCenario1_a1129824eae63ee7f358e9e2ad2cbe041}{sort\+By\+Peso}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A soluçao do senario 1 vai ser usar Top-\/down Dynamic Programming with Memoization ou seja vamos usar uma soluçao recursiva que vai contruir uma tabela e cima para baixo cujo o tempo de execuçao é igual a uma soluçao Bottom-\/up Dynamic Programming a catch é que normalmente essas tabelas sao de 2 entradas. Nesta soluçao nos iremos ter que trabalhar inicialmente com uma soluçao de uma tabela de 3 entradas para compensar o facto de termos 2 constraints e mais tarde de 4 entradas para ter em conta as diferentes carrinhas 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCenario1_ae29121f7b7b83cb9153f4cf73e8fda34}\label{classCenario1_ae29121f7b7b83cb9153f4cf73e8fda34}} 
+\index{Cenario1@{Cenario1}!Cenario1@{Cenario1}}
+\index{Cenario1@{Cenario1}!Cenario1@{Cenario1}}
+\doxysubsubsection{\texorpdfstring{Cenario1()}{Cenario1()}}
+{\footnotesize\ttfamily Cenario1\+::\+Cenario1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmpresa}{Empresa}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor Montar argumentos nessecarios para o funcionamento do cenario 1 
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{classEmpresa}{Empresa}} a ser estudada \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCenario1_a315f14f0c68ed14158bd99a5926ff55d}\label{classCenario1_a315f14f0c68ed14158bd99a5926ff55d}} 
+\index{Cenario1@{Cenario1}!solveKnapsack@{solveKnapsack}}
+\index{solveKnapsack@{solveKnapsack}!Cenario1@{Cenario1}}
+\doxysubsubsection{\texorpdfstring{solveKnapsack()}{solveKnapsack()}}
+{\footnotesize\ttfamily int Cenario1\+::solve\+Knapsack (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{profits,  }\item[{const std\+::vector$<$ int $>$ \&}]{weights,  }\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema \mbox{\Hypertarget{classCenario1_a1129824eae63ee7f358e9e2ad2cbe041}\label{classCenario1_a1129824eae63ee7f358e9e2ad2cbe041}} 
+\index{Cenario1@{Cenario1}!sortByPeso@{sortByPeso}}
+\index{sortByPeso@{sortByPeso}!Cenario1@{Cenario1}}
+\doxysubsubsection{\texorpdfstring{sortByPeso()}{sortByPeso()}}
+{\footnotesize\ttfamily bool Cenario1\+::sort\+By\+Peso (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Função para ordenar por peso 
+\begin{DoxyParams}{Parameters}
+{\em e1} & encomenda 1 \\
+\hline
+{\em e2} & encomenda 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCenario1_a675d9374e9af115f4c961521b59779bd}\label{classCenario1_a675d9374e9af115f4c961521b59779bd}} 
+\index{Cenario1@{Cenario1}!sortByVolume@{sortByVolume}}
+\index{sortByVolume@{sortByVolume}!Cenario1@{Cenario1}}
+\doxysubsubsection{\texorpdfstring{sortByVolume()}{sortByVolume()}}
+{\footnotesize\ttfamily bool Cenario1\+::sort\+By\+Volume (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Função para ordenar por volume 
+\begin{DoxyParams}{Parameters}
+{\em e1} & encomenda 1 \\
+\hline
+{\em e2} & encomenda 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+codigo/cenarios.\+h\item 
+codigo/cenario1.\+cpp\end{DoxyCompactItemize}

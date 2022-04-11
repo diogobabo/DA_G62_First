@@ -1,3 +1,6 @@
+#ifndef DA_T6_G62_ENCOMENDA_H
+#define DA_T6_G62_ENCOMENDA_H
+
 class Encomenda {
 private:
     unsigned int vol;
@@ -64,3 +67,5 @@ public:
      */
     NormalEncomenda(unsigned int vol, unsigned int peso, unsigned int recompensa);
 };
+
+#endif //DA_T6_G62_ENCOMENDA_H

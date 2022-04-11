@@ -1,6 +1,9 @@
 #include <algorithm>
 #include "cenarios.h"
 
+Cenario3::Cenario3(Empresa *e) {
+}
+
 bool Cenario3::sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomenda* e2) {
     return e1->getDuracao() < e2->getDuracao();
 }
@@ -8,14 +11,14 @@ bool Cenario3::sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomend
 int Cenario3::greedyMinAvgTime() {
     sort(encomendasExp.begin(), encomendasExp.end(), sortByDuracao);
     double sum = encomendasExp[0]->getDuracao();
-    int startTime = 32400 + encomendasExp[0]->getDuracao(); // corresponde a 09:00 + a 1st encomenda
+    int startTime = 32400 + (int) encomendasExp[0]->getDuracao(); // corresponde a 09:00 + a 1st encomenda
     int endTime = 61200; // corresponde a 17:00
     double avgTime;
     int numEncomendas = 1;
     int temp = 0;
     for(int i = 1; i < encomendasExp.size(); i++) {
         if(startTime + encomendasExp[i]->getDuracao() <= endTime) {
-            temp += encomendasExp[i-1]->getDuracao();
+            temp += (int) encomendasExp[i-1]->getDuracao();
             sum += temp + encomendasExp[i]->getDuracao();
             numEncomendas++;
         }
@@ -24,5 +27,5 @@ int Cenario3::greedyMinAvgTime() {
         }
     }
     avgTime = sum / numEncomendas; // tempo minimizado
-    return avgTime;
+    return (int) avgTime;
 }

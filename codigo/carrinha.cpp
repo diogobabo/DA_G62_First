@@ -16,7 +16,7 @@ int Carrinha::adicionarEncomenda(Encomenda *encomenda) {
     return 0;
 }
 
-int Carrinha::verificaDisponibilidade(Encomenda *encomenda) {
+int Carrinha::verificaDisponibilidade(Encomenda *encomenda) const {
     if(encomenda->getVol()+vol>volMax || encomenda->getPeso()+peso>pesoMax) {
         return 1; // encomenda não cabe na carrinha
     }

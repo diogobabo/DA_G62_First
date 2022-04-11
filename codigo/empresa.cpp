@@ -1,25 +1,19 @@
-#include "Empresa.h"
+#include "empresa.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 
 
-
-
-Empresa::Empresa() {
-
-}
-
 Empresa::Empresa(string fileEncomendas, string fileCarrinhas) {
-    lerEncomendas(fileEncomendas);
-    lerCarrinhas(fileCarrinhas);
+    lerEncomendas(&fileEncomendas);
+    lerCarrinhas(&fileCarrinhas);
 }
 
-void Empresa::lerEncomendas(std::string fileName) {
+void Empresa::lerEncomendas(std::string *fileName) {
     string s,tempo;
     string vol,peso,recompensa;
     ifstream file;
-    file.open(fileName);
+    file.open(*fileName);
     getline(file,s);
     while(getline(file,s)) {
         std::stringstream str(s);
@@ -32,11 +26,11 @@ void Empresa::lerEncomendas(std::string fileName) {
     }
 }
 
-void Empresa::lerCarrinhas(std::string fileName) {
+void Empresa::lerCarrinhas(std::string *fileName) {
     string s,tempo;
     string volMax,pesoMax,custo;
     ifstream file;
-    file.open(fileName);
+    file.open(*fileName);
     getline(file,s);
     while(getline(file,s)) {
         std::stringstream str(s);

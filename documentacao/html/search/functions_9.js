@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eencomenda_58',['~Encomenda',['../classEncomenda.html#a8bbc33a2746cec70ddeeb1e2c9eadf8a',1,'Encomenda']]]
+  ['verificadisponibilidade_73',['verificaDisponibilidade',['../classCarrinha.html#ab3595004796cd7fe305334cd9654de2e',1,'Carrinha']]]
 ];

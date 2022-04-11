@@ -1,6 +1,13 @@
 #include <iostream>
-#include "Empresa.h"
+#include "empresa.h"
+#include "menu.h"
 
 int main() {
+    Empresa empresa("../input/encomendas.txt", "../input/carrinhas.txt");
+
+    Menu menu(&empresa);
+    menu.start();
     return 0;
 }
+
+

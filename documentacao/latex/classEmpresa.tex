@@ -3,22 +3,26 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classEmpresa_aff124b958356c479ab50ddf4cf302193}{Empresa}} ()
+\mbox{\hyperlink{classEmpresa_a3b43102b3d53affe7cdfaea67ba76ebd}{Empresa}} ()=default
 \item 
 \mbox{\hyperlink{classEmpresa_a489fcbf171b587b15d20f3fb9e60c6b6}{Empresa}} (string file\+Encomendas, string file\+Carrinhas)
 \item 
-void \mbox{\hyperlink{classEmpresa_aa4ec65cfed2e1cbfe83c183ab6f0177c}{ler\+Carrinhas}} (std\+::string file\+Name)
+void \mbox{\hyperlink{classEmpresa_ad3a31a0b32917d351d2ec324ef86ee75}{ler\+Carrinhas}} (std\+::string $\ast$file\+Name)
 \item 
-void \mbox{\hyperlink{classEmpresa_a7693aad23d89fea84df0f0925874a839}{ler\+Encomendas}} (std\+::string file\+Name)
+void \mbox{\hyperlink{classEmpresa_aa2d5545c9ec676d7f3dc04cabdccdafa}{ler\+Encomendas}} (std\+::string $\ast$file\+Name)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$ $>$ \mbox{\hyperlink{classEmpresa_a6eefbf82efa0e93cce75e4f69cf1f095}{get\+Encomendas}} () const
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classCarrinha}{Carrinha}} $\ast$ $>$ \mbox{\hyperlink{classEmpresa_af546aa28e86118d72362f83f550436a7}{get\+Carrinhas}} () const
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classEmpresa_aff124b958356c479ab50ddf4cf302193}\label{classEmpresa_aff124b958356c479ab50ddf4cf302193}} 
+\mbox{\Hypertarget{classEmpresa_a3b43102b3d53affe7cdfaea67ba76ebd}\label{classEmpresa_a3b43102b3d53affe7cdfaea67ba76ebd}} 
 \index{Empresa@{Empresa}!Empresa@{Empresa}}
 \index{Empresa@{Empresa}!Empresa@{Empresa}}
 \doxysubsubsection{\texorpdfstring{Empresa()}{Empresa()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Empresa\+::\+Empresa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
 Constructor \mbox{\Hypertarget{classEmpresa_a489fcbf171b587b15d20f3fb9e60c6b6}\label{classEmpresa_a489fcbf171b587b15d20f3fb9e60c6b6}} 
 \index{Empresa@{Empresa}!Empresa@{Empresa}}
@@ -28,39 +32,57 @@ Constructor \mbox{\Hypertarget{classEmpresa_a489fcbf171b587b15d20f3fb9e60c6b6}\l
 
 Constructor 
 \begin{DoxyParams}{Parameters}
-{\em file\+Encomendas} & \\
+{\em file\+Encomendas} & localizacao do ficheiro de carrinhas.\+txt \\
 \hline
-{\em file\+Carrinhas} & \\
+{\em file\+Carrinhas} & localizacao do ficheiro encomendas.\+txt \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classEmpresa_aa4ec65cfed2e1cbfe83c183ab6f0177c}\label{classEmpresa_aa4ec65cfed2e1cbfe83c183ab6f0177c}} 
+\mbox{\Hypertarget{classEmpresa_af546aa28e86118d72362f83f550436a7}\label{classEmpresa_af546aa28e86118d72362f83f550436a7}} 
+\index{Empresa@{Empresa}!getCarrinhas@{getCarrinhas}}
+\index{getCarrinhas@{getCarrinhas}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{getCarrinhas()}{getCarrinhas()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classCarrinha}{Carrinha}} $\ast$$>$ Empresa\+::get\+Carrinhas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retorna vetor de carrinhas \begin{DoxyReturn}{Returns}
+carrinhas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmpresa_a6eefbf82efa0e93cce75e4f69cf1f095}\label{classEmpresa_a6eefbf82efa0e93cce75e4f69cf1f095}} 
+\index{Empresa@{Empresa}!getEncomendas@{getEncomendas}}
+\index{getEncomendas@{getEncomendas}!Empresa@{Empresa}}
+\doxysubsubsection{\texorpdfstring{getEncomendas()}{getEncomendas()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$$>$ Empresa\+::get\+Encomendas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retorna vetor de encomendas \begin{DoxyReturn}{Returns}
+encomendas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmpresa_ad3a31a0b32917d351d2ec324ef86ee75}\label{classEmpresa_ad3a31a0b32917d351d2ec324ef86ee75}} 
 \index{Empresa@{Empresa}!lerCarrinhas@{lerCarrinhas}}
 \index{lerCarrinhas@{lerCarrinhas}!Empresa@{Empresa}}
 \doxysubsubsection{\texorpdfstring{lerCarrinhas()}{lerCarrinhas()}}
-{\footnotesize\ttfamily void Empresa\+::ler\+Carrinhas (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Empresa\+::ler\+Carrinhas (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{file\+Name }\end{DoxyParamCaption})}
 
 Função responsável por ler o ficheiro das carrinhas 
 \begin{DoxyParams}{Parameters}
-{\em file\+Name} & \\
+{\em file\+Name} & localizacao do ficheiro de carrinhas.\+txt \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classEmpresa_a7693aad23d89fea84df0f0925874a839}\label{classEmpresa_a7693aad23d89fea84df0f0925874a839}} 
+\mbox{\Hypertarget{classEmpresa_aa2d5545c9ec676d7f3dc04cabdccdafa}\label{classEmpresa_aa2d5545c9ec676d7f3dc04cabdccdafa}} 
 \index{Empresa@{Empresa}!lerEncomendas@{lerEncomendas}}
 \index{lerEncomendas@{lerEncomendas}!Empresa@{Empresa}}
 \doxysubsubsection{\texorpdfstring{lerEncomendas()}{lerEncomendas()}}
-{\footnotesize\ttfamily void Empresa\+::ler\+Encomendas (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Empresa\+::ler\+Encomendas (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{file\+Name }\end{DoxyParamCaption})}
 
 Função responsável por ler o ficheiro das encomendas 
 \begin{DoxyParams}{Parameters}
-{\em file\+Name} & \\
+{\em file\+Name} & localizacao do ficheiro encomendas.\+txt \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-codigo/Empresa.\+h\item 
-codigo/Empresa.\+cpp\end{DoxyCompactItemize}
+codigo/empresa.\+h\item 
+codigo/empresa.\+cpp\end{DoxyCompactItemize}

@@ -1,3 +1,6 @@
+#ifndef DA_T6_G62_CARRINHA_H
+#define DA_T6_G62_CARRINHA_H
+
 #include "encomenda.h"
 
 #include <vector>
@@ -34,7 +37,7 @@ public:
      * @param encomenda encomenda a verificar
      * @return 0 se for possivel adicionar
      */
-    int verificaDisponibilidade(Encomenda *encomenda);
+    int verificaDisponibilidade(Encomenda *encomenda) const;
 
     /**
      * Remover encomenda do transporte
@@ -85,3 +88,5 @@ public:
      */
     std::vector<Encomenda *> getEncomendas() const {return encomendas;};
 };
+
+#endif //DA_T6_G62_CARRINHA_H

@@ -72,26 +72,68 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DA_T6_G62_CENARIOS_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DA_T6_G62_CENARIOS_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="classCenario1.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario1.html">Cenario1</a> {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;};</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classCenario2.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario2.html">Cenario2</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCenario3.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario3.html">Cenario3</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif //DA_T6_G62_CENARIOS_H</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;encomenda.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;carrinha.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;empresa.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classCenario1.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario1.html">Cenario1</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;Encomenda *&gt; encomendas;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;Carrinha *&gt; carrinhas;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> knapsackRecursive(std::vector&lt;std::vector&lt;int&gt;&gt; &amp;dp, <span class="keyword">const</span> std::vector&lt;int&gt; &amp;profits,<span class="keyword">const</span> std::vector&lt;int&gt; &amp;weights, <span class="keywordtype">int</span> capacity, <span class="keywordtype">int</span> currentIndex);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCenario1.html#ae29121f7b7b83cb9153f4cf73e8fda34">Cenario1</a>(<a class="code" href="classEmpresa.html">Empresa</a> *e);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCenario1.html#a315f14f0c68ed14158bd99a5926ff55d">solveKnapsack</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;profits, <span class="keyword">const</span> std::vector&lt;int&gt; &amp;weights, <span class="keywordtype">int</span> capacity);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCenario1.html#a675d9374e9af115f4c961521b59779bd">sortByVolume</a>(<span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e1, <span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e2);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCenario1.html#a1129824eae63ee7f358e9e2ad2cbe041">sortByPeso</a>(<span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e1, <span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e2);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classCenario2.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario2.html">Cenario2</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;Encomenda *&gt; encomendas;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::vector&lt;Carrinha *&gt; carrinhas;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCenario2.html#afff401206c75e5a50fcaf4aca9da48f0">Cenario2</a>(<a class="code" href="classEmpresa.html">Empresa</a> *e);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCenario2.html#a93adac23b2dc6ef3f19c0abd91aa81c2">sortByRecompensa</a>(<span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e1, <span class="keyword">const</span> <a class="code" href="classEncomenda.html">Encomenda</a>* e2);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classCenario3.html">   70</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCenario3.html">Cenario3</a> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;ExpressoEncomenda *&gt; encomendasExp;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classCenario3.html#aa49d6fc362da3df590da43f14fe772b7">Cenario3</a>(<a class="code" href="classEmpresa.html">Empresa</a> *e);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classCenario3.html#a6d69e9f02940d5ecffff9f6b53f4274e">sortByDuracao</a>(<span class="keyword">const</span> <a class="code" href="classExpressoEncomenda.html">ExpressoEncomenda</a>* e1, <span class="keyword">const</span> <a class="code" href="classExpressoEncomenda.html">ExpressoEncomenda</a>* e2);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCenario3.html#ab34831422ab865cdaf4bb4070de79b8c">greedyMinAvgTime</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif //DA_T6_G62_CENARIOS_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassCenario3_html"><div class="ttname"><a href="classCenario3.html">Cenario3</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:14</div></div>
-<div class="ttc" id="aclassCenario2_html"><div class="ttname"><a href="classCenario2.html">Cenario2</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:9</div></div>
-<div class="ttc" id="aclassCenario1_html"><div class="ttname"><a href="classCenario1.html">Cenario1</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:4</div></div>
+<div class="ttc" id="aclassCenario3_html_a6d69e9f02940d5ecffff9f6b53f4274e"><div class="ttname"><a href="classCenario3.html#a6d69e9f02940d5ecffff9f6b53f4274e">Cenario3::sortByDuracao</a></div><div class="ttdeci">static bool sortByDuracao(const ExpressoEncomenda *e1, const ExpressoEncomenda *e2)</div><div class="ttdef"><b>Definition:</b> cenario3.cpp:7</div></div>
+<div class="ttc" id="aclassCenario2_html_a93adac23b2dc6ef3f19c0abd91aa81c2"><div class="ttname"><a href="classCenario2.html#a93adac23b2dc6ef3f19c0abd91aa81c2">Cenario2::sortByRecompensa</a></div><div class="ttdeci">static bool sortByRecompensa(const Encomenda *e1, const Encomenda *e2)</div><div class="ttdef"><b>Definition:</b> cenario2.cpp:8</div></div>
+<div class="ttc" id="aclassCenario3_html_aa49d6fc362da3df590da43f14fe772b7"><div class="ttname"><a href="classCenario3.html#aa49d6fc362da3df590da43f14fe772b7">Cenario3::Cenario3</a></div><div class="ttdeci">Cenario3(Empresa *e)</div><div class="ttdef"><b>Definition:</b> cenario3.cpp:4</div></div>
+<div class="ttc" id="aclassEmpresa_html"><div class="ttname"><a href="classEmpresa.html">Empresa</a></div><div class="ttdef"><b>Definition:</b> empresa.h:12</div></div>
+<div class="ttc" id="aclassCenario3_html"><div class="ttname"><a href="classCenario3.html">Cenario3</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:70</div></div>
+<div class="ttc" id="aclassCenario1_html_a1129824eae63ee7f358e9e2ad2cbe041"><div class="ttname"><a href="classCenario1.html#a1129824eae63ee7f358e9e2ad2cbe041">Cenario1::sortByPeso</a></div><div class="ttdeci">static bool sortByPeso(const Encomenda *e1, const Encomenda *e2)</div><div class="ttdef"><b>Definition:</b> cenario1.cpp:47</div></div>
+<div class="ttc" id="aclassCenario2_html"><div class="ttname"><a href="classCenario2.html">Cenario2</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:50</div></div>
+<div class="ttc" id="aclassCenario2_html_afff401206c75e5a50fcaf4aca9da48f0"><div class="ttname"><a href="classCenario2.html#afff401206c75e5a50fcaf4aca9da48f0">Cenario2::Cenario2</a></div><div class="ttdeci">Cenario2(Empresa *e)</div><div class="ttdef"><b>Definition:</b> cenario2.cpp:3</div></div>
+<div class="ttc" id="aclassEncomenda_html"><div class="ttname"><a href="classEncomenda.html">Encomenda</a></div><div class="ttdef"><b>Definition:</b> encomenda.h:4</div></div>
+<div class="ttc" id="aclassExpressoEncomenda_html"><div class="ttname"><a href="classExpressoEncomenda.html">ExpressoEncomenda</a></div><div class="ttdef"><b>Definition:</b> encomenda.h:40</div></div>
+<div class="ttc" id="aclassCenario1_html"><div class="ttname"><a href="classCenario1.html">Cenario1</a></div><div class="ttdef"><b>Definition:</b> cenarios.h:16</div></div>
+<div class="ttc" id="aclassCenario1_html_ae29121f7b7b83cb9153f4cf73e8fda34"><div class="ttname"><a href="classCenario1.html#ae29121f7b7b83cb9153f4cf73e8fda34">Cenario1::Cenario1</a></div><div class="ttdeci">Cenario1(Empresa *e)</div><div class="ttdef"><b>Definition:</b> cenario1.cpp:6</div></div>
+<div class="ttc" id="aclassCenario1_html_a675d9374e9af115f4c961521b59779bd"><div class="ttname"><a href="classCenario1.html#a675d9374e9af115f4c961521b59779bd">Cenario1::sortByVolume</a></div><div class="ttdeci">static bool sortByVolume(const Encomenda *e1, const Encomenda *e2)</div><div class="ttdef"><b>Definition:</b> cenario1.cpp:43</div></div>
+<div class="ttc" id="aclassCenario3_html_ab34831422ab865cdaf4bb4070de79b8c"><div class="ttname"><a href="classCenario3.html#ab34831422ab865cdaf4bb4070de79b8c">Cenario3::greedyMinAvgTime</a></div><div class="ttdeci">int greedyMinAvgTime()</div><div class="ttdef"><b>Definition:</b> cenario3.cpp:11</div></div>
+<div class="ttc" id="aclassCenario1_html_a315f14f0c68ed14158bd99a5926ff55d"><div class="ttname"><a href="classCenario1.html#a315f14f0c68ed14158bd99a5926ff55d">Cenario1::solveKnapsack</a></div><div class="ttdeci">int solveKnapsack(const std::vector&lt; int &gt; &amp;profits, const std::vector&lt; int &gt; &amp;weights, int capacity)</div><div class="ttdef"><b>Definition:</b> cenario1.cpp:12</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

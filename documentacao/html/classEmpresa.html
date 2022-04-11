@@ -71,21 +71,28 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aff124b958356c479ab50ddf4cf302193"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#aff124b958356c479ab50ddf4cf302193">Empresa</a> ()</td></tr>
-<tr class="separator:aff124b958356c479ab50ddf4cf302193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b43102b3d53affe7cdfaea67ba76ebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#a3b43102b3d53affe7cdfaea67ba76ebd">Empresa</a> ()=default</td></tr>
+<tr class="separator:a3b43102b3d53affe7cdfaea67ba76ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a489fcbf171b587b15d20f3fb9e60c6b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#a489fcbf171b587b15d20f3fb9e60c6b6">Empresa</a> (string fileEncomendas, string fileCarrinhas)</td></tr>
 <tr class="separator:a489fcbf171b587b15d20f3fb9e60c6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4ec65cfed2e1cbfe83c183ab6f0177c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#aa4ec65cfed2e1cbfe83c183ab6f0177c">lerCarrinhas</a> (std::string fileName)</td></tr>
-<tr class="separator:aa4ec65cfed2e1cbfe83c183ab6f0177c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7693aad23d89fea84df0f0925874a839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#a7693aad23d89fea84df0f0925874a839">lerEncomendas</a> (std::string fileName)</td></tr>
-<tr class="separator:a7693aad23d89fea84df0f0925874a839"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a31a0b32917d351d2ec324ef86ee75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#ad3a31a0b32917d351d2ec324ef86ee75">lerCarrinhas</a> (std::string *fileName)</td></tr>
+<tr class="separator:ad3a31a0b32917d351d2ec324ef86ee75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d5545c9ec676d7f3dc04cabdccdafa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#aa2d5545c9ec676d7f3dc04cabdccdafa">lerEncomendas</a> (std::string *fileName)</td></tr>
+<tr class="separator:aa2d5545c9ec676d7f3dc04cabdccdafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eefbf82efa0e93cce75e4f69cf1f095"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classEncomenda.html">Encomenda</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#a6eefbf82efa0e93cce75e4f69cf1f095">getEncomendas</a> () const</td></tr>
+<tr class="separator:a6eefbf82efa0e93cce75e4f69cf1f095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af546aa28e86118d72362f83f550436a7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCarrinha.html">Carrinha</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEmpresa.html#af546aa28e86118d72362f83f550436a7">getCarrinhas</a> () const</td></tr>
+<tr class="separator:af546aa28e86118d72362f83f550436a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aff124b958356c479ab50ddf4cf302193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff124b958356c479ab50ddf4cf302193">&#9670;&nbsp;</a></span>Empresa() <span class="overload">[1/2]</span></h2>
+<a id="a3b43102b3d53affe7cdfaea67ba76ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b43102b3d53affe7cdfaea67ba76ebd">&#9670;&nbsp;</a></span>Empresa() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Empresa::Empresa </td>
@@ -94,6 +101,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Constructor </p>
 
@@ -126,8 +138,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Constructor </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fileEncomendas</td><td></td></tr>
-    <tr><td class="paramname">fileCarrinhas</td><td></td></tr>
+    <tr><td class="paramname">fileEncomendas</td><td>localizacao do ficheiro de carrinhas.txt </td></tr>
+    <tr><td class="paramname">fileCarrinhas</td><td>localizacao do ficheiro encomendas.txt </td></tr>
   </table>
   </dd>
 </dl>
@@ -135,8 +147,60 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa4ec65cfed2e1cbfe83c183ab6f0177c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4ec65cfed2e1cbfe83c183ab6f0177c">&#9670;&nbsp;</a></span>lerCarrinhas()</h2>
+<a id="af546aa28e86118d72362f83f550436a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af546aa28e86118d72362f83f550436a7">&#9670;&nbsp;</a></span>getCarrinhas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classCarrinha.html">Carrinha</a> *&gt; Empresa::getCarrinhas </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna vetor de carrinhas </p><dl class="section return"><dt>Returns</dt><dd>carrinhas </dd></dl>
+
+</div>
+</div>
+<a id="a6eefbf82efa0e93cce75e4f69cf1f095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eefbf82efa0e93cce75e4f69cf1f095">&#9670;&nbsp;</a></span>getEncomendas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classEncomenda.html">Encomenda</a> *&gt; Empresa::getEncomendas </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna vetor de encomendas </p><dl class="section return"><dt>Returns</dt><dd>encomendas </dd></dl>
+
+</div>
+</div>
+<a id="ad3a31a0b32917d351d2ec324ef86ee75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a31a0b32917d351d2ec324ef86ee75">&#9670;&nbsp;</a></span>lerCarrinhas()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +208,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Empresa::lerCarrinhas </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string *&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -152,15 +216,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Função responsável por ler o ficheiro das carrinhas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fileName</td><td></td></tr>
+    <tr><td class="paramname">fileName</td><td>localizacao do ficheiro de carrinhas.txt </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a7693aad23d89fea84df0f0925874a839"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7693aad23d89fea84df0f0925874a839">&#9670;&nbsp;</a></span>lerEncomendas()</h2>
+<a id="aa2d5545c9ec676d7f3dc04cabdccdafa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d5545c9ec676d7f3dc04cabdccdafa">&#9670;&nbsp;</a></span>lerEncomendas()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +232,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Empresa::lerEncomendas </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string *&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
@@ -176,7 +240,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Função responsável por ler o ficheiro das encomendas </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fileName</td><td></td></tr>
+    <tr><td class="paramname">fileName</td><td>localizacao do ficheiro encomendas.txt </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,8 +248,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>codigo/<a class="el" href="Empresa_8h_source.html">Empresa.h</a></li>
-<li>codigo/Empresa.cpp</li>
+<li>codigo/<a class="el" href="empresa_8h_source.html">empresa.h</a></li>
+<li>codigo/empresa.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
