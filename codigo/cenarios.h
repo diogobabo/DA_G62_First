@@ -52,12 +52,32 @@ public:
      */
     static bool sortByPeso(const Encomenda* e1, const Encomenda* e2);
 
+    /**
+     * Função responsável pelo job scheduling
+     * @return tempo medio
+     */
     int tentativa();
 
+    /**
+     * Função responsável pelo job scheduling
+     * @return tempo medio
+     */
     int bestFit();
 
+    /**
+     * Função para ordenar pela variavel decisiva
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
     static bool sortByVarEncomenda(const Encomenda* e1, const Encomenda* e2);
 
+    /**
+     * Função para ordenar pela variavel decisiva
+     * @param c1 encomenda 1
+     * @param c2 encomenda 2
+     * @return
+     */
     static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
 };
 
@@ -81,9 +101,28 @@ public:
      */
     static bool sortByRecompensa(const Encomenda* e1, const Encomenda* e2);
 
+    /**
+     * Função para ordenar pela variavel decisiva
+     * @param e1 encomenda 1
+     * @param e2 encomenda 2
+     * @return
+     */
     static bool sortByVarEncomendaRecompensa(const Encomenda* e1, const Encomenda* e2);
 
+    /**
+     * Função para ordenar pela variavel decisiva
+     * @param c1 encomenda 1
+     * @param c2 encomenda 2
+     * @return
+     */
     static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
+
+    /**
+     * Função para ordenar a struct
+     * @param c1 encomenda_valor 1
+     * @param c2 encomenda_valor 2
+     * @return
+     */
     static bool sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2);
 };
 

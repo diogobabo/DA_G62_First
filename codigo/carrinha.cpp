@@ -42,3 +42,7 @@ int Carrinha::removerEncomenda(Encomenda *encomenda) {
 void Carrinha::setVarDecisiva(double peso_peso, double peso_vol) {
     var_decisiva = peso_peso*pesoMax + peso_vol*volMax;
 }
+
+void Carrinha::clearEncomendas() {
+   encomendas.clear();
+}

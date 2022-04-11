@@ -101,6 +101,11 @@ public:
      * @return var_decisiva
      */
     double getVarDecisiva() const {return var_decisiva;};
+
+    /**
+     * Limpa encomendas da carrinha;
+     */
+    void clearEncomendas();
 };
 
 #endif //DA_T6_G62_CARRINHA_H
