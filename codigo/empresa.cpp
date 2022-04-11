@@ -21,10 +21,10 @@ void Empresa::lerEncomendas(std::string *fileName) {
         getline(str,peso,' ');
         getline(str,recompensa,' ');
         getline(str,tempo,' ');
-        Encomenda encomenda(stoi(vol),stoi(peso),stoi(recompensa));
-        ExpressoEncomenda expressoEncomenda(stoi(vol),stoi(peso),stoi(recompensa), stoi(tempo));
-        encomendas.push_back(&encomenda);
-        expEncomendas.push_back(&expressoEncomenda);
+        auto *encomenda = new Encomenda(stoi(vol),stoi(peso),stoi(recompensa));
+        auto *expEncomenda = new ExpressoEncomenda(stoi(vol),stoi(peso),stoi(recompensa), stoi(tempo));
+        encomendas.push_back(encomenda);
+        expEncomendas.push_back(expEncomenda);
     }
 }
 
@@ -39,8 +39,8 @@ void Empresa::lerCarrinhas(std::string *fileName) {
         getline(str,volMax,' ');
         getline(str,pesoMax,' ');
         getline(str,custo,' ');
-        Carrinha carrinha(stoi(volMax), stoi(pesoMax), stoi(custo));
-        carrinhas.push_back(&carrinha);
+        auto *carrinha = new Carrinha(stoi(volMax), stoi(pesoMax), stoi(custo));
+        carrinhas.push_back(carrinha);
     }
 }
 
