@@ -13,6 +13,7 @@ class Empresa {
 private:
     vector<Encomenda *> encomendas;
     vector<Carrinha *> carrinhas;
+    vector<ExpressoEncomenda *> expEncomendas;
 
 
 public:
@@ -51,6 +52,12 @@ public:
      * @return carrinhas
      */
     std::vector<Carrinha *> getCarrinhas() const {return carrinhas;};
+
+    /**
+     * Retorna vetor de encomendas expresso
+     * @return encomendas
+     */
+    std::vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
 };
 
 

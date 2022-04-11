@@ -22,7 +22,7 @@ private:
     int knapsackRecursive(std::vector<std::vector<int>> &dp, const std::vector<int> &profits,const std::vector<int> &weights, int capacity, int currentIndex);
 public:
     /**
-     * Constructor Montar argumentos nessecarios para o funcionamento do cenario 1
+     * Constructor Montar argumentos necessarios para o funcionamento do cenario 1
      * @param e Empresa a ser estudada
      */
     explicit Cenario1(Empresa *e);
@@ -53,7 +53,7 @@ private:
     std::vector<Carrinha *> carrinhas;
 public:
     /**
-     * Constructor Montar argumentos nessecarios para o funcionamento do cenario 2
+     * Constructor Montar argumentos necessarios para o funcionamento do cenario 2
      * @param e Empresa a ser estudada
      */
     explicit Cenario2(Empresa *e);
@@ -73,11 +73,10 @@ private:
 public:
 
     /**
-     * Constructor Montar argumentos nessecarios para o funcionamento do cenario 3
+     * Constructor Montar argumentos necessarios para o funcionamento do cenario 3
      * @param e Empresa a ser estudada
      */
     explicit Cenario3(Empresa *e);
-
 
     /**
      * Função para ordenar por duração

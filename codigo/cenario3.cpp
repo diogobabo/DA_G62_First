@@ -2,6 +2,7 @@
 #include "cenarios.h"
 
 Cenario3::Cenario3(Empresa *e) {
+    encomendasExp = e->getExpEncomendas();
 }
 
 bool Cenario3::sortByDuracao(const ExpressoEncomenda* e1, const ExpressoEncomenda* e2) {

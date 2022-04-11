@@ -17,6 +17,10 @@ int Menu::start() {
     cout << "4) Extras\n";
     cout << "Insert option (0 to exit):\n";
 
+    Cenario1 c1(e);
+    Cenario2 c2(e);
+    Cenario3 c3(e);
+
     while(option) {
         cin >> option;
         switch (option) {
@@ -25,6 +29,7 @@ int Menu::start() {
             case 2:
                 break;
             case 3:
+                cout << c3.greedyMinAvgTime();
                 break;
             case 4:
                 extras();

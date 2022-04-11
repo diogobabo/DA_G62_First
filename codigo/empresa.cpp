@@ -22,7 +22,9 @@ void Empresa::lerEncomendas(std::string *fileName) {
         getline(str,recompensa,' ');
         getline(str,tempo,' ');
         Encomenda encomenda(stoi(vol),stoi(peso),stoi(recompensa));
+        ExpressoEncomenda expressoEncomenda(stoi(vol),stoi(peso),stoi(recompensa), stoi(tempo));
         encomendas.push_back(&encomenda);
+        expEncomendas.push_back(&expressoEncomenda);
     }
 }
 
