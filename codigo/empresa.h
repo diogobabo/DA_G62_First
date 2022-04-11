@@ -67,6 +67,9 @@ public:
      */
     std::vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
 
+    /**
+     * Remover encomendas entregues
+     */
     void removerEntregues();
 
     /**
