@@ -22,6 +22,7 @@ int Cenario3::greedyMinAvgTime() {
             temp += (int) encomendasExp[i-1]->getDuracao();
             sum += temp + encomendasExp[i]->getDuracao();
             numEncomendas++;
+            startTime += encomendasExp[i]->getDuracao();
         }
         else {
             break;

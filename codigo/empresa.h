@@ -15,7 +15,9 @@ private:
     vector<Carrinha *> carrinhas;
     vector<ExpressoEncomenda *> expEncomendas;
 
-
+    double pesoPeso;
+    double pesoVol;
+    void balancaVars();
 public:
     /**
      * Constructor

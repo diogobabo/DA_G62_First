@@ -52,4 +52,19 @@ void Empresa::novoDia(std::string *fileEncomendas) {
         else (*temp)->setPrioridade(true); // se não foi entregue no dia anterior, muda prioridade para elevada
     }
     lerEncomendas(fileEncomendas); // ler encomendas para novo dia
+    // novos pesos variaveis
+    pesoVol=0;
+    pesoPeso=0;
+    balancaVars();
+}
+
+void Empresa::balancaVars() {
+    unsigned int totalPeso=0, totalVol=0;
+    for(auto & encomenda : encomendas) {
+        totalPeso+=encomenda->getPeso();
+        totalVol+=encomenda->getVol();
+    }
+    auto totalVar= (float) (totalVol+totalPeso);
+    pesoPeso =  (float) totalPeso / totalVar;
+    pesoVol = (float) totalVol / totalVar;
 }
