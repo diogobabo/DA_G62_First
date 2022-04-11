@@ -25,6 +25,24 @@ public:
      */
     int extras();
 
+    /**
+     *
+     * @return
+     */
+    int Cenario1();
+
+    /**
+     *
+     * @return
+     */
+    int Cenario2();
+
+    /**
+     *
+     * @return
+     */
+    int Cenario3();
+
 };
 
 
