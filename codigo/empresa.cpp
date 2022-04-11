@@ -56,6 +56,9 @@ void Empresa::novoDia(std::string *fileEncomendas) {
     pesoVol=0;
     pesoPeso=0;
     balancaVars();
+    for(auto &encomenda: encomendas) {
+        encomenda->setVarDecisiva(pesoPeso, pesoVol);
+    }
 }
 
 void Empresa::balancaVars() {
@@ -67,4 +70,12 @@ void Empresa::balancaVars() {
     auto totalVar= (float) (totalVol+totalPeso);
     pesoPeso =  (float) totalPeso / totalVar;
     pesoVol = (float) totalVol / totalVar;
+}
+
+void Empresa::removerEntregues() {
+    for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
+        auto temp = itr;
+        itr++;
+        if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
+    }
 }
