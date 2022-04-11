@@ -1,8 +1,8 @@
 #include "cenarios.h"
 
-Cenario2::Cenario2(Empresa *e) {
-    this->encomendas = e->getEncomendas();
-    this->carrinhas = e->getCarrinhas();
+Cenario2::Cenario2(Empresa e) {
+    this->encomendas = e.getEncomendas();
+    this->carrinhas = e.getCarrinhas();
 }
 
 bool Cenario2::sortByRecompensa(const Encomenda* e1, const Encomenda* e2) {

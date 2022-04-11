@@ -4,9 +4,9 @@
 using namespace std;
 
 
-Cenario1::Cenario1(Empresa *e) {
-    this->encomendas = e->getEncomendas();
-    this->carrinhas = e->getCarrinhas();
+Cenario1::Cenario1(Empresa e) {
+    this->encomendas = e.getEncomendas();
+    this->carrinhas = e.getCarrinhas();
 }
 
 

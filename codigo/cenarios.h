@@ -31,7 +31,7 @@ public:
      * Constructor Montar argumentos necessarios para o funcionamento do cenario 1
      * @param e Empresa a ser estudada
      */
-    explicit Cenario1(Empresa *e);
+    explicit Cenario1(Empresa e);
 
     /** Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema */
     int solveKnapsack(const std::vector<int> &profits, const std::vector<int> &weights, int capacity);
@@ -90,7 +90,7 @@ public:
      * Constructor Montar argumentos necessarios para o funcionamento do cenario 2
      * @param e Empresa a ser estudada
      */
-    explicit Cenario2(Empresa *e);
+    explicit Cenario2(Empresa e);
     int solveMaxLucro();
     ENCOMENDA_VALOR solveKnapsack(Carrinha &c);
     /**
@@ -141,7 +141,7 @@ public:
      * Constructor Montar argumentos necessarios para o funcionamento do cenario 3
      * @param e Empresa a ser estudada
      */
-    explicit Cenario3(Empresa *e);
+    explicit Cenario3(Empresa e);
 
     /**
      * Função para ordenar por duração

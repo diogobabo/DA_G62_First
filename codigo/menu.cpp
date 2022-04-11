@@ -5,7 +5,9 @@
 
 using namespace std;
 
-Menu::Menu(Empresa *e): e(e) {}
+Menu::Menu(Empresa e){
+    this->e = e;
+}
 
 int Menu::start() {
     int option=-1;
@@ -34,6 +36,7 @@ int Menu::start() {
             default:
                 break;
         }
+
     }
     return 0;
 }

@@ -5,13 +5,13 @@
 
 class Menu {
 private:
-    Empresa *e;
+    Empresa e;
 public:
     /**
      * Menu construtor
      * @param e Empresa a estudar
      */
-    explicit Menu(Empresa *e);
+    explicit Menu(Empresa e);
 
     /**
      * Mostrar Menu
