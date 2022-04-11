@@ -6,7 +6,7 @@ private:
     unsigned int vol;
     unsigned int peso;
     unsigned int recompensa;
-    double var_decisiva;
+    double var_decisiva = 1;
     bool prioridade=false;
     bool entregue=false;
 public:
@@ -75,6 +75,12 @@ public:
      * @return var_decisiva
      */
     double getVarDecisiva() const {return var_decisiva;};
+
+    /**
+     * Retorna variavel recompensa/var_decisiva
+     * @return Recompensa por Unidade
+     */
+    double getRecompensaUnidade() const {return recompensa/var_decisiva;};
 };
 
 class ExpressoEncomenda: public Encomenda {
