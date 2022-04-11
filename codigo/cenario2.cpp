@@ -77,7 +77,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
 }
 
 int Cenario2::solveMaxLucro() {
-    while(true){
+    for(int i=0; i<carrinhas.size(); i++){
         Carrinha *max;
         ENCOMENDA_VALOR maxs;
         for(int car = 0; car<carrinhas.size();car++){
