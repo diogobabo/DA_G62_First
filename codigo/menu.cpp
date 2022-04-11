@@ -50,8 +50,7 @@ int Menu::Cenario1() {
 
 int Menu::Cenario2() {
     class Cenario2 c2(e);
-    Carrinha c(40,75,4000);
-    cout << "merda " <<  c2.solveKnapsack(c) << endl;
+    cout << c2.solveMaxLucro() << endl;
     return 0;
 }
 

@@ -92,7 +92,7 @@ public:
      */
     explicit Cenario2(Empresa *e);
     int solveMaxLucro();
-    int solveKnapsack(Carrinha &c);
+    ENCOMENDA_VALOR solveKnapsack(Carrinha &c);
     /**
      * Função para ordenar por recompensa
      * @param e1 encomenda 1

@@ -45,7 +45,7 @@ void Empresa::lerCarrinhas(std::string *fileName) {
 }
 
 void Empresa::novoDia(std::string *fileEncomendas) {
-    for(auto itr=carrinhas.begin(); itr!=carrinhas.end()){
+    for(auto itr=carrinhas.begin(); itr!=carrinhas.end();itr++){
         (*itr)->clearEncomendas();
     }
 

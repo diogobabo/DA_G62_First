@@ -19,18 +19,20 @@ bool Cenario2::sortByVarEncomendaRecompensa(const Encomenda *e1, const Encomenda
 bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) {
     return e1.profit < e2.profit;
 }
-int Cenario2::solveKnapsack(Carrinha &c) {
-    for(int n = 0;n<carrinhas.size();n++){
-        if(!carrinhas[n]->getEncomendas().empty()){
-            return -1;
-        }
+ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
+
+    if(!c.getEncomendas().empty()){
+        ENCOMENDA_VALOR v;
+        return v;
     }
+
     ENCOMENDA_VALOR v;
     Encomenda*e = new Encomenda(0,0,0);
     encomendas.push_back(e);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
     if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 ||encomendas.empty()) {
-        return 0;
+        ENCOMENDA_VALOR v;
+        return v;
     }
 
     int n = encomendas.size();
@@ -70,28 +72,36 @@ int Cenario2::solveKnapsack(Carrinha &c) {
         }
     }
     ENCOMENDA_VALOR resposta = dp[n - 1][c.getVolMax()-1][c.getPesoMax()-1];
-    for(int n = 0;n<resposta.CarrinhaEncomneda.size();n++){
-        c.adicionarEncomenda(resposta.CarrinhaEncomneda[n]);
-    }
-    return c.getBalanco();
+
+    return resposta;
 }
 
 int Cenario2::solveMaxLucro() {
     bool flag = true;
     while(flag){
-        int maxprof = 0;
+        Carrinha *max;
+        ENCOMENDA_VALOR maxs;
         for(int car = 0; car<carrinhas.size();car++){
-            solveKnapsack(*carrinhas[car]);
-            if(maxprof < carrinhas[car]->getBalanco()){
-                maxprof = carrinhas[car]->getBalanco();
+            ENCOMENDA_VALOR solved = solveKnapsack(*carrinhas[car]);
+            if(maxs.profit < solved.profit){
+                maxs.profit = solved.profit;
+                max = carrinhas[car];
+                maxs = solved;
             }
-
         }
-        for(int car = 0; car<carrinhas.size();car++){
-            if(maxprof == carrinhas[car]->getBalanco()){
-
-            }
+        if(maxs.profit<0){
+            flag = false;
+            break;
+        }
+        for(int n = 0;n<maxs.CarrinhaEncomneda.size();n++){
+            max->adicionarEncomenda(maxs.CarrinhaEncomneda[n]);
         }
     }
-    return 0;
+    int profit = 0;
+    for(int car = 0; car<carrinhas.size();car++){
+        if(carrinhas[car]->getBalanco()>0){
+            profit +=carrinhas[car]->getBalanco();
+        }
+    }
+    return profit;
 }
