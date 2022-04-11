@@ -43,4 +43,3 @@ int Menu::start() {
 int Menu::extras() {
     return 0;
 }
-

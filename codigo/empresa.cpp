@@ -5,8 +5,8 @@
 
 
 Empresa::Empresa(string fileEncomendas, string fileCarrinhas) {
-    lerEncomendas(&fileEncomendas);
     lerCarrinhas(&fileCarrinhas);
+    novoDia(&fileEncomendas);
 }
 
 void Empresa::lerEncomendas(std::string *fileName) {
@@ -42,4 +42,14 @@ void Empresa::lerCarrinhas(std::string *fileName) {
         Carrinha carrinha(stoi(volMax), stoi(pesoMax), stoi(custo));
         carrinhas.push_back(&carrinha);
     }
+}
+
+void Empresa::novoDia(std::string *fileEncomendas) {
+    for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
+        auto temp = itr;
+        itr++;
+        if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
+        else (*temp)->setPrioridade(true); // se não foi entregue no dia anterior, muda prioridade para elevada
+    }
+    lerEncomendas(fileEncomendas); // ler encomendas para novo dia
 }

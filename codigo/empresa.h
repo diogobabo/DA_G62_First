@@ -30,6 +30,12 @@ public:
     Empresa(string fileEncomendas, string fileCarrinhas);
 
     /**
+     * Ler ficheiro de encomendas para o dia
+     * @param fileEncomendas
+     */
+    void novoDia(std::string *fileEncomendas);
+
+    /**
      * Função responsável por ler o ficheiro das carrinhas
      * @param fileName localizacao do ficheiro de carrinhas.txt
      */

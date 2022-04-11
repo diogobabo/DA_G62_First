@@ -6,6 +6,8 @@ private:
     unsigned int vol;
     unsigned int peso;
     unsigned int recompensa;
+    bool prioridade=false;
+    bool entregue=false;
 public:
     /**
      * Encomenda
@@ -35,6 +37,30 @@ public:
      * @return recompensa
      */
     unsigned int getRecompensa() const {return recompensa;};
+
+    /**
+     * Retorna se encomenda tem prioridade
+     * @return prioridade
+     */
+    bool getPrioridade() const {return prioridade;};
+
+    /**
+     * Retorna estado da encomenda
+     * @return entregue
+     */
+    bool getEstado() const {return entregue;};
+
+    /**
+     * Define prioridade da entrega
+     * @param _prioridade prioridade
+     */
+    void setPrioridade(bool const _prioridade) { this->prioridade=_prioridade;};
+
+    /**
+     * Define estado da entrega
+     * @param _entregue entregue
+     */
+    void setEstado(bool const _entregue) { this->entregue=_entregue;};
 };
 
 class ExpressoEncomenda: public Encomenda {
