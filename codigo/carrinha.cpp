@@ -31,6 +31,7 @@ int Carrinha::removerEncomenda(Encomenda *encomenda) {
             balanco-= (int) encomenda->getRecompensa();
             peso-=encomenda->getPeso();
             vol-=encomenda->getVol();
+            encomenda->setEstado(false);
             encomendas.erase(itr);
             return 0;
         }

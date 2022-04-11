@@ -78,3 +78,37 @@ int Cenario1::tentativa() {
     }
     return numCarrinhas;
 }
+
+int Cenario1::bestFit() {
+
+    int numCarrinhas = 0;
+    pair<int, int> bin_rem[encomendas.size()];
+
+    for(int i = 0; i < encomendas.size(); i++) {
+        int j;
+
+        unsigned int minV = carrinhas[0]->getVolMax(), minP = carrinhas[0]->getPesoMax(), bi = 0;
+
+        for(j=0; j<numCarrinhas; j++) {
+            if(bin_rem[j].first >= encomendas[i]->getVol() && bin_rem[j].second >= encomendas[i]->getPeso() &&
+            bin_rem[j].first-encomendas[i]->getVol()<minV && bin_rem[j].second-encomendas[i]->getPeso()<minP){
+                bi = j;
+                minV = bin_rem[j].first - encomendas[i]->getVol();
+                minP = bin_rem[j].second - encomendas[i]->getPeso();
+            }
+        }
+
+        if(minV==carrinhas[0]->getVolMax()&&minP==carrinhas[0]->getPesoMax()){
+            bin_rem[numCarrinhas] = make_pair(minV-encomendas[i]->getVol(), minP-encomendas[i]->getPeso());
+            numCarrinhas++;
+        }
+        else
+            bin_rem[bi] = make_pair( bin_rem[bi].first-encomendas[i]->getVol(), bin_rem[bi].second-encomendas[i]->getPeso());
+    }
+    for(auto x : carrinhas) {
+        if(x->getEncomendas().size() != 0) {
+            numCarrinhas++;
+        }
+    }
+    return numCarrinhas;
+}
