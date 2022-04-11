@@ -83,9 +83,8 @@ int Cenario2::solveMaxLucro() {
         for(int car = 0; car<carrinhas.size();car++){
             ENCOMENDA_VALOR solved = solveKnapsack(*carrinhas[car]);
             if(maxs.profit < solved.profit){
-                maxs.profit = solved.profit;
-                max = carrinhas[car];
                 maxs = solved;
+                max = carrinhas[car];
             }
         }
         if(maxs.profit<0 || porEntregar()){
