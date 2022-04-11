@@ -67,3 +67,7 @@ int Cenario2::solveKnapsack(Carrinha &c) {
     }
     return c.getBalanco();
 }
+
+int Cenario2::solveMaxLucro() {
+    return 0;
+}

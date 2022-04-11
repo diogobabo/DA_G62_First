@@ -71,7 +71,7 @@ public:
      * @param e Empresa a ser estudada
      */
     explicit Cenario2(Empresa *e);
-
+    int solveMaxLucro();
     int solveKnapsack(Carrinha &c);
     /**
      * Função para ordenar por recompensa
