@@ -65,6 +65,9 @@ public:
      * @return
      */
     static bool sortByRecompensa(const Encomenda* e1, const Encomenda* e2);
+
+    static bool sortByVar(const Encomenda* e1, const Encomenda* e2);
+
 };
 
 class Cenario3 {
