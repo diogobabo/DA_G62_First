@@ -8,7 +8,7 @@ using namespace std;
 Menu::Menu(Empresa *e): e(e) {}
 
 int Menu::start() {
-    int option=0;
+    int option=-1;
 
     cout << "Bem vindo, qual dos seguintes cenário pretende explorar de forma a implementar na plataforma digital:\n";
     cout << "1) Cenario 1\n";
