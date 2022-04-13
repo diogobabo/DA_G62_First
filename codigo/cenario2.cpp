@@ -108,3 +108,61 @@ bool Cenario2::porEntregar() {
         if(!(*itr)->getEstado()) return 1;
     return 0;
 }
+
+ENCOMENDA_VALOR Cenario2::solveKnapsackBabado(vector<vector<vector<ENCOMENDA_VALOR>>> &dp,Carrinha &c,int v,int w,int n,int i) {
+    if (v <= 0 || w <= 0 ||i >= encomendas.size()){
+        ENCOMENDA_VALOR v;
+        v.profit = 0;
+        return v;
+    }
+    if(dp[i][v][w].profit != -1)
+        return dp[i][v][w];
+    ENCOMENDA_VALOR profit1 , profit2;
+    profit1.profit = 0;
+    profit2.profit = 0;
+
+    if(encomendas[i]->getEstado()){
+        return ENCOMENDA_VALOR();;
+    }
+
+    if (encomendas[i]->getVol()<=v && encomendas[i]->getPeso()<=w) {
+        ENCOMENDA_VALOR var = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
+        var.profit = var.profit + encomendas[i]->getRecompensa() ;
+        var.CarrinhaEncomneda.push_back(encomendas[i]);
+        profit1 = var;
+    }
+
+    profit2 = dp[i - 1][v][w];
+
+    dp[i][v][w] = max(profit1, profit2,sortStruct);
+
+    ENCOMENDA_VALOR resposta = dp[n - 1][c.getVolMax()-1][c.getPesoMax()-1];
+
+    return resposta;
+}
+
+ENCOMENDA_VALOR Cenario2::solveKnapsackBabadonsei(Carrinha &c) {
+    if(!c.getEncomendas().empty()){
+        ENCOMENDA_VALOR v;
+        return v;
+    }
+    Encomenda*e = new Encomenda(0,0,0);
+    encomendas.push_back(e);
+    sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
+    if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 ||encomendas.empty()) {
+        ENCOMENDA_VALOR v;
+        return v;
+    }
+    ENCOMENDA_VALOR v;
+    static int n = encomendas.size();
+    static vector<vector<vector<ENCOMENDA_VALOR>>> dp(n, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax(), vector<ENCOMENDA_VALOR>(c.getPesoMax(), v)));// dp[index][volume][peso]
+    for (int i = 0; i < n; i++) {
+        for(int v = 0; v < c.getVolMax();v++){
+            dp[i][v][0].profit = 0;
+        }
+        for(int w = 0; w < c.getPesoMax(); w++){
+            dp[i][0][w].profit = 0;
+        }
+    }
+    return solveKnapsackBabado(dp,c,c.getVolMax(),c.getPesoMax(),n,1);
+}
