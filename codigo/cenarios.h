@@ -8,6 +8,7 @@
 #include "carrinha.h"
 #include "empresa.h"
 #include <map>
+#include <unordered_map>
 
 
 struct ENCOMENDA_VALOR{
@@ -138,7 +139,7 @@ public:
 class Cenario3 {
 private:
     std::vector<ExpressoEncomenda *> encomendasExp;
-    map<int,int> quociente;
+    std::vector<double> quociente; // entregues & por entregar
 public:
 
     /**
@@ -160,6 +161,18 @@ public:
      * @return o tempo medio minimizado
      */
     vector<int> greedyMinAvgTime();
+
+    /**
+     * Função responsável por retornar o número de encomendas que ainda não foram entregues
+     * @return o número de encomendas por entregar
+     */
+    int encomendasPorEntregar();
+
+    /**
+     * Função responsável por retornar o vetor dos quocientes entre as encomendas entregues e não entregues
+     * @return o vetor dos quocientes dos dias
+     */
+    vector<double> getQuocientes();
 
 };
 

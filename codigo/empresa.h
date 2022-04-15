@@ -101,6 +101,8 @@ public:
      * Atualiza valroes peso, volume, balanco das carrinhas
      */
     void atualizaCarrinhas();
+
+    int encomendasPorEntregar();
 };
 
 

@@ -1,6 +1,6 @@
 #include "menu.h"
 #include "cenarios.h"
-
+#include <iomanip>
 #include <iostream>
 
 using namespace std;
@@ -66,12 +66,21 @@ int Menu::Cenario2() {
 
 int Menu::Cenario3() {
     vector<int>avg;
+    vector<double>quo;
     class Cenario3 c3(e);
     avg = c3.greedyMinAvgTime();
+    quo = c3.getQuocientes();
+
     int numeroDias = 1;
-    for(auto x : avg) {
+    for(int i = 0; i <avg.size(); i++) {
         cout << "Dia: " << numeroDias << endl;
-        cout << "Tempo Médio: " << x << endl;
+        cout << "Tempo Médio: " << avg[i] << endl;
+        cout << fixed;
+        cout << setprecision(2);
+        cout << "Percentagem encomendas entregues: " << (quo[i] * 100) << "%" << std::endl;
+        if(i != avg.size() - 1) {
+            cout << "--------------------------------------------------" << std::endl;
+        }
         numeroDias++;
     }
     return 0;
