@@ -1,4 +1,5 @@
 #include "cenarios.h"
+//#include "dpmatrix.h"
 
 Cenario2::Cenario2(const Empresa& e) {
     this->encomendas = e.getEncomendas();
@@ -20,74 +21,83 @@ bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) 
     return e1.profit < e2.profit;
 }
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas) {
-    ENCOMENDA_VALOR v;
+    ENCOMENDA_VALOR ev;
     if(!c.getEncomendas()->empty()){
-        return v;
+        return ev;
     }
 
     if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 ||encomendas.empty()) {
-        return v;
+        return ev;
     }
 
     int n = (int)encomendas.size();
-    vector<vector<vector<ENCOMENDA_VALOR>>> dp(n, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax(), vector<ENCOMENDA_VALOR>(c.getPesoMax(), v)));// dp[index][volume][peso]
+    vector<vector<vector<ENCOMENDA_VALOR>>> dp(n, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax(), vector<ENCOMENDA_VALOR>(c.getPesoMax(), ev)));// dp[index][volume][peso]
+    //dpmatrix dp(n, c.getVolMax(), c.getPesoMax());
 
     for (int i = 0; i < n; i++) {
         for(int v = 0; v < c.getVolMax();v++){
             dp[i][v][0].profit = 0;
+            /**ENCOMENDA_VALOR p(dp.getPos(i, v, 0));
+            p.profit=0;
+            dp.setPos(i, v, 0, p);*/
         }
         for(int w = 0; w < c.getPesoMax(); w++){
             dp[i][0][w].profit = 0;
+            /**ENCOMENDA_VALOR p(dp.getPos(i, w, 0));
+            p.profit=0;
+            dp.setPos(i, w, 0, p);*/
         }
     }
-    ENCOMENDA_VALOR profit1 ;
-    int cGetVol = c.getVolMax(),cGetPeso = c.getPesoMax();
+    ENCOMENDA_VALOR profit1;
+    int cGetVol = (int) c.getVolMax(),cGetPeso = (int)c.getPesoMax();
     for (int i = 1; i < n; i++) {
         if(encomendas[i]->getEstado()) {
             continue;
         }
-        int eVol = encomendas[i]->getVol(),ePes = encomendas[i]->getPeso();
+        int eVol = (int) encomendas[i]->getVol(),ePes = (int)encomendas[i]->getPeso();
 
         for (int v = 0; v < cGetVol;v++) {
                 for(int w = 0; w < cGetPeso; w++){
 
                 if (eVol<=v && ePes<=w) {
                     profit1 = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
+                    //profit1 = dp.getPos(i-1, v - encomendas[i]->getVol(),w - encomendas[i]->getPeso());
                     profit1.profit = (int) (profit1.profit + encomendas[i]->getRecompensa()) ;
                     profit1.CarrinhaEncomneda.push_back(encomendas[i]);
                 }
 
                 dp[i][v][w] = max(profit1, dp[i - 1][v][w],sortStruct);
+                //dp.setPos(i, v, w, max(profit1, dp.getPos(i-1, v, w),sortStruct));
             }
-
         }
     }
 
     return dp[n - 1][c.getVolMax()-1][c.getPesoMax()-1];
+    //return dp.getPos(n-1, c.getVolMax()-1,c.getPesoMax()-1);
 }
 
 int Cenario2::solveMaxLucro() {
     prepareSolve();
 
-    for(int car = 0; car<carrinhas.size();car++){
-        ENCOMENDA_VALOR solved = prepareKnapsack(*carrinhas[car]);
+    for(auto & carrinha : carrinhas){
+        ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha);
         if(solved.profit == -5){
             break;
         }
-        for(int n = 0;n<solved.CarrinhaEncomneda.size();n++){
-            carrinhas[car]->adicionarEncomenda(solved.CarrinhaEncomneda[n]);
+        for(auto & n : solved.CarrinhaEncomneda){
+            carrinha->adicionarEncomenda(n);
         }
     }
 
 
     int profit = 0;
-    for(int car = 0; car<carrinhas.size();car++){
-        if(carrinhas[car]->getBalanco()>0){
-            profit +=carrinhas[car]->getBalanco();
+    for(auto & carrinha : carrinhas){
+        if(carrinha->getBalanco()>0){
+            profit +=carrinha->getBalanco();
         }else{
-            auto v = carrinhas[car]->getEncomendas();
-            for(int n = 0; n< v->size();n++){
-                carrinhas[car]->removerEncomenda(v->at(n));
+            auto v = carrinha->getEncomendas();
+            for(auto & n : *v){
+                carrinha->removerEncomenda(n);
             }
         }
     }
@@ -99,19 +109,17 @@ void Cenario2::prepareSolve() {
     sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
 
-    Encomenda*e = new Encomenda(0,0,1);
+    auto*e = new Encomenda(0,0,1);
     encomendas.push_back(e);
 
     std::reverse(encomendas.begin(), encomendas.end());
-
-    return;
 }
 
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     vector<Encomenda *> e;
-    for(int v=0;v<encomendas.size();v++){
-        if(!encomendas[v]->getEstado()){
-            e.push_back(encomendas[v]);
+    for(auto & encomenda : encomendas){
+        if(!encomenda->getEstado()){
+            e.push_back(encomenda);
         }
     }
     if(e.size()<=1){
