@@ -94,8 +94,8 @@ public:
     explicit Cenario2(const Empresa& e);
     int solveMaxLucro();
     ENCOMENDA_VALOR solveKnapsack(Carrinha &c);
-    ENCOMENDA_VALOR solveKnapsackBabadonsei(Carrinha &c);
-    ENCOMENDA_VALOR solveKnapsackBabado(vector<vector<vector<ENCOMENDA_VALOR>>> &dp, Carrinha &c,int v,int w, int n,int i);
+    void prepareSolve();
+    ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
     /**
      * Função para ordenar por recompensa
      * @param e1 encomenda 1
