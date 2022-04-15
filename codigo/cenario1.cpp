@@ -60,6 +60,7 @@ bool Cenario1::sortByVarEncomenda(const Encomenda *e1, const Encomenda *e2) {
 int Cenario1::tentativa() {
     sort(encomendas.begin(),encomendas.end(), sortByVarEncomenda);
     sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
+    int numEntregues = 0;
     int numCarrinhas = 0;
     for(int i = 0; i < carrinhas.size(); i++) {
         for(int j = 0; j < encomendas.size(); j++) {
@@ -74,6 +75,11 @@ int Cenario1::tentativa() {
     for(auto x : carrinhas) {
         if(x->getEncomendas().size() != 0) {
             numCarrinhas++;
+        }
+    }
+    for(auto x : encomendas) {
+        if(x->getEstado() == true) {
+            numEntregues++;
         }
     }
     return numCarrinhas;

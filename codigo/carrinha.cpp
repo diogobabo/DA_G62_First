@@ -46,3 +46,7 @@ void Carrinha::setVarDecisiva(double peso_peso, double peso_vol) {
 void Carrinha::clearEncomendas() {
    encomendas.clear();
 }
+
+void Carrinha::setEncomendas(std::vector<Encomenda *> temp) {
+    this->encomendas = temp;
+}

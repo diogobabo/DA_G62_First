@@ -4,7 +4,6 @@
 
 int main() {
     Empresa empresa("../input/encomendas.txt", "../input/carrinhas.txt");
-
     Menu menu(empresa);
     menu.start();
     return 0;

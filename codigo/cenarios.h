@@ -157,7 +157,8 @@ public:
      * Função responsável por minimizar o tempo das entregas expresso
      * @return o tempo medio minimizado
      */
-    int greedyMinAvgTime();
+    vector<int> greedyMinAvgTime();
+
 };
 
 #endif //DA_T6_G62_CENARIOS_H

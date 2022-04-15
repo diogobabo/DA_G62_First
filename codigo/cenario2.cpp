@@ -48,6 +48,9 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
     }
 
     for (int i = 1; i < n; i++) {
+        if(encomendas[i]->getEstado()){
+            continue;
+        }
         for (int v = 0; v < c.getVolMax();v++) {
             for(int w = 0; w < c.getPesoMax(); w++){
                 if(encomendas[i]->getEstado()){

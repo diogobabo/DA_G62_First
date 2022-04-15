@@ -47,7 +47,7 @@ int Menu::extras() {
 
 int Menu::Cenario1() {
     class Cenario1 c1(e);
-    cout << "." << c1.tentativa();
+    cout << c1.tentativa();
     return 0;
 }
 
@@ -58,9 +58,14 @@ int Menu::Cenario2() {
 }
 
 int Menu::Cenario3() {
+    vector<int>avg;
     class Cenario3 c3(e);
-    cout << "Average time to deliver " <<  c3.greedyMinAvgTime() << endl;
-
-    int novo_dia = 1;
+    avg = c3.greedyMinAvgTime();
+    int numeroDias = 1;
+    for(auto x : avg) {
+        cout << "Dia: " << numeroDias << endl;
+        cout << "Tempo Médio: " << x << endl;
+        numeroDias++;
+    }
     return 0;
 }

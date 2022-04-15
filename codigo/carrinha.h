@@ -106,6 +106,8 @@ public:
      * Limpa encomendas da carrinha;
      */
     void clearEncomendas();
+
+    void setEncomendas(std::vector<Encomenda *>);
 };
 
 #endif //DA_T6_G62_CARRINHA_H
