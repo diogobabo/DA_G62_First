@@ -40,30 +40,24 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
             dp[i][0][w].profit = 0;
         }
     }
-
+    ENCOMENDA_VALOR profit1 ;
+    int cGetVol = c.getVolMax(),cGetPeso = c.getPesoMax();
     for (int i = 1; i < n; i++) {
-        if(encomendas[i]->getEstado()){
+        if(encomendas[i]->getEstado()) {
             continue;
         }
-        for (int v = 0; v < c.getVolMax();v++) {
-                for(int w = 0; w < c.getPesoMax(); w++){
-                if(encomendas[i]->getEstado()){
-                    continue;
-                }
-                ENCOMENDA_VALOR profit1 , profit2;
-                profit1.profit = 0;
-                profit2.profit = 0;
+        int eVol = encomendas[i]->getVol(),ePes = encomendas[i]->getPeso();
 
-                if (encomendas[i]->getVol()<=v && encomendas[i]->getPeso()<=w) {
-                    ENCOMENDA_VALOR var = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
-                    var.profit = (int) (var.profit + encomendas[i]->getRecompensa()) ;
-                    var.CarrinhaEncomneda.push_back(encomendas[i]);
-                    profit1 = var;
+        for (int v = 0; v < cGetVol;v++) {
+                for(int w = 0; w < cGetPeso; w++){
+
+                if (eVol<=v && ePes<=w) {
+                    profit1 = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
+                    profit1.profit = (int) (profit1.profit + encomendas[i]->getRecompensa()) ;
+                    profit1.CarrinhaEncomneda.push_back(encomendas[i]);
                 }
 
-                profit2 = dp[i - 1][v][w];
-
-                dp[i][v][w] = max(profit1, profit2,sortStruct);
+                dp[i][v][w] = max(profit1, dp[i - 1][v][w],sortStruct);
             }
 
         }
