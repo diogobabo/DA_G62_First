@@ -86,13 +86,6 @@ int Cenario1::tentativa() {
     return numCarrinhas;
 }
 
-int Cenario1::bestFit() {
-
-    vector<vector<vector<int>>> dp(carrinhas.size(), vector<vector<int>> (100, vector<int>(100, -1)));
-
-    return 0;
-}
-
 double Cenario1::getQuocient() {
     int counter = 0;
     for(auto x : encomendas) {
