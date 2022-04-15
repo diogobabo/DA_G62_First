@@ -115,22 +115,11 @@ void Empresa::removerEncomendas() {
 
 void Empresa::atualizaCarrinhas() {
     for(auto & carrinha : carrinhas){
-        unsigned int peso=0, vol=0;
-        int balanco=(int)-carrinha->getCusto();
-        vector<Encomenda*> *e=carrinha->getEncomendas();
-        for(auto itr=e->begin(); itr!=e->end();) {
-            if((*itr)->getEstado()) {
-                itr = e->erase(itr);
-                continue;
-            }
-            peso+=(*itr)->getPeso();
-            balanco+=(int)(*itr)->getRecompensa();
-            vol+=(*itr)->getVol();
-            itr++;
+        auto v = carrinha->getEncomendas();
+        for(auto & n : *v){
+            carrinha->removerEncomenda(n);
         }
-        carrinha->setPeso(peso);
-        carrinha->setBalanco(balanco);
-        carrinha->setVol(vol);
+
     }
 }
 
