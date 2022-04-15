@@ -31,9 +31,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
     }
 
     int n = (int)encomendas.size();
-    vector<vector<vector<int>>> dp(n, vector<vector<int>>(c.getVolMax(), vector<int>(c.getPesoMax(), -1)));// dp[index][volume][peso]
-    //dpmatrix dp(n, c.getVolMax(), c.getPesoMax());
-
+    vector<vector<vector<int>>> dp(n, vector<vector<int>>(c.getVolMax()+1, vector<int>(c.getPesoMax()+1, -1)));// dp[index][volume][peso]
 
     int profit1;
     int cGetVol = (int) c.getVolMax(),cGetPeso = (int)c.getPesoMax();
@@ -43,15 +41,14 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
         }
         int eVol = (int) encomendas[i]->getVol(),ePes = (int)encomendas[i]->getPeso();
 
-        for (int v = 0; v < cGetVol;v++) {
-                for(int w = 0; w < cGetPeso; w++){
+        for (int v = 0; v <= cGetVol;v++) {
+                for(int w = 0; w <= cGetPeso; w++){
                     if(i == 0 || w == 0 || v == 0){
                         dp[i][w][v] = 0;
                         continue;
                     }
                     if (eVol<=v && ePes<=w) {
                         profit1 = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
-                        //profit1 = dp.getPos(i-1, v - encomendas[i]->getVol(),w - encomendas[i]->getPeso());
                         profit1 = (int) (profit1 + encomendas[i]->getRecompensa()) ;
                     }
 
