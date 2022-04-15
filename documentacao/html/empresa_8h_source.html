@@ -84,28 +84,55 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    vector&lt;Encomenda *&gt; encomendas;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    vector&lt;Carrinha *&gt; carrinhas;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    vector&lt;ExpressoEncomenda *&gt; expEncomendas;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classEmpresa.html">Empresa</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classEmpresa.html">Empresa</a>(<span class="keywordtype">string</span> fileEncomendas, <span class="keywordtype">string</span> fileCarrinhas);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> lerCarrinhas(std::string *fileName);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> lerEncomendas(std::string *fileName);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classEmpresa.html#a6eefbf82efa0e93cce75e4f69cf1f095">   47</a></span>&#160;    std::vector&lt;Encomenda *&gt; <a class="code" href="classEmpresa.html#a6eefbf82efa0e93cce75e4f69cf1f095">getEncomendas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> encomendas;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classEmpresa.html#af546aa28e86118d72362f83f550436a7">   53</a></span>&#160;    std::vector&lt;Carrinha *&gt; <a class="code" href="classEmpresa.html#af546aa28e86118d72362f83f550436a7">getCarrinhas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> carrinhas;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif //DA_T4_G62_EMPRESA_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">string</span> fileEncomendas, fileCarrinhas;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">double</span> pesoPeso=0.5;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">double</span> pesoVol=0.5;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> balancaVars();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classEmpresa.html">Empresa</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classEmpresa.html">Empresa</a>(<span class="keywordtype">string</span> fileEncomendas, <span class="keywordtype">string</span> fileCarrinhas);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> novoDia(<span class="keywordtype">string</span> *fileEncomendas);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> lerCarrinhas(<span class="keywordtype">string</span> *fileName);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> lerEncomendas(<span class="keywordtype">string</span> *fileName);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classEmpresa.html#a39d5bd00c2a002938b6db937c60d5423">   58</a></span>&#160;    vector&lt;Encomenda *&gt; <a class="code" href="classEmpresa.html#a39d5bd00c2a002938b6db937c60d5423">getEncomendas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> encomendas;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classEmpresa.html#acfb6899a5584d95325a099fc7a908a89">   64</a></span>&#160;    vector&lt;Carrinha *&gt; <a class="code" href="classEmpresa.html#acfb6899a5584d95325a099fc7a908a89">getCarrinhas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> carrinhas;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classEmpresa.html#a9fc269958d07569e0b24901d00e88212">   70</a></span>&#160;    vector&lt;ExpressoEncomenda *&gt; <a class="code" href="classEmpresa.html#a9fc269958d07569e0b24901d00e88212">getExpEncomendas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> expEncomendas;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> removerEntregues();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> removerEncomendas();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classEmpresa.html#a6a5be6f33a4f7ebdf8aecf817cc15ff0">   86</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classEmpresa.html#a6a5be6f33a4f7ebdf8aecf817cc15ff0">getPesoVol</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> pesoVol;};</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classEmpresa.html#aeb95540dd3083eabeb587461b849efad">   92</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classEmpresa.html#aeb95540dd3083eabeb587461b849efad">getPesoPeso</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> pesoPeso;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classEmpresa.html#af33c515987cef23c3c264e7bcd79e0fc">   98</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classEmpresa.html#af33c515987cef23c3c264e7bcd79e0fc">getFileEncomendas</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> fileEncomendas;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> atualizaCarrinhas();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> encomendasPorEntregar();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif //DA_T4_G62_EMPRESA_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassEmpresa_html_a6a5be6f33a4f7ebdf8aecf817cc15ff0"><div class="ttname"><a href="classEmpresa.html#a6a5be6f33a4f7ebdf8aecf817cc15ff0">Empresa::getPesoVol</a></div><div class="ttdeci">double getPesoVol() const</div><div class="ttdef"><b>Definition:</b> empresa.h:86</div></div>
+<div class="ttc" id="aclassEmpresa_html_acfb6899a5584d95325a099fc7a908a89"><div class="ttname"><a href="classEmpresa.html#acfb6899a5584d95325a099fc7a908a89">Empresa::getCarrinhas</a></div><div class="ttdeci">vector&lt; Carrinha * &gt; getCarrinhas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:64</div></div>
+<div class="ttc" id="aclassEmpresa_html_a9fc269958d07569e0b24901d00e88212"><div class="ttname"><a href="classEmpresa.html#a9fc269958d07569e0b24901d00e88212">Empresa::getExpEncomendas</a></div><div class="ttdeci">vector&lt; ExpressoEncomenda * &gt; getExpEncomendas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:70</div></div>
 <div class="ttc" id="aclassEmpresa_html"><div class="ttname"><a href="classEmpresa.html">Empresa</a></div><div class="ttdef"><b>Definition:</b> empresa.h:12</div></div>
-<div class="ttc" id="aclassEmpresa_html_af546aa28e86118d72362f83f550436a7"><div class="ttname"><a href="classEmpresa.html#af546aa28e86118d72362f83f550436a7">Empresa::getCarrinhas</a></div><div class="ttdeci">std::vector&lt; Carrinha * &gt; getCarrinhas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:53</div></div>
-<div class="ttc" id="aclassEmpresa_html_a6eefbf82efa0e93cce75e4f69cf1f095"><div class="ttname"><a href="classEmpresa.html#a6eefbf82efa0e93cce75e4f69cf1f095">Empresa::getEncomendas</a></div><div class="ttdeci">std::vector&lt; Encomenda * &gt; getEncomendas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:47</div></div>
+<div class="ttc" id="aclassEmpresa_html_af33c515987cef23c3c264e7bcd79e0fc"><div class="ttname"><a href="classEmpresa.html#af33c515987cef23c3c264e7bcd79e0fc">Empresa::getFileEncomendas</a></div><div class="ttdeci">string getFileEncomendas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:98</div></div>
+<div class="ttc" id="aclassEmpresa_html_aeb95540dd3083eabeb587461b849efad"><div class="ttname"><a href="classEmpresa.html#aeb95540dd3083eabeb587461b849efad">Empresa::getPesoPeso</a></div><div class="ttdeci">double getPesoPeso() const</div><div class="ttdef"><b>Definition:</b> empresa.h:92</div></div>
+<div class="ttc" id="aclassEmpresa_html_a39d5bd00c2a002938b6db937c60d5423"><div class="ttname"><a href="classEmpresa.html#a39d5bd00c2a002938b6db937c60d5423">Empresa::getEncomendas</a></div><div class="ttdeci">vector&lt; Encomenda * &gt; getEncomendas() const</div><div class="ttdef"><b>Definition:</b> empresa.h:58</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

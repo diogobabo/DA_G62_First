@@ -3,9 +3,13 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCenario3_aa49d6fc362da3df590da43f14fe772b7}{Cenario3}} (\mbox{\hyperlink{classEmpresa}{Empresa}} $\ast$e)
+\mbox{\hyperlink{classCenario3_a794b2e2b1127834fcdb3ad3e1e20080b}{Cenario3}} (const \mbox{\hyperlink{classEmpresa}{Empresa}} \&e)
 \item 
-int \mbox{\hyperlink{classCenario3_ab34831422ab865cdaf4bb4070de79b8c}{greedy\+Min\+Avg\+Time}} ()
+vector$<$ int $>$ \mbox{\hyperlink{classCenario3_ab835e3f2894f87a1b31b5af2940945aa}{greedy\+Min\+Avg\+Time}} ()
+\item 
+int \mbox{\hyperlink{classCenario3_aee7d04840f772c5213e423853ba91a9a}{encomendas\+Por\+Entregar}} ()
+\item 
+vector$<$ double $>$ \mbox{\hyperlink{classCenario3_a73f1c82a8fdf0cf2b4f4785150ebe4ca}{get\+Quocientes}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -15,13 +19,13 @@ static bool \mbox{\hyperlink{classCenario3_a6d69e9f02940d5ecffff9f6b53f4274e}{so
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classCenario3_aa49d6fc362da3df590da43f14fe772b7}\label{classCenario3_aa49d6fc362da3df590da43f14fe772b7}} 
+\mbox{\Hypertarget{classCenario3_a794b2e2b1127834fcdb3ad3e1e20080b}\label{classCenario3_a794b2e2b1127834fcdb3ad3e1e20080b}} 
 \index{Cenario3@{Cenario3}!Cenario3@{Cenario3}}
 \index{Cenario3@{Cenario3}!Cenario3@{Cenario3}}
 \doxysubsubsection{\texorpdfstring{Cenario3()}{Cenario3()}}
-{\footnotesize\ttfamily Cenario3\+::\+Cenario3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmpresa}{Empresa}} $\ast$}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Cenario3\+::\+Cenario3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEmpresa}{Empresa}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructor Montar argumentos nessecarios para o funcionamento do cenario 3 
+Constructor Montar argumentos necessarios para o funcionamento do cenario 3 
 \begin{DoxyParams}{Parameters}
 {\em e} & \mbox{\hyperlink{classEmpresa}{Empresa}} a ser estudada \\
 \hline
@@ -29,11 +33,29 @@ Constructor Montar argumentos nessecarios para o funcionamento do cenario 3
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classCenario3_ab34831422ab865cdaf4bb4070de79b8c}\label{classCenario3_ab34831422ab865cdaf4bb4070de79b8c}} 
+\mbox{\Hypertarget{classCenario3_aee7d04840f772c5213e423853ba91a9a}\label{classCenario3_aee7d04840f772c5213e423853ba91a9a}} 
+\index{Cenario3@{Cenario3}!encomendasPorEntregar@{encomendasPorEntregar}}
+\index{encomendasPorEntregar@{encomendasPorEntregar}!Cenario3@{Cenario3}}
+\doxysubsubsection{\texorpdfstring{encomendasPorEntregar()}{encomendasPorEntregar()}}
+{\footnotesize\ttfamily int Cenario3\+::encomendas\+Por\+Entregar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função responsável por retornar o número de encomendas que ainda não foram entregues \begin{DoxyReturn}{Returns}
+o número de encomendas por entregar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCenario3_a73f1c82a8fdf0cf2b4f4785150ebe4ca}\label{classCenario3_a73f1c82a8fdf0cf2b4f4785150ebe4ca}} 
+\index{Cenario3@{Cenario3}!getQuocientes@{getQuocientes}}
+\index{getQuocientes@{getQuocientes}!Cenario3@{Cenario3}}
+\doxysubsubsection{\texorpdfstring{getQuocientes()}{getQuocientes()}}
+{\footnotesize\ttfamily vector$<$ double $>$ Cenario3\+::get\+Quocientes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Função responsável por retornar o vetor dos quocientes entre as encomendas entregues e não entregues \begin{DoxyReturn}{Returns}
+o vetor dos quocientes dos dias 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCenario3_ab835e3f2894f87a1b31b5af2940945aa}\label{classCenario3_ab835e3f2894f87a1b31b5af2940945aa}} 
 \index{Cenario3@{Cenario3}!greedyMinAvgTime@{greedyMinAvgTime}}
 \index{greedyMinAvgTime@{greedyMinAvgTime}!Cenario3@{Cenario3}}
 \doxysubsubsection{\texorpdfstring{greedyMinAvgTime()}{greedyMinAvgTime()}}
-{\footnotesize\ttfamily int Cenario3\+::greedy\+Min\+Avg\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ int $>$ Cenario3\+::greedy\+Min\+Avg\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Função responsável por minimizar o tempo das entregas expresso \begin{DoxyReturn}{Returns}
 o tempo medio minimizado 
