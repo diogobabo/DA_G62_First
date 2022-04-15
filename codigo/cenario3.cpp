@@ -42,7 +42,7 @@ vector<int> Cenario3::greedyMinAvgTime() {
         }
     }
     avgTime = sum / numEncomendas;
-    if(avgTimeAllDays.empty()) {
+    if(avgTimeAllDays.empty() || numEncomendas < encomendasExp.size()) {
         avgTimeAllDays.push_back(avgTime);
     }
     return avgTimeAllDays;
