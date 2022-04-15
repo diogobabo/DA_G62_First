@@ -17,6 +17,7 @@ vector<int> Cenario3::greedyMinAvgTime() {
     int avgTime;
     int numEncomendas = 1;
     int temp = 0;
+    int numDias = 1;
     vector<int> avgTimeAllDays;
     for(int i = 1; i < encomendasExp.size(); i++) {
         if(startTime + (int) encomendasExp[i]->getDuracao() <= endTime) {
@@ -26,7 +27,9 @@ vector<int> Cenario3::greedyMinAvgTime() {
             startTime += (int)encomendasExp[i]->getDuracao();
         }
         else {
+            numDias++;
             avgTime = (int) sum / numEncomendas;
+
             avgTimeAllDays.push_back(avgTime);
             startTime = 32400 + (int) encomendasExp[i]->getDuracao();
             if(startTime > endTime) {
