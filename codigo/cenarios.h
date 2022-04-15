@@ -4,12 +4,12 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "encomenda.h"
-#include "carrinha.h"
-#include "empresa.h"
 #include <map>
 #include <unordered_map>
 
+#include "encomenda.h"
+#include "carrinha.h"
+#include "empresa.h"
 
 struct ENCOMENDA_VALOR{
     int profit = -1;
@@ -173,6 +173,12 @@ public:
      * @return o vetor dos quocientes dos dias
      */
     vector<double> getQuocientes();
+
+};
+
+class Cenario4 {
+private:
+public:
 
 };
 
