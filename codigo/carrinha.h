@@ -87,7 +87,7 @@ public:
      * Retorna vetor de encomendas
      * @return encomendas
      */
-    std::vector<Encomenda *> getEncomendas() const {return encomendas;};
+    std::vector<Encomenda *>* getEncomendas() {return &encomendas;};
 
     /**
      * Define variável decisiva, balanço entre peso e volume

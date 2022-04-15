@@ -21,7 +21,7 @@ bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) 
 }
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
 
-    if(!c.getEncomendas().empty()){
+    if(!c.getEncomendas()->empty()){
         ENCOMENDA_VALOR v;
         return v;
     }
@@ -145,7 +145,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsackBabado(vector<vector<vector<ENCOMENDA_VAL
 }
 
 ENCOMENDA_VALOR Cenario2::solveKnapsackBabadonsei(Carrinha &c) {
-    if(!c.getEncomendas().empty()){
+    if(!c.getEncomendas()->empty()){
         ENCOMENDA_VALOR v;
         return v;
     }

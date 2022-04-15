@@ -74,7 +74,7 @@ int Cenario1::tentativa() {
         }
     }
     for(auto x : carrinhas) {
-        if(!x->getEncomendas().empty()) {
+        if(!x->getEncomendas()->empty()) {
             numCarrinhas++;
         }
     }
