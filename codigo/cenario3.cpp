@@ -32,13 +32,18 @@ vector<int> Cenario3::greedyMinAvgTime() {
             if(startTime > endTime) {
                 break;
             }
+            if(i == encomendasExp.size() - 1){
+                avgTimeAllDays.push_back((int)encomendasExp[i]->getDuracao());
+                break;
+            }
             numEncomendas = 1;
             temp = 0;
             sum = encomendasExp[i]->getDuracao();
         }
     }
+
     avgTime = (int) sum / numEncomendas;
-    if(avgTimeAllDays.empty()) {
+    if(avgTimeAllDays.empty() || numEncomendas < encomendasExp.size()) {
         avgTimeAllDays.push_back(avgTime);
     }
     return avgTimeAllDays;
