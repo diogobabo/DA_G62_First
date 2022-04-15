@@ -14,12 +14,12 @@ bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 }
 
 bool Cenario2::sortByVarEncomendaRecompensa(const Encomenda *e1, const Encomenda *e2) {
-    return e1->getRecompensaUnidade() > e2->getRecompensaUnidade();
+    return e1->getRecompensaUnidade() < e2->getRecompensaUnidade();
 }
 bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) {
     return e1.profit < e2.profit;
 }
-ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
+ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas) {
     ENCOMENDA_VALOR v;
     if(!c.getEncomendas()->empty()){
         return v;
@@ -74,23 +74,27 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
 
 int Cenario2::solveMaxLucro() {
     prepareSolve();
-    Carrinha *max=nullptr;
-    ENCOMENDA_VALOR maxs;
+
     for(int car = 0; car<carrinhas.size();car++){
-        ENCOMENDA_VALOR solved = solveKnapsack(*carrinhas[car]);
-        if(maxs.profit < solved.profit){
-            maxs = solved;
-            max = carrinhas[car];
+        ENCOMENDA_VALOR solved = prepareKnapsack(*carrinhas[car]);
+        if(solved.profit == -5){
+            break;
+        }
+        for(int n = 0;n<solved.CarrinhaEncomneda.size();n++){
+            carrinhas[car]->adicionarEncomenda(solved.CarrinhaEncomneda[n]);
         }
     }
-    for(int n = 0;n<maxs.CarrinhaEncomneda.size();n++){
-        max->adicionarEncomenda(maxs.CarrinhaEncomneda[n]);
-    }
+
 
     int profit = 0;
     for(int car = 0; car<carrinhas.size();car++){
         if(carrinhas[car]->getBalanco()>0){
             profit +=carrinhas[car]->getBalanco();
+        }else{
+            auto v = carrinhas[car]->getEncomendas();
+            for(int n = 0; n< v->size();n++){
+                carrinhas[car]->removerEncomenda(v->at(n));
+            }
         }
     }
     return profit;
@@ -99,15 +103,27 @@ int Cenario2::solveMaxLucro() {
 void Cenario2::prepareSolve() {
 
     sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
-
-    Encomenda*e = new Encomenda(0,0,0);
-    encomendas.push_back(e);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
 
+    Encomenda*e = new Encomenda(0,0,1);
+    encomendas.push_back(e);
+
+    std::reverse(encomendas.begin(), encomendas.end());
 
     return;
 }
 
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
-    return ENCOMENDA_VALOR();
+    vector<Encomenda *> e;
+    for(int v;v<encomendas.size();v++){
+        if(!encomendas[v]->getEstado()){
+            e.push_back(encomendas[v]);
+        }
+    }
+    if(e.size()<=1){
+        ENCOMENDA_VALOR v;
+        v.profit = -5;
+        return v;
+    }
+    return solveKnapsack(c,e);
 }

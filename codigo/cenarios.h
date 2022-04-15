@@ -94,7 +94,7 @@ public:
      */
     explicit Cenario2(const Empresa& e);
     int solveMaxLucro();
-    ENCOMENDA_VALOR solveKnapsack(Carrinha &c);
+    ENCOMENDA_VALOR solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas);
     void prepareSolve();
     ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
     /**
