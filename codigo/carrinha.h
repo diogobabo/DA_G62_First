@@ -14,7 +14,7 @@ private:
     unsigned int vol=0;
     unsigned int peso=0;
     int balanco=-(int)custo;
-    double var_decisiva;
+    double var_decisiva=0;
     std::vector<Encomenda *> encomendas;
 
 public:
@@ -103,11 +103,33 @@ public:
     double getVarDecisiva() const {return var_decisiva;};
 
     /**
+     * Define volume da carrinha
+     * @param volume volume atual da carrinha
+     */
+    void setVol(unsigned int volume) {this->vol=volume;};
+
+    /**
+     * Define peso da carrinha
+     * @param peso peso atual da carrinha
+     */
+    void setPeso(unsigned int peso_) {this->peso=peso_;};
+
+    /**
+     * Define balanco da carrinha
+     * @param balanco balanco atual da carrinha
+     */
+    void setBalanco(int balanco_) {this->balanco=balanco_;};
+
+    /**
      * Limpa encomendas da carrinha;
      */
     void clearEncomendas();
 
-    void setEncomendas(std::vector<Encomenda *>);
+    /**
+     * Define encomendas da carrinha
+     * @param encomendas encomendas atuais da carrinha
+     */
+    void setEncomendas(std::vector<Encomenda *> *encomendas_);
 };
 
 #endif //DA_T6_G62_CARRINHA_H

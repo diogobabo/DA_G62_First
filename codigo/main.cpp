@@ -3,7 +3,7 @@
 #include "menu.h"
 
 int main() {
-    Empresa empresa("../input/encomendas.txt", "../input/carrinhas.txt");
+    Empresa empresa("../input/encomendasC3.txt", "../input/carrinhasC3.txt");
     Menu menu(empresa);
     menu.start();
     return 0;

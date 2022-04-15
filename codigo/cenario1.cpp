@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Cenario1::Cenario1(Empresa e) {
+Cenario1::Cenario1(const Empresa& e) {
     this->encomendas = e.getEncomendas();
     this->carrinhas = e.getCarrinhas();
 }
@@ -54,6 +54,7 @@ bool Cenario1::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 }
 
 bool Cenario1::sortByVarEncomenda(const Encomenda *e1, const Encomenda *e2) {
+    if(e1->getPrioridade()!=e2->getPrioridade()) return e1->getPrioridade() > e2->getPrioridade();
     return e1->getVarDecisiva() < e2->getVarDecisiva();
 }
 
@@ -62,23 +63,23 @@ int Cenario1::tentativa() {
     sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
     int numEntregues = 0;
     int numCarrinhas = 0;
-    for(int i = 0; i < carrinhas.size(); i++) {
-        for(int j = 0; j < encomendas.size(); j++) {
-            if(encomendas[j]->getEstado()) {
+    for(auto & carrinha : carrinhas) {
+        for(auto & encomenda : encomendas) {
+            if(encomenda->getEstado()) {
                 continue;
             }
-            if (!carrinhas[i]->verificaDisponibilidade(encomendas[j])) {
-                carrinhas[i]->adicionarEncomenda(encomendas[j]);
+            if (!carrinha->verificaDisponibilidade(encomenda)) {
+                carrinha->adicionarEncomenda(encomenda);
             }
         }
     }
     for(auto x : carrinhas) {
-        if(x->getEncomendas().size() != 0) {
+        if(!x->getEncomendas().empty()) {
             numCarrinhas++;
         }
     }
     for(auto x : encomendas) {
-        if(x->getEstado() == true) {
+        if(x->getEstado()) {
             numEntregues++;
         }
     }

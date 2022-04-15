@@ -1,6 +1,6 @@
 #include "cenarios.h"
 
-Cenario2::Cenario2(Empresa e) {
+Cenario2::Cenario2(const Empresa& e) {
     this->encomendas = e.getEncomendas();
     this->carrinhas = e.getCarrinhas();
 }
@@ -27,7 +27,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
     }
 
     ENCOMENDA_VALOR v;
-    Encomenda*e = new Encomenda(0,0,0);
+    auto*e = new Encomenda(0,0,0);
     encomendas.push_back(e);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
     if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 ||encomendas.empty()) {
@@ -35,7 +35,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
         return v;
     }
 
-    int n = encomendas.size();
+    int n = (int)encomendas.size();
     vector<vector<vector<ENCOMENDA_VALOR>>> dp(n, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax(), vector<ENCOMENDA_VALOR>(c.getPesoMax(), v)));// dp[index][volume][peso]
 
     for (int i = 0; i < n; i++) {
@@ -62,7 +62,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c) {
 
                 if (encomendas[i]->getVol()<=v && encomendas[i]->getPeso()<=w) {
                     ENCOMENDA_VALOR var = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
-                    var.profit = var.profit + encomendas[i]->getRecompensa() ;
+                    var.profit = (int) (var.profit + encomendas[i]->getRecompensa()) ;
                     var.CarrinhaEncomneda.push_back(encomendas[i]);
                     profit1 = var;
                 }
@@ -108,8 +108,8 @@ int Cenario2::solveMaxLucro() {
 
 bool Cenario2::porEntregar() {
     for(auto itr=encomendas.begin(); itr!=encomendas.end(); itr++)
-        if(!(*itr)->getEstado()) return 1;
-    return 0;
+        if(!(*itr)->getEstado()) return true;
+    return false;
 }
 
 ENCOMENDA_VALOR Cenario2::solveKnapsackBabado(vector<vector<vector<ENCOMENDA_VALOR>>> &dp,Carrinha &c,int v,int w,int n,int i) {
@@ -125,7 +125,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsackBabado(vector<vector<vector<ENCOMENDA_VAL
     profit2.profit = 0;
 
     if(encomendas[i]->getEstado()){
-        return ENCOMENDA_VALOR();;
+        return {};
     }
 
     if (encomendas[i]->getVol()<=v && encomendas[i]->getPeso()<=w) {

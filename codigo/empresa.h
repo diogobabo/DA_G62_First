@@ -15,8 +15,10 @@ private:
     vector<Carrinha *> carrinhas;
     vector<ExpressoEncomenda *> expEncomendas;
 
-    double pesoPeso;
-    double pesoVol;
+    string fileEncomendas, fileCarrinhas;
+
+    double pesoPeso=0.5;
+    double pesoVol=0.5;
     void balancaVars();
 public:
     /**
@@ -35,37 +37,37 @@ public:
      * Ler ficheiro de encomendas para o dia
      * @param fileEncomendas
      */
-    void novoDia(std::string *fileEncomendas);
+    void novoDia(string *fileEncomendas);
 
     /**
      * Função responsável por ler o ficheiro das carrinhas
      * @param fileName localizacao do ficheiro de carrinhas.txt
      */
-    void lerCarrinhas(std::string *fileName);
+    void lerCarrinhas(string *fileName);
 
     /**
      * Função responsável por ler o ficheiro das encomendas
      * @param fileName localizacao do ficheiro encomendas.txt
      */
-    void lerEncomendas(std::string *fileName);
+    void lerEncomendas(string *fileName);
 
     /**
      * Retorna vetor de encomendas
      * @return encomendas
      */
-    std::vector<Encomenda *> getEncomendas() const {return encomendas;};
+    vector<Encomenda *> getEncomendas() const {return encomendas;};
 
     /**
      * Retorna vetor de carrinhas
      * @return carrinhas
      */
-    std::vector<Carrinha *> getCarrinhas() const {return carrinhas;};
+    vector<Carrinha *> getCarrinhas() const {return carrinhas;};
 
     /**
      * Retorna vetor de encomendas expresso
      * @return encomendas
      */
-    std::vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
+    vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
 
     /**
      * Remover encomendas entregues
@@ -88,6 +90,17 @@ public:
      * @return o "peso" do peso na variável
      */
     double getPesoPeso() const {return pesoPeso;};
+
+    /**
+     * Retorna a localizacao do ficheiro encomendas
+     * @return localizacao do ficheiro
+     */
+    string getFileEncomendas() const {return fileEncomendas;};
+
+    /**
+     * Atualiza valroes peso, volume, balanco das carrinhas
+     */
+    void atualizaCarrinhas();
 };
 
 

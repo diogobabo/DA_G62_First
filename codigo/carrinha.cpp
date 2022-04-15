@@ -1,5 +1,6 @@
 #include "carrinha.h"
 
+
 Carrinha::Carrinha(unsigned int volMax, unsigned int pesoMax, unsigned int custo): volMax(volMax), pesoMax(pesoMax), custo(custo)
 {
 }
@@ -24,6 +25,9 @@ int Carrinha::verificaDisponibilidade(Encomenda *encomenda) const {
     return 0;
 }
 
+void Carrinha::setVarDecisiva(double peso_peso, double peso_vol) {
+    var_decisiva = peso_peso*pesoMax + peso_vol*volMax;
+}
 
 int Carrinha::removerEncomenda(Encomenda *encomenda) {
     for(auto itr = encomendas.begin(); itr!=encomendas.end(); itr++) {
@@ -39,14 +43,13 @@ int Carrinha::removerEncomenda(Encomenda *encomenda) {
     return 1;
 }
 
-void Carrinha::setVarDecisiva(double peso_peso, double peso_vol) {
-    var_decisiva = peso_peso*pesoMax + peso_vol*volMax;
-}
-
 void Carrinha::clearEncomendas() {
-   encomendas.clear();
+    peso=0;
+    vol=0;
+    balanco=(int)-custo;
+    encomendas.clear();
 }
 
-void Carrinha::setEncomendas(std::vector<Encomenda *> temp) {
-    this->encomendas = temp;
+void Carrinha::setEncomendas(std::vector<Encomenda *> *temp) {
+    this->encomendas = *temp;
 }

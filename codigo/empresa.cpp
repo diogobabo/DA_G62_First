@@ -5,11 +5,14 @@
 
 
 Empresa::Empresa(string fileEncomendas, string fileCarrinhas) {
+    fileEncomendas = fileEncomendas;
+    fileCarrinhas = fileCarrinhas;
     lerCarrinhas(&fileCarrinhas);
     novoDia(&fileEncomendas);
 }
 
 void Empresa::lerEncomendas(std::string *fileName) {
+    fileEncomendas=*fileName;
     string s,tempo;
     string vol,peso,recompensa;
     ifstream file;
@@ -26,9 +29,13 @@ void Empresa::lerEncomendas(std::string *fileName) {
         encomendas.push_back(encomenda);
         expEncomendas.push_back(expEncomenda);
     }
+    file.clear();
+    file.seekg(0, ios::beg);
+    file.close();
 }
 
 void Empresa::lerCarrinhas(std::string *fileName) {
+    fileCarrinhas=*fileName;
     string s,tempo;
     string volMax,pesoMax,custo;
     ifstream file;
@@ -42,20 +49,23 @@ void Empresa::lerCarrinhas(std::string *fileName) {
         auto *carrinha = new Carrinha(stoi(volMax), stoi(pesoMax), stoi(custo));
         carrinhas.push_back(carrinha);
     }
+    file.clear();
+    file.seekg(0, ios::beg);
+    file.close();
 }
 
-void Empresa::novoDia(std::string *fileEncomendas) {
-    for(auto itr=carrinhas.begin(); itr!=carrinhas.end();itr++){
-        (*itr)->clearEncomendas();
+void Empresa::novoDia(std::string *fileEncomenda) {
+    for(auto & carrinha : carrinhas){
+        carrinha->clearEncomendas(); // limpar carrinhas
     }
 
-    for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
-        auto temp = itr;
-        itr++;
-        if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
-        else (*temp)->setPrioridade(true); // se não foi entregue no dia anterior, muda prioridade para elevada
+    for(auto itr= encomendas.begin(); itr!=encomendas.end(); itr++) {
+        if((*itr)->getEstado()) {
+            encomendas.erase(itr--); // se foi entregue, remove do vetor
+        }
+        else (*itr)->setPrioridade(true); // se não foi entregue no dia anterior, muda prioridade para elevada
     }
-    lerEncomendas(fileEncomendas); // ler encomendas para novo dia
+    lerEncomendas(fileEncomenda); // ler encomendas para novo dia
     // novos pesos variaveis
     pesoVol=0;
     pesoPeso=0;
@@ -88,6 +98,24 @@ void Empresa::removerEntregues() {
 }
 
 void Empresa::removerEncomendas() {
-    for(auto itr=encomendas.begin(); itr!=encomendas.end(); itr++)
-        delete *itr;
+    for(auto & encomenda : encomendas) {
+        delete encomenda;
+    }
+    encomendas.clear();
+}
+
+void Empresa::atualizaCarrinhas() {
+    for(auto & carrinha : carrinhas){
+        unsigned int peso=0, vol=0;
+        int balanco=(int)-carrinha->getCusto();
+        vector<Encomenda*> e=carrinha->getEncomendas();
+        for(auto & i : e) {
+            peso+=i->getPeso();
+            balanco+=(int)i->getRecompensa();
+            vol+=i->getVol();
+        }
+        carrinha->setPeso(peso);
+        carrinha->setBalanco(balanco);
+        carrinha->setVol(vol);
+    }
 }

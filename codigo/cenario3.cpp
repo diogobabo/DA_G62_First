@@ -1,7 +1,7 @@
 #include <algorithm>
 #include "cenarios.h"
 
-Cenario3::Cenario3(Empresa e) {
+Cenario3::Cenario3(const Empresa& e) {
     encomendasExp = e.getExpEncomendas();
 }
 
@@ -23,10 +23,10 @@ vector<int> Cenario3::greedyMinAvgTime() {
             temp += (int) encomendasExp[i-1]->getDuracao();
             sum += temp + encomendasExp[i]->getDuracao();
             numEncomendas++;
-            startTime += encomendasExp[i]->getDuracao();
+            startTime += (int)encomendasExp[i]->getDuracao();
         }
         else {
-            avgTime = sum / numEncomendas;
+            avgTime = (int) sum / numEncomendas;
             avgTimeAllDays.push_back(avgTime);
             startTime = 32400 + (int) encomendasExp[i]->getDuracao();
             if(startTime > endTime) {
@@ -37,7 +37,7 @@ vector<int> Cenario3::greedyMinAvgTime() {
             sum = encomendasExp[i]->getDuracao();
         }
     }
-    avgTime = sum / numEncomendas;
+    avgTime = (int) sum / numEncomendas;
     if(avgTimeAllDays.empty()) {
         avgTimeAllDays.push_back(avgTime);
     }

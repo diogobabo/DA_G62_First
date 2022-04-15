@@ -24,19 +24,24 @@ int Menu::start() {
         switch (option) {
             case 1:
                 Cenario1();
+                e.removerEncomendas();
                 break;
             case 2:
                 Cenario2();
+                e.removerEncomendas();
                 break;
             case 3:
                 Cenario3();
+                e.removerEncomendas();
                 break;
             case 4:
                 extras();
             default:
                 break;
         }
-
+        e.atualizaCarrinhas();
+        string f = e.getFileEncomendas();
+        e.novoDia(&f);
     }
     return 0;
 }
@@ -47,7 +52,7 @@ int Menu::extras() {
 
 int Menu::Cenario1() {
     class Cenario1 c1(e);
-    cout << c1.tentativa();
+    cout << c1.tentativa() << endl;
     return 0;
 }
 
