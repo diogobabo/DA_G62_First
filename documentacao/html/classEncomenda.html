@@ -86,6 +86,20 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1625a3e8b10501da0c374c77e384eafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad867370508332fa319002ba2a9fb1717"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#ad867370508332fa319002ba2a9fb1717">getRecompensa</a> () const</td></tr>
 <tr class="separator:ad867370508332fa319002ba2a9fb1717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae325a54f87891ecdf500b2370d2f290"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#aae325a54f87891ecdf500b2370d2f290">getPrioridade</a> () const</td></tr>
+<tr class="separator:aae325a54f87891ecdf500b2370d2f290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab120620d18fb0380733510191d038510"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#ab120620d18fb0380733510191d038510">getEstado</a> () const</td></tr>
+<tr class="separator:ab120620d18fb0380733510191d038510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3526c9bcca9c6a306efcff02c61bb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#a0b3526c9bcca9c6a306efcff02c61bb4">setPrioridade</a> (bool const _prioridade)</td></tr>
+<tr class="separator:a0b3526c9bcca9c6a306efcff02c61bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6b3911c407a0278b9023d8aaf83d35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#aaf6b3911c407a0278b9023d8aaf83d35">setEstado</a> (bool const _entregue)</td></tr>
+<tr class="separator:aaf6b3911c407a0278b9023d8aaf83d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61423ad118d92966cd17d4f859506e62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#a61423ad118d92966cd17d4f859506e62">setVarDecisiva</a> (double peso_peso, double peso_vol)</td></tr>
+<tr class="separator:a61423ad118d92966cd17d4f859506e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30c9556a5dc308e80764627826c59b8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#af30c9556a5dc308e80764627826c59b8">getVarDecisiva</a> () const</td></tr>
+<tr class="separator:af30c9556a5dc308e80764627826c59b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcdf47f16818c9b69a239d3734f60eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEncomenda.html#a0dcdf47f16818c9b69a239d3734f60eb">getRecompensaUnidade</a> () const</td></tr>
+<tr class="separator:a0dcdf47f16818c9b69a239d3734f60eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8becfb9df9c44ab5c3189e9d8634511"></a>
@@ -155,6 +169,32 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab120620d18fb0380733510191d038510"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab120620d18fb0380733510191d038510">&#9670;&nbsp;</a></span>getEstado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Encomenda::getEstado </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna estado da encomenda </p><dl class="section return"><dt>Returns</dt><dd>entregue </dd></dl>
+
+</div>
+</div>
 <a id="a1625a3e8b10501da0c374c77e384eafa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1625a3e8b10501da0c374c77e384eafa">&#9670;&nbsp;</a></span>getPeso()</h2>
 
@@ -178,6 +218,32 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Retorna peso da encomenda </p><dl class="section return"><dt>Returns</dt><dd>peso </dd></dl>
+
+</div>
+</div>
+<a id="aae325a54f87891ecdf500b2370d2f290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae325a54f87891ecdf500b2370d2f290">&#9670;&nbsp;</a></span>getPrioridade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Encomenda::getPrioridade </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna se encomenda tem prioridade </p><dl class="section return"><dt>Returns</dt><dd>prioridade </dd></dl>
 
 </div>
 </div>
@@ -207,6 +273,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a0dcdf47f16818c9b69a239d3734f60eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcdf47f16818c9b69a239d3734f60eb">&#9670;&nbsp;</a></span>getRecompensaUnidade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Encomenda::getRecompensaUnidade </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna variavel recompensa/var_decisiva </p><dl class="section return"><dt>Returns</dt><dd>Recompensa por Unidade </dd></dl>
+
+</div>
+</div>
+<a id="af30c9556a5dc308e80764627826c59b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30c9556a5dc308e80764627826c59b8">&#9670;&nbsp;</a></span>getVarDecisiva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Encomenda::getVarDecisiva </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna variavel decisiva </p><dl class="section return"><dt>Returns</dt><dd>var_decisiva </dd></dl>
+
+</div>
+</div>
 <a id="a51ed607d33f2dc42d59b12a0e4731988"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51ed607d33f2dc42d59b12a0e4731988">&#9670;&nbsp;</a></span>getVol()</h2>
 
@@ -230,6 +348,105 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Retorna volume da encomenda </p><dl class="section return"><dt>Returns</dt><dd>volume </dd></dl>
+
+</div>
+</div>
+<a id="aaf6b3911c407a0278b9023d8aaf83d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf6b3911c407a0278b9023d8aaf83d35">&#9670;&nbsp;</a></span>setEstado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Encomenda::setEstado </td>
+          <td>(</td>
+          <td class="paramtype">bool const&#160;</td>
+          <td class="paramname"><em>_entregue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define estado da entrega </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_entregue</td><td>entregue </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b3526c9bcca9c6a306efcff02c61bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3526c9bcca9c6a306efcff02c61bb4">&#9670;&nbsp;</a></span>setPrioridade()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Encomenda::setPrioridade </td>
+          <td>(</td>
+          <td class="paramtype">bool const&#160;</td>
+          <td class="paramname"><em>_prioridade</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Define prioridade da entrega </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_prioridade</td><td>prioridade </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a61423ad118d92966cd17d4f859506e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61423ad118d92966cd17d4f859506e62">&#9670;&nbsp;</a></span>setVarDecisiva()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Encomenda::setVarDecisiva </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>peso_peso</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>peso_vol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Define variável decisiva, balanço entre peso e volume </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">peso_peso</td><td>percentagem do peso </td></tr>
+    <tr><td class="paramname">peso_vol</td><td>percentagem do volume </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
