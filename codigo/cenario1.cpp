@@ -92,3 +92,13 @@ int Cenario1::bestFit() {
 
     return 0;
 }
+
+double Cenario1::getQuocient() {
+    int counter = 0;
+    for(auto x : encomendas) {
+        if(x->getEstado()) {
+            counter++;
+        }
+    }
+    return(counter / (double) encomendas.size());
+}

@@ -26,6 +26,7 @@ class Cenario1 {
 private:
     std::vector<Encomenda *> encomendas;
     std::vector<Carrinha *> carrinhas;
+    double quocient;
     /** Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema */
     int knapsackRecursive(std::vector<std::vector<int>> &dp, const std::vector<int> &profits,const std::vector<int> &weights, int capacity, int currentIndex);
 public:
@@ -81,6 +82,12 @@ public:
      * @return
      */
     static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
+
+    /**
+     * Quocient encomendas entregues / total
+     * @return quocientes entre as entregues e total
+     */
+    double getQuocient();
 };
 
 class Cenario2 {
@@ -134,6 +141,12 @@ public:
      * @return
      */
     bool porEntregar();
+
+    /**
+     * Quocient encomendas entregues / total
+     * @return quocientes entre as entregues e total
+     */
+    double getQuocient();
 };
 
 class Cenario3 {

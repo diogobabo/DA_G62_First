@@ -111,3 +111,14 @@ void Cenario2::prepareSolve() {
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     return ENCOMENDA_VALOR();
 }
+
+double Cenario2::getQuocient() {
+    int counter = 0;
+    for(auto x : encomendas) {
+        if(x->getEstado()) {
+            counter++;
+        }
+    }
+    return(counter / (double) encomendas.size());
+}
+
