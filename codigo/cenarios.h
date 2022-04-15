@@ -7,6 +7,7 @@
 #include "encomenda.h"
 #include "carrinha.h"
 #include "empresa.h"
+#include <map>
 
 
 struct ENCOMENDA_VALOR{
@@ -137,6 +138,7 @@ public:
 class Cenario3 {
 private:
     std::vector<ExpressoEncomenda *> encomendasExp;
+    map<int,int> quociente;
 public:
 
     /**
