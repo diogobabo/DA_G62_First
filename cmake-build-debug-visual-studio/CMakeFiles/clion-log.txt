@@ -1,4 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2020.3.3/bin/ninja/win/ninja.exe" -G Ninja C:\Users\DiogoBabo\Desktop\DA_G62_First
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/DiogoBabo/Desktop/DA_G62_First/cmake-build-debug-visual-studio
