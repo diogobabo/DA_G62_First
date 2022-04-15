@@ -115,7 +115,7 @@ void Cenario2::prepareSolve() {
 
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     vector<Encomenda *> e;
-    for(int v;v<encomendas.size();v++){
+    for(int v = 0;v<encomendas.size();v++){
         if(!encomendas[v]->getEstado()){
             e.push_back(encomendas[v]);
         }
