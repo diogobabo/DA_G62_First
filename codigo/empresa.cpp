@@ -119,3 +119,5 @@ void Empresa::atualizaCarrinhas() {
         carrinha->setVol(vol);
     }
 }
+
+
