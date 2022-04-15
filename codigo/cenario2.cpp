@@ -169,3 +169,14 @@ ENCOMENDA_VALOR Cenario2::solveKnapsackBabadonsei(Carrinha &c) {
     }
     return solveKnapsackBabado(dp,c,c.getVolMax(),c.getPesoMax(),n,1);
 }
+
+double Cenario2::getQuocient() {
+    int counter = 0;
+    for(auto x : encomendas) {
+        if(x->getEstado()) {
+            counter++;
+        }
+    }
+    return(counter / (double) encomendas.size());
+}
+

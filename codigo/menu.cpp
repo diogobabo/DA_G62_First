@@ -55,6 +55,9 @@ int Menu::extras() {
 int Menu::Cenario1() {
     class Cenario1 c1(e);
     cout << c1.tentativa() << endl;
+    cout << fixed;
+    cout << setprecision(2);
+    cout << "Percentagem encomendas entregues: " << (c1.getQuocient() * 100) << "%" << std::endl;
     return 0;
 }
 
