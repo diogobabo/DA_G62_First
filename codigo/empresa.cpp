@@ -120,7 +120,8 @@ void Empresa::atualizaCarrinhas() {
         vector<Encomenda*> *e=carrinha->getEncomendas();
         for(auto itr=e->begin(); itr!=e->end(); itr++) {
             if((*itr)->getEstado()) {
-                e->erase(itr--);
+                itr = e->erase(itr);
+                itr--;
                 continue;
             }
             peso+=(*itr)->getPeso();
