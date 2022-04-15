@@ -37,13 +37,13 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
     for (int i = 0; i < n; i++) {
         for(int v = 0; v < c.getVolMax();v++){
             dp[i][v][0].profit = 0;
-            /**ENCOMENDA_VALOR p(dp.getPos(i, v, 0));
+            /*ENCOMENDA_VALOR p(dp.getPos(i, v, 0));
             p.profit=0;
             dp.setPos(i, v, 0, p);*/
         }
         for(int w = 0; w < c.getPesoMax(); w++){
             dp[i][0][w].profit = 0;
-            /**ENCOMENDA_VALOR p(dp.getPos(i, w, 0));
+            /*ENCOMENDA_VALOR p(dp.getPos(i, w, 0));
             p.profit=0;
             dp.setPos(i, w, 0, p);*/
         }
