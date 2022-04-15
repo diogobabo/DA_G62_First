@@ -39,9 +39,11 @@ int Menu::start() {
             default:
                 break;
         }
+
         e.atualizaCarrinhas();
         string f = e.getFileEncomendas();
         e.novoDia(&f);
+
     }
     return 0;
 }
