@@ -127,3 +127,14 @@ ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     }
     return solveKnapsack(c,e);
 }
+
+double Cenario2::getQuocient() {
+    int counter = 0;
+    for(auto x : encomendas) {
+        if(x->getEstado()) {
+            counter++;
+        }
+    }
+    return(counter / (double) encomendas.size());
+}
+

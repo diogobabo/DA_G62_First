@@ -1,4 +1,20 @@
 var searchData=
 [
-  ['_7eencomenda_32',['~Encomenda',['../classEncomenda.html#a8bbc33a2746cec70ddeeb1e2c9eadf8a',1,'Encomenda']]]
+  ['setbalanco_44',['setBalanco',['../classCarrinha.html#a05c0ac1495f14f7772b1836039d6d368',1,'Carrinha']]],
+  ['setencomendas_45',['setEncomendas',['../classCarrinha.html#a878d378d4ca96e5c8bfaa7705f5281c3',1,'Carrinha']]],
+  ['setestado_46',['setEstado',['../classEncomenda.html#aaf6b3911c407a0278b9023d8aaf83d35',1,'Encomenda']]],
+  ['setpeso_47',['setPeso',['../classCarrinha.html#a28b16952b93dadc8dbb03f15487d179a',1,'Carrinha']]],
+  ['setprioridade_48',['setPrioridade',['../classEncomenda.html#a0b3526c9bcca9c6a306efcff02c61bb4',1,'Encomenda']]],
+  ['setvardecisiva_49',['setVarDecisiva',['../classCarrinha.html#a52afb66446feb3eedc804049d59f9557',1,'Carrinha::setVarDecisiva()'],['../classEncomenda.html#a61423ad118d92966cd17d4f859506e62',1,'Encomenda::setVarDecisiva()']]],
+  ['setvol_50',['setVol',['../classCarrinha.html#adfcc1e544110c1027cf18e46e48d4db6',1,'Carrinha']]],
+  ['solveknapsack_51',['solveKnapsack',['../classCenario1.html#a315f14f0c68ed14158bd99a5926ff55d',1,'Cenario1']]],
+  ['sortbyduracao_52',['sortByDuracao',['../classCenario3.html#a6d69e9f02940d5ecffff9f6b53f4274e',1,'Cenario3']]],
+  ['sortbypeso_53',['sortByPeso',['../classCenario1.html#a1129824eae63ee7f358e9e2ad2cbe041',1,'Cenario1']]],
+  ['sortbyrecompensa_54',['sortByRecompensa',['../classCenario2.html#a93adac23b2dc6ef3f19c0abd91aa81c2',1,'Cenario2']]],
+  ['sortbyvarcarrinha_55',['sortByVarCarrinha',['../classCenario1.html#ade083d04093e58c051cc1595a95d4842',1,'Cenario1::sortByVarCarrinha()'],['../classCenario2.html#a3ab95b70743378f9060120c0889b905a',1,'Cenario2::sortByVarCarrinha()']]],
+  ['sortbyvarencomenda_56',['sortByVarEncomenda',['../classCenario1.html#ab08b53d3be303dac5139a1ddb45d5eba',1,'Cenario1']]],
+  ['sortbyvarencomendarecompensa_57',['sortByVarEncomendaRecompensa',['../classCenario2.html#adf421bae2b024d3c35995c122f2ee565',1,'Cenario2']]],
+  ['sortbyvolume_58',['sortByVolume',['../classCenario1.html#a675d9374e9af115f4c961521b59779bd',1,'Cenario1']]],
+  ['sortstruct_59',['sortStruct',['../classCenario2.html#a276f9a1b25c87ee15c9011c031fdae96',1,'Cenario2']]],
+  ['start_60',['start',['../classMenu.html#a2cdd781eb269cbd85c253f2ff710a5a3',1,'Menu']]]
 ];
