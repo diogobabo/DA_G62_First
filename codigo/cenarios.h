@@ -179,7 +179,11 @@ public:
 class Cenario4 {
 private:
 public:
-
+    /**
+     * Constructor Montar argumentos necessarios para o funcionamento do cenario 4
+     * @param e Empresa a ser estudada
+     */
+    explicit Cenario4(const Empresa& e);
 };
 
 #endif //DA_T6_G62_CENARIOS_H
