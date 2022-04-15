@@ -63,7 +63,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
                     profit1 = dp[i - 1][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
                     //profit1 = dp.getPos(i-1, v - encomendas[i]->getVol(),w - encomendas[i]->getPeso());
                     profit1.profit = (int) (profit1.profit + encomendas[i]->getRecompensa()) ;
-                    profit1.CarrinhaEncomneda.push_back(encomendas[i]);
+                    profit1.CarrinhaEncomenda.push_back(encomendas[i]);
                 }
 
                 dp[i][v][w] = max(profit1, dp[i - 1][v][w],sortStruct);
@@ -84,7 +84,7 @@ int Cenario2::solveMaxLucro() {
         if(solved.profit == -5){
             break;
         }
-        for(auto & n : solved.CarrinhaEncomneda){
+        for(auto & n : solved.CarrinhaEncomenda){
             carrinha->adicionarEncomenda(n);
         }
     }

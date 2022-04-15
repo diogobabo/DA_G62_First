@@ -13,7 +13,7 @@
 
 struct ENCOMENDA_VALOR{
     int profit = -1;
-    std::vector<Encomenda *> CarrinhaEncomneda;
+    std::vector<Encomenda *> CarrinhaEncomenda;
 };
 
     /**
