@@ -130,6 +130,12 @@ public:
      * @param encomendas encomendas atuais da carrinha
      */
     void setEncomendas(std::vector<Encomenda *> *encomendas_);
+
+    /**
+     * Retorna variavel recompensa/var_decisiva
+     * @return Recompensa por Unidade
+     */
+    double getCustoUnidade() const {return custo/var_decisiva;};
 };
 
 #endif //DA_T6_G62_CARRINHA_H
