@@ -104,6 +104,8 @@ public:
     ENCOMENDA_VALOR solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas);
     void prepareSolve();
     ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
+    int knapsackRec(int W, int V, int wt[], int vt[], int val[], int i, int*** dp);
+    ENCOMENDA_VALOR knapsack(Carrinha &c, vector<Encomenda*> encomendas);
     /**
      * Função para ordenar por recompensa
      * @param e1 encomenda 1
