@@ -67,12 +67,11 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomend
 
                     if (eVol<=v && ePes<=w) {
                         profit1 = dp[(i - 1)%2][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
-                        //profit1 = dp.getPos(i-1, v - encomendas[i]->getVol(),w - encomendas[i]->getPeso());
                         profit1.profit = (int) (profit1.profit + encomendas[i]->getRecompensa()) ;
                         profit1.CarrinhaEncomenda.push_back(encomendas[i]);
+                        dp[i%2][v][w] = max(profit1, dp[(i - 1)%2][v][w],sortStruct);
                     }
-
-                    dp[i%2][v][w] = max(profit1, dp[(i - 1)%2][v][w],sortStruct);
+                    else dp[i%2][v][w] = dp[(i - 1)%2][v][w];
                     //dp.setPos(i, v, w, max(profit1, dp.getPos(i-1, v, w),sortStruct));
             }
         }
