@@ -28,33 +28,20 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
         return ev;
     }
 
-
-    if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 || encomendas.empty()) {
-        return ev;
-    }
     int n = (int) encomendas.size();
-    /*
-    for(int i = 0; i < n; i++){
-        if(encomendas[i]->getEstado()) {
-            continue;
-        }
-        ev.CarrinhaEncomenda.push_back(encomendas[i]);
-    }
-     */
 
-
-    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,
+    // dp[index][volume][peso]
+    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,
+                                               vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,
                                                                                   vector<ENCOMENDA_VALOR>(
                                                                                           c.getPesoMax() + 1,
-                                                                                          ev)));// dp[index][volume][peso]
-    //dpmatrix dp(n, c.getVolMax(), c.getPesoMax());
-
+                                                                                          ev)));
 
     ENCOMENDA_VALOR profit1;
     int cGetVol = (int) c.getVolMax(), cGetPeso = (int) c.getPesoMax();
 
     for (int i = 0; i <= n; i++) {
-        int eVol, ePes, eRec;
+        int eVol, ePes, eRec; // vars da encomenda a ser iterada
         if (i != 0) {
             eVol = (int) encomendas[i - 1]->getVol(), ePes = (int) encomendas[i -
                                                                               1]->getPeso(), eRec = (int) encomendas[i -
@@ -67,31 +54,21 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
                     continue;
                 }
                 if (encomendas[i - 1]->getEstado()) {
-                    continue;
+                    continue; // entregue
                 }
-                if (eVol <= v && ePes <= w) {
+                if (eVol <= v && ePes <= w) { // encomenda cabe na celula da tabela
                     if (eRec + dp[(i - 1) % 2][v - eVol][w - ePes].profit > dp[(i - 1) % 2][v][w].profit) {
-                        dp[i%2][v][w]=dp[(i-1)%2][v-eVol][w-ePes];
+                        dp[i % 2][v][w] = dp[(i - 1) % 2][v - eVol][w - ePes];
                         dp[i % 2][v][w].profit += eRec;
                         dp[i % 2][v][w].CarrinhaEncomenda.push_back(encomendas[i - 1]);
                     } else {
                         dp[i % 2][v][w] = dp[(i - 1) % 2][v][w];
                     }
-                } else dp[i % 2][v][w] = dp[(i - 1) % 2][v][w];
+                } else dp[i % 2][v][w] = dp[(i - 1) % 2][v][w]; // encomenda a ser iterada nao cabe, dp igual a linha anterior
             }
         }
     }
     return dp[n % 2][cGetVol][cGetPeso];
-/*
-    ev.profit = dp[n][cGetVol][cGetPeso];
-    int last=dp[n][c.getVolMax()][c.getPesoMax()];
-    int nr=n, vol=(int)c.getVolMax(), peso=(int)c.getPesoMax();
-    while(last!=0){
-        nr-=1;
-        if(dp[nr][vol][peso]==last) continue;
-        ev.CarrinhaEncomenda.push_back(encomendas.at(nr+1));
-        last=dp[nr][vol - encomendas.at(nr)->getVol()][peso - encomendas.at(nr)->getPeso()];
-    }*/
 }
 
 int Cenario2::solveMaxLucro() {
