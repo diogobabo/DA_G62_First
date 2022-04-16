@@ -85,6 +85,7 @@ int Cenario2::solveMaxLucro() {
             break;
         }
         else if(solved.profit-carrinha->getCusto()<0){
+            cout << "unprofit, profit: " << solved.profit << ", custo: " << carrinha->getCusto() << endl;
             continue;
         }
         for (auto &n: solved.CarrinhaEncomenda) {
@@ -92,8 +93,9 @@ int Cenario2::solveMaxLucro() {
         }
 
         profit += carrinha->getBalanco();
-        cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size() << ", balanco: " << carrinha->getBalanco() << " " <<  solved.profit-carrinha->getCusto() << endl;
+        cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size() << ", balanco: " << carrinha->getBalanco() << endl;
     }
+    
     return profit;
 }
 
