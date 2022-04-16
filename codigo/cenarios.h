@@ -12,7 +12,7 @@
 #include "empresa.h"
 
 struct ENCOMENDA_VALOR{
-    int profit = -1;
+    long profit = -1;
     std::vector<Encomenda *> CarrinhaEncomenda;
 };
 

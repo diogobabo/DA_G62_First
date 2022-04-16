@@ -77,17 +77,23 @@ int Cenario2::solveMaxLucro() {
     prepareSolve();
 
     int profit = 0;
+    int nr_carrinhas = 0, iteracoes = 0;
     for (auto &carrinha: carrinhas) {
+        cout << ++iteracoes << endl;
         ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha);
-        if (solved.profit - carrinha->getCusto() < 0) {
+        if (solved.profit==-5) {
             break;
+        }
+        else if(solved.profit-carrinha->getCusto()<0){
+            continue;
         }
         for (auto &n: solved.CarrinhaEncomenda) {
             carrinha->adicionarEncomenda(n);
         }
-        if (carrinha->getBalanco() > 0) profit += carrinha->getBalanco();
-    }
 
+        profit += carrinha->getBalanco();
+        cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size() << ", balanco: " << carrinha->getBalanco() << " " <<  solved.profit-carrinha->getCusto() << endl;
+    }
     return profit;
 }
 
@@ -107,9 +113,10 @@ ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     }
     if (e.empty()) {
         ENCOMENDA_VALOR v;
+        v.profit=-5;
         return v;
     }
-    cout << e.size() << endl;
+    cout << e.size() << " encomendas por entregar\n";
     return solveKnapsack(c, e);
 }
 
