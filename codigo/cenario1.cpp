@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Cenario1::Cenario1(const Empresa& e) {
+Cenario1::Cenario1(Empresa e) {
     this->encomendas = e.getEncomendas();
     this->carrinhas = e.getCarrinhas();
 }
