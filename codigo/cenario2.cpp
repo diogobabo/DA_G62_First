@@ -21,6 +21,11 @@ bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) 
     return e1.profit < e2.profit;
 }
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas) {
+    static int count = 0;
+    count++;
+    if(count==23){
+        cout << "here";
+    }
     ENCOMENDA_VALOR ev;
     if(!c.getEncomendas()->empty()){
         return ev;
@@ -115,6 +120,7 @@ ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
         v.profit = -5;
         return v;
     }
+    cout << e.size() << endl;
     return solveKnapsack(c,e);
 }
 
