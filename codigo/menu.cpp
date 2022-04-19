@@ -28,7 +28,7 @@ int Menu::start() {
                 break;
             case 2:
                 Cenario2();
-                e.removerEncomendas();
+                //e.removerEncomendas();
                 break;
             case 3:
                 Cenario3();
@@ -40,7 +40,6 @@ int Menu::start() {
                 break;
         }
 
-        e.atualizaCarrinhas();
         string f = e.getFileEncomendas();
         e.novoDia(&f);
 

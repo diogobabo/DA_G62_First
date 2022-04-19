@@ -5,19 +5,17 @@
 \item 
 \mbox{\hyperlink{classCenario2_a3001b53934b40a1eb19ab266fca52032}{Cenario2}} (const \mbox{\hyperlink{classEmpresa}{Empresa}} \&e)
 \item 
-\mbox{\Hypertarget{classCenario2_a7a888899e0095728d6fe0544fffd21ed}\label{classCenario2_a7a888899e0095728d6fe0544fffd21ed}} 
-int {\bfseries solve\+Max\+Lucro} ()
+int \mbox{\hyperlink{classCenario2_a7a888899e0095728d6fe0544fffd21ed}{solve\+Max\+Lucro}} ()
 \item 
-\mbox{\Hypertarget{classCenario2_ab4a853e484b214b4586761ef1a6756d9}\label{classCenario2_ab4a853e484b214b4586761ef1a6756d9}} 
-\mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} {\bfseries solve\+Knapsack} (\mbox{\hyperlink{classCarrinha}{Carrinha}} \&c)
+\mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} \mbox{\hyperlink{classCenario2_a5d76b9faa47a1801b41902d8de4e7a30}{solve\+Knapsack}} (\mbox{\hyperlink{classCarrinha}{Carrinha}} \&c, vector$<$ \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$ $>$ encomendas)
 \item 
-\mbox{\Hypertarget{classCenario2_a6c0a38366359abf6bc0fb410fd69e299}\label{classCenario2_a6c0a38366359abf6bc0fb410fd69e299}} 
-void {\bfseries prepare\+Solve} ()
+void \mbox{\hyperlink{classCenario2_a6c0a38366359abf6bc0fb410fd69e299}{prepare\+Solve}} ()
 \item 
-\mbox{\Hypertarget{classCenario2_ad8bdc8d161c68e5de7f70710039016a7}\label{classCenario2_ad8bdc8d161c68e5de7f70710039016a7}} 
-\mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} {\bfseries prepare\+Knapsack} (\mbox{\hyperlink{classCarrinha}{Carrinha}} \&c)
+\mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} \mbox{\hyperlink{classCenario2_ad8bdc8d161c68e5de7f70710039016a7}{prepare\+Knapsack}} (\mbox{\hyperlink{classCarrinha}{Carrinha}} \&c)
 \item 
 bool \mbox{\hyperlink{classCenario2_aba50f14cf1f3fe5b9364541f248d1cc7}{por\+Entregar}} ()
+\item 
+double \mbox{\hyperlink{classCenario2_a12b8723a6e83025b67b559bdb9110867}{get\+Quocient}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -47,6 +45,15 @@ Constructor Montar argumentos necessarios para o funcionamento do cenario 2
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCenario2_a12b8723a6e83025b67b559bdb9110867}\label{classCenario2_a12b8723a6e83025b67b559bdb9110867}} 
+\index{Cenario2@{Cenario2}!getQuocient@{getQuocient}}
+\index{getQuocient@{getQuocient}!Cenario2@{Cenario2}}
+\doxysubsubsection{\texorpdfstring{getQuocient()}{getQuocient()}}
+{\footnotesize\ttfamily double Cenario2\+::get\+Quocient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Quocient encomendas entregues / total \begin{DoxyReturn}{Returns}
+quocientes entre as entregues e total 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCenario2_aba50f14cf1f3fe5b9364541f248d1cc7}\label{classCenario2_aba50f14cf1f3fe5b9364541f248d1cc7}} 
 \index{Cenario2@{Cenario2}!porEntregar@{porEntregar}}
 \index{porEntregar@{porEntregar}!Cenario2@{Cenario2}}
@@ -56,13 +63,58 @@ Constructor Montar argumentos necessarios para o funcionamento do cenario 2
 Encomendas por entregar \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classCenario2_ad8bdc8d161c68e5de7f70710039016a7}\label{classCenario2_ad8bdc8d161c68e5de7f70710039016a7}} 
+\index{Cenario2@{Cenario2}!prepareKnapsack@{prepareKnapsack}}
+\index{prepareKnapsack@{prepareKnapsack}!Cenario2@{Cenario2}}
+\doxysubsubsection{\texorpdfstring{prepareKnapsack()}{prepareKnapsack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} Cenario2\+::prepare\+Knapsack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCarrinha}{Carrinha}} \&}]{c }\end{DoxyParamCaption})}
+
+Preparar conjunto de entregas a ser distribuidas 
+\begin{DoxyParams}{Parameters}
+{\em c} & carrinha a ser preenchida \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estrutura com encomendas e profit distribuido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCenario2_a6c0a38366359abf6bc0fb410fd69e299}\label{classCenario2_a6c0a38366359abf6bc0fb410fd69e299}} 
+\index{Cenario2@{Cenario2}!prepareSolve@{prepareSolve}}
+\index{prepareSolve@{prepareSolve}!Cenario2@{Cenario2}}
+\doxysubsubsection{\texorpdfstring{prepareSolve()}{prepareSolve()}}
+{\footnotesize\ttfamily void Cenario2\+::prepare\+Solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Preparar dataset, ordenar por custo ou recompensa por unidade de medida \mbox{\Hypertarget{classCenario2_a5d76b9faa47a1801b41902d8de4e7a30}\label{classCenario2_a5d76b9faa47a1801b41902d8de4e7a30}} 
+\index{Cenario2@{Cenario2}!solveKnapsack@{solveKnapsack}}
+\index{solveKnapsack@{solveKnapsack}!Cenario2@{Cenario2}}
+\doxysubsubsection{\texorpdfstring{solveKnapsack()}{solveKnapsack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} Cenario2\+::solve\+Knapsack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCarrinha}{Carrinha}} \&}]{c,  }\item[{vector$<$ \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$ $>$}]{encomendas }\end{DoxyParamCaption})}
+
+Resolve problema atraves de knapsack com programção dinamica 
+\begin{DoxyParams}{Parameters}
+{\em c} & carrinha a ser preenchida \\
+\hline
+{\em encomendas} & encomendas a distribuir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estrutura com encomendas e profit distribuido 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCenario2_a7a888899e0095728d6fe0544fffd21ed}\label{classCenario2_a7a888899e0095728d6fe0544fffd21ed}} 
+\index{Cenario2@{Cenario2}!solveMaxLucro@{solveMaxLucro}}
+\index{solveMaxLucro@{solveMaxLucro}!Cenario2@{Cenario2}}
+\doxysubsubsection{\texorpdfstring{solveMaxLucro()}{solveMaxLucro()}}
+{\footnotesize\ttfamily int Cenario2\+::solve\+Max\+Lucro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Processo de resoluçao da distribuicao das encomendas \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classCenario2_a93adac23b2dc6ef3f19c0abd91aa81c2}\label{classCenario2_a93adac23b2dc6ef3f19c0abd91aa81c2}} 
 \index{Cenario2@{Cenario2}!sortByRecompensa@{sortByRecompensa}}
 \index{sortByRecompensa@{sortByRecompensa}!Cenario2@{Cenario2}}
 \doxysubsubsection{\texorpdfstring{sortByRecompensa()}{sortByRecompensa()}}
 {\footnotesize\ttfamily bool Cenario2\+::sort\+By\+Recompensa (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Função para ordenar por recompensa 
+Ordenar por recompensa 
 \begin{DoxyParams}{Parameters}
 {\em e1} & encomenda 1 \\
 \hline

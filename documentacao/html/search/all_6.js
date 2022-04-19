@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['menu_37',['Menu',['../classMenu.html',1,'Menu'],['../classMenu.html#a631769f4a4eec75be6493b9aba37287d',1,'Menu::Menu()']]]
+  ['lercarrinhas_38',['lerCarrinhas',['../classEmpresa.html#a29db4d44722bf849e380984eec7c782b',1,'Empresa']]],
+  ['lerencomendas_39',['lerEncomendas',['../classEmpresa.html#afe351aafeca6e62e38e3d21c624a8e04',1,'Empresa']]]
 ];
