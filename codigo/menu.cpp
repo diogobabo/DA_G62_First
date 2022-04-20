@@ -17,25 +17,27 @@ int Menu::start() {
     cout << "2) Cenario 2\n";
     cout << "3) Cenario 3\n";
     cout << "4) Extras\n";
-    cout << "Insert option (0 to exit):\n";
+    cout << "5) Reset encomendas\n";
 
     while(option) {
+        cout << "\nInsert option (0 to exit):\n";
         cin >> option;
         switch (option) {
             case 1:
                 Cenario1();
-                e.removerEncomendas();
                 break;
             case 2:
                 Cenario2();
-                //e.removerEncomendas();
                 break;
             case 3:
                 Cenario3();
-                e.removerEncomendas();
                 break;
             case 4:
                 extras();
+                break;
+            case 5:
+                e.removerEncomendas();
+                break;
             default:
                 break;
         }
