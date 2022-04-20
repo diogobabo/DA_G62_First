@@ -86,9 +86,9 @@ int Cenario2::solveMaxLucro() {
         ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha); // knapsack
 
         int peso=0, vol=0;
-        for(int i=0; i<solved.CarrinhaEncomenda.size(); i++) {
-            peso+=solved.CarrinhaEncomenda[i]->getPeso();
-            vol+=solved.CarrinhaEncomenda[i]->getVol();
+        for(auto & i : solved.CarrinhaEncomenda) {
+            peso+=(int) i->getPeso();
+            vol+=(int) i->getVol();
         }
 
         if (solved.profit == -5 || unprofit == 3) { // nao existem mais encomendas por entregar
