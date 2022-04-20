@@ -1,12 +1,12 @@
 #include "cenarios.h"
 //#include "dpmatrix.h"
 
-Cenario2::Cenario2(const Empresa& e) {
+Cenario2::Cenario2(const Empresa &e) {
     this->encomendas = e.getEncomendas();
     this->carrinhas = e.getCarrinhas();
 }
 
-bool Cenario2::sortByRecompensa(const Encomenda* e1, const Encomenda* e2) {
+bool Cenario2::sortByRecompensa(const Encomenda *e1, const Encomenda *e2) {
     return e1->getRecompensa() > e2->getRecompensa();
 }
 
@@ -17,132 +17,133 @@ bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 bool Cenario2::sortByVarEncomendaRecompensa(const Encomenda *e1, const Encomenda *e2) {
     return e1->getRecompensaUnidade() < e2->getRecompensaUnidade();
 }
+
 bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) {
     return e1.profit < e2.profit;
 }
-ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas) {
+
+ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomendas) {
     ENCOMENDA_VALOR ev;
-    if(!c.getEncomendas()->empty()){
+    if (!c.getEncomendas()->empty()) {
         return ev;
     }
 
-    if (c.getPesoMax() <= 0 || c.getVolMax() <= 0 ||encomendas.empty()) {
-        return ev;
-    }
-    int n = (int)encomendas.size();
-    /*
-    for(int i = 0; i < n; i++){
-        if(encomendas[i]->getEstado()) {
-            continue;
-        }
-        ev.CarrinhaEncomenda.push_back(encomendas[i]);
-    }
-     */
+    int n = (int) encomendas.size();
 
-
-    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2, vector<vector<ENCOMENDA_VALOR>>(c.getVolMax(), vector<ENCOMENDA_VALOR>(c.getPesoMax(), ev)));// dp[index][volume][peso]
-    //dpmatrix dp(n, c.getVolMax(), c.getPesoMax());
-
+    // dp[index][volume][peso]
+    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,
+                                               vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,
+                                                                               vector<ENCOMENDA_VALOR>(
+                                                                                       c.getPesoMax() + 1,
+                                                                                       ev)));
 
     ENCOMENDA_VALOR profit1;
-    int cGetVol = (int) c.getVolMax(),cGetPeso = (int)c.getPesoMax();
+    int cGetVol = (int) c.getVolMax(), cGetPeso = (int) c.getPesoMax();
 
-    for (int i = 0; i < 2; i++) {
-        for(int v = 0; v < cGetVol;v++){
-            dp[i][v][0].profit = 0;
+    for (int i = 0; i <= n; i++) {
+        int eVol, ePes, eRec; // vars da encomenda a ser iterada
+        if (i != 0) {
+            if (encomendas[i - 1]->getEstado()) { // entregue
+                continue;
+            }
+            eVol = (int) encomendas[i - 1]->getVol(), ePes = (int) encomendas[i -
+                                                                              1]->getPeso(), eRec = (int) encomendas[i -
+                                                                                                                     1]->getRecompensa();
         }
-        for(int w = 0; w< cGetPeso;w++){
-            dp[i][0][w].profit = 0;
-        }
-    }
-    for (int i = 1; i < n; i++) {
-        if(encomendas[i]->getEstado()) {
-            continue;
-        }
-        int eVol = (int) encomendas[i]->getVol(),ePes = (int)encomendas[i]->getPeso();
-
-        for (int v = 0; v < cGetVol;v++) {
-                for(int w = 0; w < cGetPeso; w++){
-                    profit1.profit = 0;
-                    if (eVol<=v && ePes<=w) {
-                        profit1 = dp[(i - 1)%2][v - encomendas[i]->getVol()][w - encomendas[i]->getPeso()];
-                        profit1.profit = (int) (profit1.profit + encomendas[i]->getRecompensa()) ;
-                        profit1.CarrinhaEncomenda.push_back(encomendas[i]);
-                        dp[i%2][v][w] = max(profit1, dp[(i - 1)%2][v][w],sortStruct);
+        // preencher tabela dynamic programming
+        for (int v = 0; v <= cGetVol; v++) {
+            for (int w = 0; w <= cGetPeso; w++) {
+                if (i == 0 || v == 0 || w == 0) {
+                    dp[i % 2][v][w].profit = 0;
+                    continue;
+                }
+                if (eVol <= v && ePes <= w) { // encomenda cabe na celula da tabela
+                    // adicionar encomenda atualmente a ser iterada
+                    if (eRec + dp[(i - 1) % 2][v - eVol][w - ePes].profit > dp[(i - 1) % 2][v][w].profit) {
+                        dp[i % 2][v][w] = dp[(i - 1) % 2][v - eVol][w - ePes];
+                        dp[i % 2][v][w].profit += eRec;
+                        dp[i % 2][v][w].CarrinhaEncomenda.push_back(encomendas[i - 1]);
+                    } else { // nao compensa adicionar encomenda atualmente a ser iterada
+                        dp[i % 2][v][w] = dp[(i - 1) % 2][v][w];
                     }
-                    dp[i%2][v][w] = max(profit1, dp[(i - 1)%2][v][w],sortStruct);
-                    //dp.setPos(i, v, w, max(profit1, dp.getPos(i-1, v, w),sortStruct));
+                } else // encomenda a ser iterada nao cabe, dp igual a linha anterior
+                    dp[i % 2][v][w] = dp[(i - 1) %
+                                         2][v][w];
             }
         }
-
     }
-    ev = dp[(n -1)%2][c.getVolMax()-1][c.getPesoMax()-1];
-    return ev;
-    //return dp.getPos(n-1, c.getVolMax()-1,c.getPesoMax()-1);
+
+    return dp[n % 2][cGetVol][cGetPeso];
 }
 
 int Cenario2::solveMaxLucro() {
-    prepareSolve();
+    prepareSolve(); // preparação dos datasets
 
-    for(auto & carrinha : carrinhas){
-        ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha);
-        if(solved.profit == -5){
-            break;
+    int profit = 0, unprofit = 0;
+    int nr_carrinhas = 0, iteracoes = 0;
+    for (auto &carrinha: carrinhas) {
+        cout << ++iteracoes << endl;
+        ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha); // knapsack
+
+        int peso=0, vol=0;
+        for(int i=0; i<solved.CarrinhaEncomenda.size(); i++) {
+            peso+=solved.CarrinhaEncomenda[i]->getPeso();
+            vol+=solved.CarrinhaEncomenda[i]->getVol();
         }
-        for(auto & n : solved.CarrinhaEncomenda){
+
+        if (solved.profit == -5 || unprofit == 3) { // nao existem mais encomendas por entregar
+            break;
+        } else if (solved.profit - carrinha->getCusto() < 0) { // nao existe profit para configuracao
+            cout << "unprofit, profit: " << solved.profit << ", custo: " << carrinha->getCusto() << endl;
+            cout << "encomendas: peso= " << peso << " vol= " << vol << " , carrinhas dim: peso= " << carrinha->getPesoMax() << " vol= " << carrinha->getVolMax() << endl;
+            unprofit++;
+            continue;
+        }
+        unprofit=0; // reset unprofit combo
+        for (auto &n: solved.CarrinhaEncomenda) {
             carrinha->adicionarEncomenda(n);
         }
+
+        profit += carrinha->getBalanco();
+        cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size()
+             << ", balanco: " << carrinha->getBalanco() << endl;
+        cout << "encomendas: peso= " << peso << " vol= " << vol << " , carrinhas dim: peso= " << carrinha->getPesoMax() << " vol= " << carrinha->getVolMax() << endl;
     }
 
-
-    int profit = 0;
-    for(auto & carrinha : carrinhas){
-        if(carrinha->getBalanco()>0){
-            profit +=carrinha->getBalanco();
-        }else{
-            auto v = carrinha->getEncomendas();
-            for(auto & n : *v){
-                carrinha->removerEncomenda(n);
-            }
-        }
-    }
     return profit;
 }
 
 void Cenario2::prepareSolve() {
-
-    sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
+    sort(carrinhas.begin(), carrinhas.end(), sortByVarCarrinha);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
-
-    auto*e = new Encomenda(0,0,1);
-    encomendas.push_back(e);
 
     std::reverse(encomendas.begin(), encomendas.end());
 }
 
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
     vector<Encomenda *> e;
-    for(auto & encomenda : encomendas){
-        if(!encomenda->getEstado()){
-            e.push_back(encomenda);
+    for (auto &encomenda: encomendas) {
+        if (!encomenda->getEstado()) {
+            e.push_back(encomenda); // encomendas por entregar
         }
     }
-    if(e.size()<=1){
+    if (e.empty()) { // tudo entregue
         ENCOMENDA_VALOR v;
         v.profit = -5;
         return v;
     }
-    cout<< e.size()<<endl;
-    return solveKnapsack(c,e);
+
+    cout << e.size() << " encomendas por entregar\n";
+    return solveKnapsack(c, e);
 }
 
 double Cenario2::getQuocient() {
     int counter = 0;
-    for(auto x : encomendas) {
-        if(x->getEstado()) {
+    for (auto x: encomendas) {
+        if (x->getEstado()) {
             counter++;
         }
     }
-    return(counter / (double) encomendas.size());
+    return (counter / (double) encomendas.size());
 }
 

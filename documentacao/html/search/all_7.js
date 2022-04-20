@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['normalencomenda_38',['NormalEncomenda',['../classNormalEncomenda.html',1,'NormalEncomenda'],['../classNormalEncomenda.html#a2918e1d1889549a04935e33e2ca707aa',1,'NormalEncomenda::NormalEncomenda()']]],
-  ['novodia_39',['novoDia',['../classEmpresa.html#ab9a8d5bc866de0f9a0eac165268f9843',1,'Empresa']]]
+  ['menu_40',['Menu',['../classMenu.html',1,'Menu'],['../classMenu.html#a631769f4a4eec75be6493b9aba37287d',1,'Menu::Menu()']]]
 ];

@@ -1,9 +1,7 @@
 #include "carrinha.h"
 
 
-Carrinha::Carrinha(unsigned int volMax, unsigned int pesoMax, unsigned int custo): volMax(volMax), pesoMax(pesoMax), custo(custo)
-{
-}
+Carrinha::Carrinha(unsigned int volMax, unsigned int pesoMax, unsigned int custo): volMax(volMax), pesoMax(pesoMax), custo(custo) {}
 
 int Carrinha::adicionarEncomenda(Encomenda *encomenda) {
     if(verificaDisponibilidade(encomenda)) {

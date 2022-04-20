@@ -12,7 +12,7 @@
 #include "empresa.h"
 
 struct ENCOMENDA_VALOR{
-    int profit = -1;
+    long profit = -1;
     std::vector<Encomenda *> CarrinhaEncomenda;
 };
 
@@ -76,7 +76,8 @@ public:
     static bool sortByVarEncomenda(const Encomenda* e1, const Encomenda* e2);
 
     /**
-     * Função para ordenar pela variavel decisiva
+     * Função para ordenar pela variavel decisivaunprofit, profit: 13218, custo: 13476
+
      * @param c1 encomenda 1
      * @param c2 encomenda 2
      * @return
@@ -100,12 +101,35 @@ public:
      * @param e Empresa a ser estudada
      */
     explicit Cenario2(const Empresa& e);
-    int solveMaxLucro();
-    ENCOMENDA_VALOR solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas);
-    void prepareSolve();
-    ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
+
     /**
-     * Função para ordenar por recompensa
+     * Processo de resoluçao da distribuicao das encomendas
+     * @return
+     */
+    int solveMaxLucro();
+
+    /**
+     * Resolve problema atraves de knapsack com programção dinamica
+     * @param c carrinha a ser preenchida
+     * @param encomendas encomendas a distribuir
+     * @return estrutura com encomendas e profit distribuido
+     */
+    ENCOMENDA_VALOR solveKnapsack(Carrinha &c,vector<Encomenda *> encomendas);
+
+    /**
+     * Preparar dataset, ordenar por custo ou recompensa por unidade de medida
+     */
+    void prepareSolve();
+
+    /**
+     * Preparar conjunto de entregas a ser distribuidas
+     * @param c carrinha a ser preenchida
+     * @return estrutura com encomendas e profit distribuido
+     */
+    ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
+
+    /**
+     * Ordenar por recompensa
      * @param e1 encomenda 1
      * @param e2 encomenda 2
      * @return
