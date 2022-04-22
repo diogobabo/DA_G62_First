@@ -69,4 +69,3 @@ vector<int> Cenario3::greedyMinAvgTime() {
 vector<double> Cenario3::getQuocientes() {
     return quociente;
 }
-

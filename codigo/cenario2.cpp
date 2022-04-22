@@ -134,4 +134,3 @@ double Cenario2::getQuocient() {
     }
     return (counter / (double) encomendas.size());
 }
-
