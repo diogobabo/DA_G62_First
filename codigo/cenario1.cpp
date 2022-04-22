@@ -28,9 +28,7 @@ int Cenario1::tentativa() {
             if(encomenda->getEstado()) {
                 continue;
             }
-            if (!carrinha->verificaDisponibilidade(encomenda)) {
-                carrinha->adicionarEncomenda(encomenda);
-            }
+            carrinha->adicionarEncomenda(encomenda);
         }
     }
     for(auto x : carrinhas) {
