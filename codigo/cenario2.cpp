@@ -14,7 +14,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
     if (!c.getEncomendas()->empty()) return {};
     int n = (int) encomendas.size();
     // dp[index][volume][peso]
-    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,vector<ENCOMENDA_VALOR>(c.getPesoMax() + 1,ev)));
+    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,vector<ENCOMENDA_VALOR>(c.getPesoMax() + 1,ENCOMENDA_VALOR())));
 
     int cGetVol = (int) c.getVolMax(), cGetPeso = (int) c.getPesoMax();
 
