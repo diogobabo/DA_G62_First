@@ -18,7 +18,7 @@ bool Cenario1::sortByVarEncomenda(const Encomenda *e1, const Encomenda *e2) {
     return e1->getVarDecisiva() > e2->getVarDecisiva();
 }
 
-int Cenario1::tentativa() {
+int Cenario1::firstFit() {
     sort(encomendas.begin(),encomendas.end(), sortByVarEncomenda);
     sort(carrinhas.begin(),carrinhas.end(), sortByVarCarrinha);
     int numEntregues = 0;
@@ -34,11 +34,6 @@ int Cenario1::tentativa() {
     for(auto x : carrinhas) {
         if(!x->getEncomendas()->empty()) {
             numCarrinhas++;
-        }
-    }
-    for(auto x : encomendas) {
-        if(x->getEstado()) {
-            numEntregues++;
         }
     }
     return numCarrinhas;
