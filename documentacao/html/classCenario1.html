@@ -76,21 +76,13 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65174c8f44b4234abde7ee589ccf1e18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a65174c8f44b4234abde7ee589ccf1e18">Cenario1</a> (<a class="el" href="classEmpresa.html">Empresa</a> e)</td></tr>
 <tr class="separator:a65174c8f44b4234abde7ee589ccf1e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a315f14f0c68ed14158bd99a5926ff55d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a315f14f0c68ed14158bd99a5926ff55d">solveKnapsack</a> (const std::vector&lt; int &gt; &amp;profits, const std::vector&lt; int &gt; &amp;weights, int capacity)</td></tr>
-<tr class="separator:a315f14f0c68ed14158bd99a5926ff55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b424317f309f02565b2d699f02d7b70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a9b424317f309f02565b2d699f02d7b70">tentativa</a> ()</td></tr>
 <tr class="separator:a9b424317f309f02565b2d699f02d7b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58ecbdc2abf6615d10be556b37c24343"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a58ecbdc2abf6615d10be556b37c24343">bestFit</a> ()</td></tr>
-<tr class="separator:a58ecbdc2abf6615d10be556b37c24343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2730ca3e3d45a36dce24d924d75e1e12"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a2730ca3e3d45a36dce24d924d75e1e12">getQuocient</a> ()</td></tr>
 <tr class="separator:a2730ca3e3d45a36dce24d924d75e1e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a675d9374e9af115f4c961521b59779bd"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a675d9374e9af115f4c961521b59779bd">sortByVolume</a> (const <a class="el" href="classEncomenda.html">Encomenda</a> *e1, const <a class="el" href="classEncomenda.html">Encomenda</a> *e2)</td></tr>
-<tr class="separator:a675d9374e9af115f4c961521b59779bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1129824eae63ee7f358e9e2ad2cbe041"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#a1129824eae63ee7f358e9e2ad2cbe041">sortByPeso</a> (const <a class="el" href="classEncomenda.html">Encomenda</a> *e1, const <a class="el" href="classEncomenda.html">Encomenda</a> *e2)</td></tr>
-<tr class="separator:a1129824eae63ee7f358e9e2ad2cbe041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08b53d3be303dac5139a1ddb45d5eba"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#ab08b53d3be303dac5139a1ddb45d5eba">sortByVarEncomenda</a> (const <a class="el" href="classEncomenda.html">Encomenda</a> *e1, const <a class="el" href="classEncomenda.html">Encomenda</a> *e2)</td></tr>
 <tr class="separator:ab08b53d3be303dac5139a1ddb45d5eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade083d04093e58c051cc1595a95d4842"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario1.html#ade083d04093e58c051cc1595a95d4842">sortByVarCarrinha</a> (const <a class="el" href="classCarrinha.html">Carrinha</a> *c1, const <a class="el" href="classCarrinha.html">Carrinha</a> *c2)</td></tr>
@@ -132,24 +124,6 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a58ecbdc2abf6615d10be556b37c24343"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58ecbdc2abf6615d10be556b37c24343">&#9670;&nbsp;</a></span>bestFit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Cenario1::bestFit </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Função responsável pelo job scheduling </p><dl class="section return"><dt>Returns</dt><dd>tempo medio </dd></dl>
-
-</div>
-</div>
 <a id="a2730ca3e3d45a36dce24d924d75e1e12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2730ca3e3d45a36dce24d924d75e1e12">&#9670;&nbsp;</a></span>getQuocient()</h2>
 
@@ -165,85 +139,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Quocient encomendas entregues / total </p><dl class="section return"><dt>Returns</dt><dd>quocientes entre as entregues e total </dd></dl>
-
-</div>
-</div>
-<a id="a315f14f0c68ed14158bd99a5926ff55d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a315f14f0c68ed14158bd99a5926ff55d">&#9670;&nbsp;</a></span>solveKnapsack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Cenario1::solveKnapsack </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>profits</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>weights</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>capacity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema </p>
-
-</div>
-</div>
-<a id="a1129824eae63ee7f358e9e2ad2cbe041"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1129824eae63ee7f358e9e2ad2cbe041">&#9670;&nbsp;</a></span>sortByPeso()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Cenario1::sortByPeso </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Função para ordenar por peso </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e1</td><td>encomenda 1 </td></tr>
-    <tr><td class="paramname">e2</td><td>encomenda 2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -326,50 +221,6 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Função para ordenar pela variavel decisiva </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e1</td><td>encomenda 1 </td></tr>
-    <tr><td class="paramname">e2</td><td>encomenda 2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a675d9374e9af115f4c961521b59779bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a675d9374e9af115f4c961521b59779bd">&#9670;&nbsp;</a></span>sortByVolume()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Cenario1::sortByVolume </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Função para ordenar por volume </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">e1</td><td>encomenda 1 </td></tr>
     <tr><td class="paramname">e2</td><td>encomenda 2 </td></tr>

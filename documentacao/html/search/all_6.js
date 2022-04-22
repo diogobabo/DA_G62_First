@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lercarrinhas_38',['lerCarrinhas',['../classEmpresa.html#a29db4d44722bf849e380984eec7c782b',1,'Empresa']]],
-  ['lerencomendas_39',['lerEncomendas',['../classEmpresa.html#afe351aafeca6e62e38e3d21c624a8e04',1,'Empresa']]]
+  ['normalencomenda_36',['NormalEncomenda',['../classNormalEncomenda.html',1,'NormalEncomenda'],['../classNormalEncomenda.html#a2918e1d1889549a04935e33e2ca707aa',1,'NormalEncomenda::NormalEncomenda()']]],
+  ['novodia_37',['novoDia',['../classEmpresa.html#ab9a8d5bc866de0f9a0eac165268f9843',1,'Empresa']]]
 ];

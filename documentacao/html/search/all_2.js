@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['carrinha_3',['Carrinha',['../classCarrinha.html',1,'Carrinha'],['../classCarrinha.html#a2d2b4b926d481b46d7366e7956c9e75e',1,'Carrinha::Carrinha()']]],
-  ['cenario1_4',['Cenario1',['../classCenario1.html',1,'Cenario1'],['../classCenario1.html#a65174c8f44b4234abde7ee589ccf1e18',1,'Cenario1::Cenario1()'],['../classMenu.html#a3d15e3b0ad0edd4a588daea59df0f976',1,'Menu::Cenario1()']]],
-  ['cenario2_5',['Cenario2',['../classCenario2.html',1,'Cenario2'],['../classCenario2.html#a3001b53934b40a1eb19ab266fca52032',1,'Cenario2::Cenario2()'],['../classMenu.html#a915454d54a650bf07cfac39c4d6dffc0',1,'Menu::Cenario2()']]],
-  ['cenario3_6',['Cenario3',['../classCenario3.html',1,'Cenario3'],['../classCenario3.html#a794b2e2b1127834fcdb3ad3e1e20080b',1,'Cenario3::Cenario3()'],['../classMenu.html#a2cfee9050469b5d14fd92b6027c84547',1,'Menu::Cenario3()']]],
-  ['cenario4_7',['Cenario4',['../classCenario4.html',1,'Cenario4'],['../classCenario4.html#a9db83b53385cfaead328c340acd56142',1,'Cenario4::Cenario4()']]],
-  ['clearencomendas_8',['clearEncomendas',['../classCarrinha.html#ac2e5c2eab84f61bd949a5012afebe815',1,'Carrinha']]]
+  ['empresa_6',['Empresa',['../classEmpresa.html',1,'Empresa'],['../classEmpresa.html#a3b43102b3d53affe7cdfaea67ba76ebd',1,'Empresa::Empresa()=default'],['../classEmpresa.html#a489fcbf171b587b15d20f3fb9e60c6b6',1,'Empresa::Empresa(string fileEncomendas, string fileCarrinhas)']]],
+  ['encomenda_7',['Encomenda',['../classEncomenda.html',1,'Encomenda'],['../classEncomenda.html#aa8becfb9df9c44ab5c3189e9d8634511',1,'Encomenda::Encomenda()']]],
+  ['encomenda_5fvalor_8',['ENCOMENDA_VALOR',['../structENCOMENDA__VALOR.html',1,'']]],
+  ['encomendasporentregar_9',['encomendasPorEntregar',['../classCenario3.html#aee7d04840f772c5213e423853ba91a9a',1,'Cenario3']]],
+  ['expressoencomenda_10',['ExpressoEncomenda',['../classExpressoEncomenda.html',1,'ExpressoEncomenda'],['../classExpressoEncomenda.html#a20340e333e26af48d94076116ee7b938',1,'ExpressoEncomenda::ExpressoEncomenda()']]]
 ];

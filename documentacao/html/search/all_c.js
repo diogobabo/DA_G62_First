@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tentativa_67',['tentativa',['../classCenario1.html#a9b424317f309f02565b2d699f02d7b70',1,'Cenario1']]]
+  ['_7eencomenda_53',['~Encomenda',['../classEncomenda.html#a8bbc33a2746cec70ddeeb1e2c9eadf8a',1,'Encomenda']]]
 ];

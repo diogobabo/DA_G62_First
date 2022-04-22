@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['normalencomenda_41',['NormalEncomenda',['../classNormalEncomenda.html',1,'NormalEncomenda'],['../classNormalEncomenda.html#a2918e1d1889549a04935e33e2ca707aa',1,'NormalEncomenda::NormalEncomenda()']]],
-  ['novodia_42',['novoDia',['../classEmpresa.html#ab9a8d5bc866de0f9a0eac165268f9843',1,'Empresa']]]
+  ['removerencomendas_40',['removerEncomendas',['../classEmpresa.html#a734f49a09fc49363d9b9552144a54657',1,'Empresa']]]
 ];

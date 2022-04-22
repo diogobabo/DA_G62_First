@@ -41,13 +41,6 @@ public:
     int verificaDisponibilidade(Encomenda *encomenda) const;
 
     /**
-     * Remover encomenda do transporte
-     * @param encomenda encomenda a ser removida
-     * @return 0 se conseguiu remover
-     */
-    int removerEncomenda(Encomenda *encomenda);
-
-    /**
      * Retorna volume maximo da carrinha
      * @return volume maximo
      */
