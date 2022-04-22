@@ -36,9 +36,10 @@ public:
 
     /**
      * Função responsável pelo job scheduling
+     * @complexity Time:O(C * E);
      * @return tempo medio
      */
-    int tentativa();
+    int firstFit();
 
     /**
      * Função para ordenar pela variavel decisiva
@@ -77,12 +78,14 @@ public:
 
     /**
      * Processo de resoluçao da distribuicao das encomendas
-     * @return
+     * @complexity Time:O(C * solveKnapsack);
+     * @return lucro maximo
      */
     int solveMaxLucro();
 
     /**
      * Resolve problema atraves de knapsack com programção dinamica
+     * @complexity Time:O(V * P * E); Space:O(V * P)
      * @param c carrinha a ser preenchida
      * @param encomendas encomendas a distribuir
      * @return estrutura com encomendas e profit distribuido
@@ -146,6 +149,7 @@ public:
 
     /**
      * Função responsável por minimizar o tempo das entregas expresso
+     * @complexity Time:O(E);
      * @return o tempo medio minimizado
      */
     vector<int> greedyMinAvgTime();
