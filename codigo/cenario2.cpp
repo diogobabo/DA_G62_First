@@ -15,15 +15,9 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
     if (!c.getEncomendas()->empty()) {
         return ev;
     }
-
     int n = (int) encomendas.size();
-
     // dp[index][volume][peso]
-    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,
-                                               vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,
-                                                                               vector<ENCOMENDA_VALOR>(
-                                                                                       c.getPesoMax() + 1,
-                                                                                       ev)));
+    vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,vector<ENCOMENDA_VALOR>(c.getPesoMax() + 1,ev)));
 
     ENCOMENDA_VALOR profit1;
     int cGetVol = (int) c.getVolMax(), cGetPeso = (int) c.getPesoMax();
@@ -34,9 +28,7 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
             if (encomendas[i - 1]->getEstado()) { // entregue
                 continue;
             }
-            eVol = (int) encomendas[i - 1]->getVol(), ePes = (int) encomendas[i -
-                                                                              1]->getPeso(), eRec = (int) encomendas[i -
-                                                                                                                     1]->getRecompensa();
+            eVol = (int) encomendas[i - 1]->getVol(), ePes = (int) encomendas[i -1]->getPeso(), eRec = (int) encomendas[i - 1]->getRecompensa();
         }
         // preencher tabela dynamic programming
         for (int v = 0; v <= cGetVol; v++) {
