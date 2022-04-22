@@ -13,7 +13,6 @@ bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomendas) {
     if (!c.getEncomendas()->empty()) return {};
     int n = (int) encomendas.size();
-
     // dp[index][volume][peso]
     vector<vector<vector<ENCOMENDA_VALOR>>> dp(2,vector<vector<ENCOMENDA_VALOR>>(c.getVolMax() + 1,vector<ENCOMENDA_VALOR>(c.getPesoMax() + 1,ev)));
 
