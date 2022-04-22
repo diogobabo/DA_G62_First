@@ -88,8 +88,6 @@ int Cenario2::solveMaxLucro() {
         if (solved.profit == -5 || unprofit == 3) { // nao existem mais encomendas por entregar
             break;
         } else if (money - carrinha->getCusto() < 0) { // nao existe profit para configuracao
-            cout << "unprofit, profit: " << money << ", custo: " << carrinha->getCusto() << endl;
-            cout << "encomendas: peso= " << peso << " vol= " << vol << " , carrinhas dim: peso= " << carrinha->getPesoMax() << " vol= " << carrinha->getVolMax() << endl;
             unprofit++;
             continue;
         }
