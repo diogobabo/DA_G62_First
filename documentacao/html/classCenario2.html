@@ -87,8 +87,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adf421bae2b024d3c35995c122f2ee565"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario2.html#adf421bae2b024d3c35995c122f2ee565">sortByVarEncomendaRecompensa</a> (const <a class="el" href="classEncomenda.html">Encomenda</a> *e1, const <a class="el" href="classEncomenda.html">Encomenda</a> *e2)</td></tr>
-<tr class="separator:adf421bae2b024d3c35995c122f2ee565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ab95b70743378f9060120c0889b905a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCenario2.html#a3ab95b70743378f9060120c0889b905a">sortByVarCarrinha</a> (const <a class="el" href="classCarrinha.html">Carrinha</a> *c1, const <a class="el" href="classCarrinha.html">Carrinha</a> *c2)</td></tr>
 <tr class="separator:a3ab95b70743378f9060120c0889b905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -212,7 +210,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resolve problema atraves de knapsack com programção dinamica </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Resolve problema atraves de knapsack com programção dinamica @complexity Time:O(V * P * E); Space:O(V * P) </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>carrinha a ser preenchida </td></tr>
     <tr><td class="paramname">encomendas</td><td>encomendas a distribuir </td></tr>
@@ -237,7 +235,7 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Processo de resoluçao da distribuicao das encomendas </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Processo de resoluçao da distribuicao das encomendas @complexity Time:O(C * solveKnapsack); </p><dl class="section return"><dt>Returns</dt><dd>lucro maximo </dd></dl>
 
 </div>
 </div>
@@ -278,50 +276,6 @@ Static Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">c1</td><td>encomenda 1 </td></tr>
     <tr><td class="paramname">c2</td><td>encomenda 2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="adf421bae2b024d3c35995c122f2ee565"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf421bae2b024d3c35995c122f2ee565">&#9670;&nbsp;</a></span>sortByVarEncomendaRecompensa()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Cenario2::sortByVarEncomendaRecompensa </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classEncomenda.html">Encomenda</a> *&#160;</td>
-          <td class="paramname"><em>e2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Função para ordenar pela variavel decisiva </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e1</td><td>encomenda 1 </td></tr>
-    <tr><td class="paramname">e2</td><td>encomenda 2 </td></tr>
   </table>
   </dd>
 </dl>

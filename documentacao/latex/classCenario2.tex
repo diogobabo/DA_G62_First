@@ -18,8 +18,6 @@ double \mbox{\hyperlink{classCenario2_a12b8723a6e83025b67b559bdb9110867}{get\+Qu
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static bool \mbox{\hyperlink{classCenario2_adf421bae2b024d3c35995c122f2ee565}{sort\+By\+Var\+Encomenda\+Recompensa}} (const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e1, const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$e2)
-\item 
 static bool \mbox{\hyperlink{classCenario2_a3ab95b70743378f9060120c0889b905a}{sort\+By\+Var\+Carrinha}} (const \mbox{\hyperlink{classCarrinha}{Carrinha}} $\ast$c1, const \mbox{\hyperlink{classCarrinha}{Carrinha}} $\ast$c2)
 \end{DoxyCompactItemize}
 
@@ -74,7 +72,7 @@ Preparar dataset, ordenar por custo ou recompensa por unidade de medida \mbox{\H
 \doxysubsubsection{\texorpdfstring{solveKnapsack()}{solveKnapsack()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structENCOMENDA__VALOR}{E\+N\+C\+O\+M\+E\+N\+D\+A\+\_\+\+V\+A\+L\+OR}} Cenario2\+::solve\+Knapsack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCarrinha}{Carrinha}} \&}]{c,  }\item[{vector$<$ \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$ $>$}]{encomendas }\end{DoxyParamCaption})}
 
-Resolve problema atraves de knapsack com programção dinamica 
+Resolve problema atraves de knapsack com programção dinamica @complexity Time\+:O(\+V $\ast$ P $\ast$ E); Space\+:O(\+V $\ast$ P) 
 \begin{DoxyParams}{Parameters}
 {\em c} & carrinha a ser preenchida \\
 \hline
@@ -90,8 +88,8 @@ estrutura com encomendas e profit distribuido
 \doxysubsubsection{\texorpdfstring{solveMaxLucro()}{solveMaxLucro()}}
 {\footnotesize\ttfamily int Cenario2\+::solve\+Max\+Lucro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Processo de resoluçao da distribuicao das encomendas \begin{DoxyReturn}{Returns}
-
+Processo de resoluçao da distribuicao das encomendas @complexity Time\+:O(\+C $\ast$ solve\+Knapsack); \begin{DoxyReturn}{Returns}
+lucro maximo 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classCenario2_a3ab95b70743378f9060120c0889b905a}\label{classCenario2_a3ab95b70743378f9060120c0889b905a}} 
 \index{Cenario2@{Cenario2}!sortByVarCarrinha@{sortByVarCarrinha}}
@@ -104,22 +102,6 @@ Função para ordenar pela variavel decisiva
 {\em c1} & encomenda 1 \\
 \hline
 {\em c2} & encomenda 2 \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
-\mbox{\Hypertarget{classCenario2_adf421bae2b024d3c35995c122f2ee565}\label{classCenario2_adf421bae2b024d3c35995c122f2ee565}} 
-\index{Cenario2@{Cenario2}!sortByVarEncomendaRecompensa@{sortByVarEncomendaRecompensa}}
-\index{sortByVarEncomendaRecompensa@{sortByVarEncomendaRecompensa}!Cenario2@{Cenario2}}
-\doxysubsubsection{\texorpdfstring{sortByVarEncomendaRecompensa()}{sortByVarEncomendaRecompensa()}}
-{\footnotesize\ttfamily bool Cenario2\+::sort\+By\+Var\+Encomenda\+Recompensa (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e1,  }\item[{const \mbox{\hyperlink{classEncomenda}{Encomenda}} $\ast$}]{e2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-Função para ordenar pela variavel decisiva 
-\begin{DoxyParams}{Parameters}
-{\em e1} & encomenda 1 \\
-\hline
-{\em e2} & encomenda 2 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
