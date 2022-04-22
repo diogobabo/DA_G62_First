@@ -11,4 +11,4 @@ add_executable(DA_T4_G62
         codigo/encomenda.cpp codigo/encomenda.h
         codigo/empresa.cpp codigo/empresa.h
         codigo/cenarios.h codigo/cenario1.cpp codigo/cenario2.cpp codigo/cenario3.cpp codigo/cenario4.cpp
-        codigo/menu.cpp codigo/menu.h codigo/dpmatrix.h)
+        codigo/menu.cpp codigo/menu.h)
