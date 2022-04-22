@@ -12,7 +12,7 @@ bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
 
 bool Cenario2::sortByVarEncomendaRecompensa(const Encomenda *e1, const Encomenda *e2) {
     if(e1->getPrioridade()!=e2->getPrioridade()) return e1 > e2;
-    return e1->getRecompensaUnidade() < e2->getRecompensaUnidade();
+    return e1->getRecompensaUnidade() > e2->getRecompensaUnidade();
 }
 
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomendas) {
@@ -87,7 +87,7 @@ int Cenario2::solveMaxLucro() {
 
         if (solved.profit == -5 || unprofit == 3) { // nao existem mais encomendas por entregar
             break;
-        } else if (money - carrinha->getCusto() < 0) { // nao existe profit para configuracao
+        } else if (money - (int) carrinha->getCusto() < 0) { // nao existe profit para configuracao
             unprofit++;
             continue;
         }
@@ -107,8 +107,6 @@ int Cenario2::solveMaxLucro() {
 void Cenario2::prepareSolve() {
     sort(carrinhas.begin(), carrinhas.end(), sortByVarCarrinha);
     sort(encomendas.begin(), encomendas.end(), sortByVarEncomendaRecompensa);
-
-    std::reverse(encomendas.begin(), encomendas.end());
 }
 
 ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
