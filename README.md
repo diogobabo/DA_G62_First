@@ -3,6 +3,9 @@ Desenhos de Algoritmos primeiro trabalho
 
 Compiling:
     
-Every time you need to compile the program, execute the following command (assuming you are in da_t6_g62/)
+Every time you need to compile the program, execute the following command (assuming you are in da_t6_g62/codigo/)
 <br>
-g++ -o da_t6_g62 codigo/main.cpp codigo/carrinha.cpp codigo/cenario1.cpp codigo/cenario2.cpp codigo/cenario3.cpp codigo/encomenda.cpp codigo/menu.cpp codigo/empresa.cpp
+g++ main.cpp carrinha.cpp cenario1.cpp cenario2.cpp cenario3.cpp encomenda.cpp menu.cpp empresa.cpp -o da_t6_g62
+
+to run just execute
+    in linux: ./da_t6_g62

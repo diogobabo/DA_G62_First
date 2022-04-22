@@ -26,9 +26,6 @@ class Cenario1 {
 private:
     std::vector<Encomenda *> encomendas;
     std::vector<Carrinha *> carrinhas;
-    double quocient;
-    /** Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema */
-    int knapsackRecursive(std::vector<std::vector<int>> &dp, const std::vector<int> &profits,const std::vector<int> &weights, int capacity, int currentIndex);
 public:
     /**
      * Constructor Montar argumentos necessarios para o funcionamento do cenario 1

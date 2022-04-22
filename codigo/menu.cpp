@@ -72,7 +72,7 @@ int Menu::Cenario3() {
     quo = c3.getQuocientes();
 
     int numeroDias = 1;
-    for(int i = 0; i <avg.size(); i++) {
+    for(size_t i = 0; i <avg.size(); i++) {
         cout << "Dia: " << numeroDias << endl;
         cout << "Tempo Médio: " << avg[i] << endl;
         cout << fixed;
