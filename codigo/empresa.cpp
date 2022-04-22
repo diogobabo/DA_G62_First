@@ -96,12 +96,12 @@ void Empresa::removerEntregues() {
     for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
         auto temp = itr;
         itr++;
-        if((*temp)->getEstado()) encomendas.erase(temp); // se foi entregue, remove do vetor
+        if((*temp)->getEstado()) encomendas.erase(temp); 
     }
     for(auto itr= expEncomendas.begin(); itr!=expEncomendas.end();) {
         auto temp = itr;
         itr++;
-        if((*temp)->getEstado()) expEncomendas.erase(temp); // se foi entregue, remove do vetor
+        if((*temp)->getEstado()) expEncomendas.erase(temp); 
     }
 }
 
