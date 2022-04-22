@@ -20,12 +20,6 @@ public:
     int start();
 
     /**
-     * Menu de extras
-     * @return
-     */
-    int extras();
-
-    /**
      * Cenario 1
      * @return
      */

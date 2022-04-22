@@ -6,20 +6,13 @@ Cenario2::Cenario2(const Empresa &e) {
     this->carrinhas = e.getCarrinhas();
 }
 
-bool Cenario2::sortByRecompensa(const Encomenda *e1, const Encomenda *e2) {
-    return e1->getRecompensa() > e2->getRecompensa();
-}
-
 bool Cenario2::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
     return c1->getCustoUnidade() < c2->getCustoUnidade();
 }
 
 bool Cenario2::sortByVarEncomendaRecompensa(const Encomenda *e1, const Encomenda *e2) {
+    if(e1->getPrioridade()!=e2->getPrioridade()) return e1 > e2;
     return e1->getRecompensaUnidade() < e2->getRecompensaUnidade();
-}
-
-bool Cenario2::sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2) {
-    return e1.profit < e2.profit;
 }
 
 ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomendas) {
@@ -59,9 +52,9 @@ ENCOMENDA_VALOR Cenario2::solveKnapsack(Carrinha &c, vector<Encomenda *> encomen
                 }
                 if (eVol <= v && ePes <= w) { // encomenda cabe na celula da tabela
                     // adicionar encomenda atualmente a ser iterada
-                    if (eRec + dp[(i - 1) % 2][v - eVol][w - ePes].profit > dp[(i - 1) % 2][v][w].profit) {
+                    if ((encomendas[i-1]->getPrioridade() ? eRec*4 : eRec) + dp[(i - 1) % 2][v - eVol][w - ePes].profit > dp[(i - 1) % 2][v][w].profit) {
                         dp[i % 2][v][w] = dp[(i - 1) % 2][v - eVol][w - ePes];
-                        dp[i % 2][v][w].profit += eRec;
+                        dp[i % 2][v][w].profit += encomendas[i-1]->getPrioridade() ? eRec*4 : eRec;
                         dp[i % 2][v][w].CarrinhaEncomenda.push_back(encomendas[i - 1]);
                     } else { // nao compensa adicionar encomenda atualmente a ser iterada
                         dp[i % 2][v][w] = dp[(i - 1) % 2][v][w];
@@ -80,36 +73,36 @@ int Cenario2::solveMaxLucro() {
     prepareSolve(); // preparação dos datasets
 
     int profit = 0, unprofit = 0;
-    int nr_carrinhas = 0, iteracoes = 0;
+    int nr_carrinhas = 0, nr_encomendas = 0;
+    cout << "Encomendas do dia: " << encomendas.size() << endl;
     for (auto &carrinha: carrinhas) {
-        cout << ++iteracoes << endl;
         ENCOMENDA_VALOR solved = prepareKnapsack(*carrinha); // knapsack
 
-        int peso=0, vol=0;
+        int peso=0, vol=0, money=0;
         for(auto & i : solved.CarrinhaEncomenda) {
             peso+=(int) i->getPeso();
             vol+=(int) i->getVol();
+            money+= (int) i->getRecompensa();
         }
 
         if (solved.profit == -5 || unprofit == 3) { // nao existem mais encomendas por entregar
             break;
-        } else if (solved.profit - carrinha->getCusto() < 0) { // nao existe profit para configuracao
-            cout << "unprofit, profit: " << solved.profit << ", custo: " << carrinha->getCusto() << endl;
+        } else if (money - carrinha->getCusto() < 0) { // nao existe profit para configuracao
+            cout << "unprofit, profit: " << money << ", custo: " << carrinha->getCusto() << endl;
             cout << "encomendas: peso= " << peso << " vol= " << vol << " , carrinhas dim: peso= " << carrinha->getPesoMax() << " vol= " << carrinha->getVolMax() << endl;
             unprofit++;
             continue;
         }
         unprofit=0; // reset unprofit combo
+
         for (auto &n: solved.CarrinhaEncomenda) {
             carrinha->adicionarEncomenda(n);
+            nr_encomendas++;
         }
-
+        nr_carrinhas++;
         profit += carrinha->getBalanco();
-        cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size()
-             << ", balanco: " << carrinha->getBalanco() << endl;
-        cout << "encomendas: peso= " << peso << " vol= " << vol << " , carrinhas dim: peso= " << carrinha->getPesoMax() << " vol= " << carrinha->getVolMax() << endl;
     }
-
+    cout << "Total de carrinhas: " << nr_carrinhas << ", Balanco: " << profit << ", Encomendas entregues: " << nr_encomendas << endl;
     return profit;
 }
 
@@ -133,7 +126,6 @@ ENCOMENDA_VALOR Cenario2::prepareKnapsack(Carrinha &c) {
         return v;
     }
 
-    cout << e.size() << " encomendas por entregar\n";
     return solveKnapsack(c, e);
 }
 

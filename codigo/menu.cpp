@@ -16,11 +16,10 @@ int Menu::start() {
     cout << "1) Cenario 1\n";
     cout << "2) Cenario 2\n";
     cout << "3) Cenario 3\n";
-    cout << "4) Extras\n";
     cout << "5) Reset encomendas\n";
 
     while(option) {
-        cout << "\nInsert option (0 to exit):\n";
+        cout << "\nInsere opção (0 para sair, 5 reset encomendas):\n";
         cin >> option;
         switch (option) {
             case 1:
@@ -31,9 +30,7 @@ int Menu::start() {
                 break;
             case 3:
                 Cenario3();
-                break;
-            case 4:
-                extras();
+                e.removerEncomendas();
                 break;
             case 5:
                 e.removerEncomendas();
@@ -49,22 +46,21 @@ int Menu::start() {
     return 0;
 }
 
-int Menu::extras() {
-    return 0;
-}
-
 int Menu::Cenario1() {
     class Cenario1 c1(e);
     cout << c1.tentativa() << endl;
     cout << fixed;
     cout << setprecision(2);
-    cout << "Percentagem encomendas entregues: " << (c1.getQuocient() * 100) << "%" << std::endl;
+    cout << "Percentagem encomendas entregues: " << (c1.getQuocient() * 100) << "%" << endl;
     return 0;
 }
 
 int Menu::Cenario2() {
     class Cenario2 c2(e);
     cout << c2.solveMaxLucro() << endl;
+    cout << fixed;
+    cout << setprecision(2);
+    cout << "Percentagem encomendas entregues: " << (c2.getQuocient() * 100) << "%" << endl;
     return 0;
 }
 

@@ -36,36 +36,12 @@ public:
      */
     explicit Cenario1( Empresa e);
 
-    /** Estas funçoes sao modelos da soluçao para 1 constraint e serao base para o nosso modelo. Vao mudar de nome e argumentos para adaptar ao nosso problema */
-    int solveKnapsack(const std::vector<int> &profits, const std::vector<int> &weights, int capacity);
-
-    /**
-     * Função para ordenar por volume
-     * @param e1 encomenda 1
-     * @param e2 encomenda 2
-     * @return
-     */
-    static bool sortByVolume(const Encomenda* e1, const Encomenda* e2);
-
-    /**
-     * Função para ordenar por peso
-     * @param e1 encomenda 1
-     * @param e2 encomenda 2
-     * @return
-     */
-    static bool sortByPeso(const Encomenda* e1, const Encomenda* e2);
 
     /**
      * Função responsável pelo job scheduling
      * @return tempo medio
      */
     int tentativa();
-
-    /**
-     * Função responsável pelo job scheduling
-     * @return tempo medio
-     */
-    int bestFit();
 
     /**
      * Função para ordenar pela variavel decisiva
@@ -129,14 +105,6 @@ public:
     ENCOMENDA_VALOR prepareKnapsack(Carrinha &c);
 
     /**
-     * Ordenar por recompensa
-     * @param e1 encomenda 1
-     * @param e2 encomenda 2
-     * @return
-     */
-    static bool sortByRecompensa(const Encomenda* e1, const Encomenda* e2);
-
-    /**
      * Função para ordenar pela variavel decisiva
      * @param e1 encomenda 1
      * @param e2 encomenda 2
@@ -151,20 +119,6 @@ public:
      * @return
      */
     static bool sortByVarCarrinha(const Carrinha* c1, const Carrinha* c2);
-
-    /**
-     * Função para ordenar a struct
-     * @param c1 encomenda_valor 1
-     * @param c2 encomenda_valor 2
-     * @return
-     */
-    static bool sortStruct(const ENCOMENDA_VALOR &e1, const ENCOMENDA_VALOR &e2);
-
-    /**
-     * Encomendas por entregar
-     * @return
-     */
-    bool porEntregar();
 
     /**
      * Quocient encomendas entregues / total
@@ -211,16 +165,6 @@ public:
      */
     vector<double> getQuocientes();
 
-};
-
-class Cenario4 {
-private:
-public:
-    /**
-     * Constructor Montar argumentos necessarios para o funcionamento do cenario 4
-     * @param e Empresa a ser estudada
-     */
-    explicit Cenario4(const Empresa& e);
 };
 
 #endif //DA_T6_G62_CENARIOS_H

@@ -70,11 +70,6 @@ public:
     vector<ExpressoEncomenda *> getExpEncomendas() const {return expEncomendas;};
 
     /**
-     * Remover encomendas entregues
-     */
-    void removerEntregues();
-
-    /**
      * Remover todas as encomendas
      */
     void removerEncomendas();
@@ -96,13 +91,6 @@ public:
      * @return localizacao do ficheiro
      */
     string getFileEncomendas() const {return fileEncomendas;};
-
-    /**
-     * Atualiza valroes peso, volume, balanco das carrinhas
-     */
-    void atualizaCarrinhas();
-
-    int encomendasPorEntregar();
 };
 
 

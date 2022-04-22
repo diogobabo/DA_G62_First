@@ -27,27 +27,9 @@ void Carrinha::setVarDecisiva(double peso_peso, double peso_vol) {
     var_decisiva = peso_peso*pesoMax + peso_vol*volMax;
 }
 
-int Carrinha::removerEncomenda(Encomenda *encomenda) {
-    for(auto itr = encomendas.begin(); itr!=encomendas.end(); itr++) {
-        if(*itr==encomenda) {
-            balanco-= (int) encomenda->getRecompensa();
-            peso-=encomenda->getPeso();
-            vol-=encomenda->getVol();
-            encomenda->setEstado(false);
-            encomendas.erase(itr);
-            return 0;
-        }
-    }
-    return 1;
-}
-
 void Carrinha::clearEncomendas() {
     peso=0;
     vol=0;
     balanco=(int)-custo;
     encomendas.clear();
-}
-
-void Carrinha::setEncomendas(std::vector<Encomenda *> *temp) {
-    this->encomendas = *temp;
 }

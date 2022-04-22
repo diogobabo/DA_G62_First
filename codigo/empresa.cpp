@@ -92,19 +92,6 @@ void Empresa::balancaVars() {
     pesoVol = (float) totalVol / totalVar;
 }
 
-void Empresa::removerEntregues() {
-    for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
-        auto temp = itr;
-        itr++;
-        if((*temp)->getEstado()) encomendas.erase(temp); 
-    }
-    for(auto itr= expEncomendas.begin(); itr!=expEncomendas.end();) {
-        auto temp = itr;
-        itr++;
-        if((*temp)->getEstado()) expEncomendas.erase(temp); 
-    }
-}
-
 void Empresa::removerEncomendas() {
     for(auto & encomenda : encomendas) {
         delete encomenda;
@@ -115,15 +102,3 @@ void Empresa::removerEncomendas() {
     }
     expEncomendas.clear();
 }
-
-void Empresa::atualizaCarrinhas() {
-    for(auto & carrinha : carrinhas){
-        auto v = carrinha->getEncomendas();
-        for(auto & n : *v){
-            carrinha->removerEncomenda(n);
-        }
-
-    }
-}
-
-

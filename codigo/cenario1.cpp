@@ -9,13 +9,6 @@ Cenario1::Cenario1(Empresa e) {
     this->carrinhas = e.getCarrinhas();
 }
 
-
-int Cenario1::solveKnapsack(const std::vector<int> &profits, const std::vector<int> &weights, int capacity) {
-    vector<vector<int>> dp(profits.size(), vector<int>(capacity + 1, -1)); //aqui vai ter que ser 3 entradas, ou seja, vector<vector<vector<int>>>
-    return this->knapsackRecursive(dp, profits, weights, capacity, 0);//vamos ter problemas no currentindex porque não vai ser um número
-}
-
-
 int Cenario1::knapsackRecursive(vector<vector<int>> &dp, const vector<int> &profits,const vector<int> &weights, int capacity, int currentIndex) {
     // base checks
     if (capacity <= 0 || currentIndex >= profits.size()) {
@@ -39,14 +32,6 @@ int Cenario1::knapsackRecursive(vector<vector<int>> &dp, const vector<int> &prof
 
     dp[currentIndex][capacity] = max(profit1, profit2);
     return dp[currentIndex][capacity];
-}
-
-bool Cenario1::sortByVolume(const Encomenda *e1, const Encomenda *e2) {
-    return e1->getVol() < e2->getVol();
-}
-
-bool Cenario1::sortByPeso(const Encomenda *e1, const Encomenda *e2) {
-    return e1->getPeso() < e2->getPeso();
 }
 
 bool Cenario1::sortByVarCarrinha(const Carrinha *c1, const Carrinha *c2) {
