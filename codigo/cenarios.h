@@ -106,14 +106,6 @@ public:
 
     /**
      * Função para ordenar pela variavel decisiva
-     * @param e1 encomenda 1
-     * @param e2 encomenda 2
-     * @return
-     */
-    static bool sortByVarEncomendaRecompensa(const Encomenda* e1, const Encomenda* e2);
-
-    /**
-     * Função para ordenar pela variavel decisiva
      * @param c1 encomenda 1
      * @param c2 encomenda 2
      * @return
