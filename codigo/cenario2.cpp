@@ -94,8 +94,8 @@ int Cenario2::solveMaxLucro() {
         for (auto &n: solved.CarrinhaEncomenda) {
             carrinha->adicionarEncomenda(n);
         }
-
-        profit += carrinha->getBalanco();
+        if(carrinha->getBalanco()>0)
+            profit += carrinha->getBalanco();
         cout << "Carrinha nr: " << ++nr_carrinhas << ", nr de encomendas: " << solved.CarrinhaEncomenda.size()
              << ", balanco: " << carrinha->getBalanco() << endl;
     }
