@@ -41,7 +41,6 @@ int Menu::start() {
 
         string f = e.getFileEncomendas();
         e.novoDia(&f);
-
     }
     return 0;
 }
@@ -67,6 +66,7 @@ int Menu::Cenario2() {
 int Menu::Cenario3() {
     vector<int>avg;
     vector<double>quo;
+    cout << "Número de encomendas a entregar: " << e.getExpEncomendas().size() << endl;
     class Cenario3 c3(e);
     avg = c3.greedyMinAvgTime();
     quo = c3.getQuocientes();

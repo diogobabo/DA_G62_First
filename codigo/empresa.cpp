@@ -59,6 +59,16 @@ void Empresa::novoDia(std::string *fileEncomenda) {
         carrinha->clearEncomendas(); // limpar carrinhas
     }
 
+    for(auto itr= expEncomendas.begin(); itr!=expEncomendas.end();) {
+        if((*itr)->getEstado()) {
+            itr = expEncomendas.erase(itr); // se foi entregue, remove do vetor
+        }
+        else {
+            (*itr)->setPrioridade(true); // se não foi entregue no dia anterior, muda prioridade para elevada
+            itr++;
+        }
+    }
+
     for(auto itr= encomendas.begin(); itr!=encomendas.end();) {
         if((*itr)->getEstado()) {
             itr = encomendas.erase(itr); // se foi entregue, remove do vetor
