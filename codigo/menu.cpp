@@ -56,7 +56,7 @@ int Menu::Cenario1() {
 
 int Menu::Cenario2() {
     class Cenario2 c2(e);
-    cout << c2.solveMaxLucro() << endl;
+    c2.solveMaxLucro();
     cout << fixed;
     cout << setprecision(2);
     cout << "Percentagem encomendas entregues: " << (c2.getQuocient() * 100) << "%" << endl;
